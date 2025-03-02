@@ -38,8 +38,7 @@ export default function ContactSection() {
           <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">Contact Us</h2>
           <div className="w-24 h-1 bg-gray-600 mx-auto"></div>
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
-            Have questions about our products or services? We're here to help. Reach out to us through any of the
-            following channels.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor mollitia aspernatur architecto deleniti ipsum corrupti, nam omnis, porro aperiam perspiciatis quisquam, voluptatum labore sed maxime. Similique accusantium quos libero earum.
           </p>
         </div>
 
@@ -84,7 +83,6 @@ export default function ContactSection() {
               </button>
             </form>
           </div>
-          {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <div className="grid gap-8">

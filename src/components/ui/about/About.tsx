@@ -10,8 +10,7 @@ export default function AboutSection() {
           <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">¿Quiénes Somos?</h2>
           <div className="w-24 h-1 bg-gray-600 mx-auto"></div>
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
-            For over two decades, we've been dedicated to creating premium cleaning solutions that are effective,
-            sustainable, and safe for your family and the environment.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, esse dicta libero debitis harum magni quos qui quam quod odio obcaecati veritatis totam itaque pariatur corrupti molestias perspiciatis beatae! Eligendi..
           </p>
         </div>
 

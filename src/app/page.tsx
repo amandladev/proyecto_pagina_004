@@ -3,7 +3,6 @@ import ImageCarousel from "@/components/ui/carousel/ImageCarousel";
 import ContactSection from "@/components/ui/contact/Contact";
 import Navbar from "@/components/ui/navbar/Navbar";
 import ServicesSection from "@/components/ui/services/Services";
-import Image from "next/image";
 
 export default function Home() {
   const carouselItems = [
