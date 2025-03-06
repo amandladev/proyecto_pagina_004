@@ -121,7 +121,7 @@ export default function ClientsSection() {
 
     const scroll = (timestamp: number) => {
       if (!startTime) startTime = timestamp
-      const elapsed = timestamp - startTime
+      // const elapsed = timestamp - startTime
 
       if (scrollContainer) {
         scrollContainer.scrollLeft += speed
