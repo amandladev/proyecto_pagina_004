@@ -35,8 +35,8 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">Contact Us</h2>
-          <div className="w-24 h-1 bg-gray-600 mx-auto"></div>
+          <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">Contactanos</h2>
+          <div className="w-24 h-1 bg-black mx-auto"></div>
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor mollitia aspernatur architecto deleniti ipsum corrupti, nam omnis, porro aperiam perspiciatis quisquam, voluptatum labore sed maxime. Similique accusantium quos libero earum.
           </p>
@@ -45,40 +45,40 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-lg shadow-sm">
-            <h3 className="text-2xl font-light text-gray-800 mb-6">Send Us a Message</h3>
+            <h3 className="text-2xl font-light text-gray-800 mb-6">Envíanos un mensaje</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
-                  <label htmlFor="firstName">First name</label>
-                  <input id="firstName" placeholder="John" required />
+                  <label htmlFor="firstName" className="text-gray-300">Nombres</label>
+                  <input className="border border-gray-300 text-color-black px-2" id="firstName" placeholder="John" required />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="lastName">Last name</label>
-                  <input id="lastName" placeholder="Doe" required />
+                  <label htmlFor="lastName" className="text-gray-300">Apellidos</label>
+                  <input className="border border-gray-300 text-color-black px-2" id="lastName" placeholder="Doe" required />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="email">Email</label>
-                <input id="email" type="email" placeholder="john@example.com" required />
+              <div className="space-y-2 flex flex-col">
+                <label htmlFor="email" className="text-gray-300">Email</label>
+                <input className="border border-gray-300 text-color-black px-2" id="email" type="email" placeholder="john@example.com" required />
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="phone">Phone (optional)</label>
-                <input id="phone" type="tel" placeholder="(555) 123-4567" />
+              <div className="space-y-2 flex flex-col">
+                <label htmlFor="phone" className="text-gray-300">Teléfono</label>
+                <input className="border border-gray-300 text-color-black px-2" id="phone" type="tel" placeholder="(555) 123-4567" />
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="subject">Subject</label>
-                <input id="subject" placeholder="How can we help?" required />
+              <div className="space-y-2 flex flex-col">
+                <label htmlFor="subject" className="text-gray-300">Asunto</label>
+                <input  className="border border-gray-300 text-color-black px-2" id="subject" placeholder="How can we help?" required />
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" placeholder="Your message..." className="min-h-[150px]" required />
+              <div className="space-y-2 flex flex-col">
+                <label htmlFor="message" className="text-gray-300">Mensaje</label>
+                <textarea id="message" placeholder="Your message..." className="min-h-[150px] text-color-black px-2 border border-gray-300" required />
               </div>
 
-              <button type="submit" className="w-full" disabled={isSubmitting}>
+              <button type="submit" className="flex items-center text-white bg-color-yellow hover:bg-gray-800 px-4 py-2 rounded-md text-md font-medium transition-colors" disabled={isSubmitting}>
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
@@ -92,7 +92,7 @@ export default function ContactSection() {
                     <MapPin className="h-6 w-6 text-gray-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-1">Our Location</h3>
+                    <h3 className="font-medium text-gray-900 mb-1">Ubicación</h3>
                     <p className="text-gray-600">
                       123 Business Street
                       <br />
@@ -109,9 +109,9 @@ export default function ContactSection() {
                     <Phone className="h-6 w-6 text-gray-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-1">Phone</h3>
+                    <h3 className="font-medium text-gray-900 mb-1">Teléfono</h3>
                     <p className="text-gray-600">
-                      Sales: (555) 123-4567
+                      Ventas: (555) 123-4567
                       <br />
                       Support: (555) 123-4568
                     </p>
@@ -126,7 +126,7 @@ export default function ContactSection() {
                   <div>
                     <h3 className="font-medium text-gray-900 mb-1">Email</h3>
                     <p className="text-gray-600">
-                      Sales: sales@company.com
+                      Ventas: sales@company.com
                       <br />
                       Support: support@company.com
                     </p>
@@ -139,21 +139,19 @@ export default function ContactSection() {
                     <Clock className="h-6 w-6 text-gray-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-1">Business Hours</h3>
+                    <h3 className="font-medium text-gray-900 mb-1">Horario de atención</h3>
                     <p className="text-gray-600">
-                      Monday - Friday: 9:00 AM - 6:00 PM
+                      Lunes - Viernes: 9:00 AM - 6:00 PM
                       <br />
-                      Saturday: 10:00 AM - 4:00 PM
+                      Sábado: 10:00 AM - 4:00 PM
                       <br />
-                      Sunday: Closed
+                      Domingo: Cerrado
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          
         </div>
       </div>
       {/* <Toaster /> */}

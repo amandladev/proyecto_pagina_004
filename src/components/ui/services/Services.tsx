@@ -9,10 +9,10 @@ import { Check } from "lucide-react"
 const services = [
   {
     id: 1,
-    title: "Industrial Cleaning",
+    title: "Agro",
     description:
       "Professional cleaning solutions for industrial facilities and manufacturing plants. Our specialized equipment and eco-friendly products ensure a safe and clean working environment.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/ganaderia/ganaderia_0.jpg?height=600&width=800",
     features: [
       "Heavy-duty equipment cleaning",
       "Factory floor maintenance",
@@ -23,10 +23,10 @@ const services = [
   },
   {
     id: 2,
-    title: "Commercial Cleaning",
+    title: "Lacteos",
     description:
       "Comprehensive cleaning services for offices, retail spaces, and commercial buildings. We maintain the highest standards of cleanliness to create a professional environment for your business.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/lacteos/lacteos_0.jpg?height=600&width=800",
     features: [
       "Daily office cleaning",
       "Floor and carpet care",
@@ -37,10 +37,10 @@ const services = [
   },
   {
     id: 3,
-    title: "Specialized Solutions",
+    title: "Food & Drink",
     description:
       "Custom cleaning solutions for unique environments and specific industry requirements. Our expert team develops tailored approaches for your specialized cleaning needs.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/frutas/frutas_0.jpg?height=600&width=800",
     features: [
       "Clean room maintenance",
       "Healthcare facility cleaning",
@@ -51,10 +51,10 @@ const services = [
   },
   {
     id: 4,
-    title: "Maintenance Services",
+    title: "Carnicos",
     description:
       "Preventive maintenance and regular upkeep services to ensure your facility remains in optimal condition. We help extend the life of your assets and prevent costly repairs.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/ganaderia/ganaderia_3.jpg?height=600&width=800",
     features: [
       "Equipment maintenance",
       "Preventive cleaning",
@@ -65,10 +65,24 @@ const services = [
   },
   {
     id: 5,
-    title: "Consulting & Training",
+    title: "Avicola",
     description:
       "Expert consultation and training services to help your team maintain cleanliness and safety standards. We share our expertise to empower your organization.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/ganaderia/ganaderia_1.jpg?height=600&width=800",
+    features: [
+      "Cleaning protocol development",
+      "Staff training programs",
+      "Safety compliance consulting",
+      "Efficiency audits",
+      "Best practices workshops",
+    ],
+  },
+  {
+    id: 6,
+    title: "Horeca",
+    description:
+      "Expert consultation and training services to help your team maintain cleanliness and safety standards. We share our expertise to empower your organization.",
+    image: "/ganaderia/ganaderia_1.jpg?height=600&width=800",
     features: [
       "Cleaning protocol development",
       "Staff training programs",
@@ -88,9 +102,9 @@ export default function ServicesSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">Nuestros Sectores</h2>
-          <div className="w-24 h-1 bg-gray-600 mx-auto"></div>
+          <div className="w-24 h-1 bg-black mx-auto"></div>
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover our comprehensive range of cleaning and maintenance services designed to meet your specific needs.
+          Descubra nuestra amplia gama de servicios de limpieza y mantenimiento diseñados para satisfacer sus necesidades específicas.
           </p>
         </div>
 
@@ -100,10 +114,10 @@ export default function ServicesSection() {
             <button
               key={service.id}
               onClick={() => setActiveService(service)}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-colors
+              className={`px-6 py-3 rounded-full text-md font-medium transition-colors
                 ${
                   activeService.id === service.id
-                    ? "bg-gray-600 text-white"
+                    ? "bg-color-yellow text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
             >
@@ -122,7 +136,6 @@ export default function ServicesSection() {
             transition={{ duration: 0.3 }}
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
-            {/* Service Image */}
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl order-2 lg:order-1">
               <Image
                 src={activeService.image || "/placeholder.svg"}
@@ -134,7 +147,7 @@ export default function ServicesSection() {
 
             {/* Service Information */}
             <div className="space-y-6 order-1 lg:order-2">
-              <h3 className="text-2xl font-light text-gray-800">{activeService.title}</h3>
+              {/* <h3 className="text-2xl font-light text-gray-800">{activeService.title}</h3> */}
               <p className="text-gray-600">{activeService.description}</p>
 
               {/* Features List */}
@@ -158,7 +171,7 @@ export default function ServicesSection() {
 
               {/* Call to Action */}
               <div className="pt-6">
-                <button className="px-8 py-3 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors">
+                <button className="px-8 py-3 bg-color-yellow text-white rounded-md hover:bg-gray-700 transition-colors">
                   Learn More
                 </button>
               </div>

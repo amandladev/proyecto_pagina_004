@@ -32,7 +32,7 @@ export default function Navbar() {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-600/90 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-100/90 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -42,7 +42,7 @@ export default function Navbar() {
               <div className="h-8 w-8 bg-white rounded-full flex items-center justify-center mr-2">
                 <span className="text-gray-600 font-bold">L</span>
               </div>
-              <span className="text-white font-light text-xl">Logo</span>
+              <span className="primary-text-color font-light text-xl">Logo</span>
             </Link>
           </div>
 
@@ -50,25 +50,25 @@ export default function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
               {/* First menu item */}
-              <Link href="/" className="text-white hover:text-gray-300 px-2 py-1 text-sm font-light transition-colors">
+              <Link href="/" className="text-tertiary-color hover:text-gray-300 px-2 py-1 text-md font-light transition-colors">
                 ¿Quiénes Somos?
               </Link>
 
               <div className="relative group">
-                <button className="flex items-center text-white hover:text-gray-300 px-2 py-1 text-sm font-light transition-colors">
+                <button className="flex items-center text-tertiary-color hover:text-gray-800 px-2 py-1 text-md font-light transition-colors">
                   Sectores
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
 
                 {/* Dropdown menu with improved hover area */}
                 <div className="absolute left-0 pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                  <div className="rounded-md shadow-lg bg-gray-700 ring-1 ring-black ring-opacity-5 overflow-hidden">
+                  <div className="rounded-md shadow-lg bg-gray-200 ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div className="py-1">
                       {serviceItems.map((service, index) => (
                         <Link
                           key={service.name}
                           href={service.href}
-                          className="block px-4 py-2 text-sm text-white hover:bg-gray-600 transition-colors"
+                          className="block px-4 py-2 text-md tertiary-color hover:bg-gray-600 transition-colors"
                           style={{
                             animationDelay: `${index * 50}ms`,
                             animation: "fadeInDown 0.3s ease forwards",
@@ -84,7 +84,7 @@ export default function Navbar() {
 
 
               <div className="relative group">
-                <button className="flex items-center text-white hover:text-gray-300 px-2 py-1 text-sm font-light transition-colors">
+                <button className="flex items-center text-tertiary-color hover:text-gray-300 px-2 py-1 text-md font-light transition-colors">
                   Asesoría Experta
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
@@ -97,7 +97,7 @@ export default function Navbar() {
                         <Link
                           key={advice.name}
                           href={advice.href}
-                          className="block px-4 py-2 text-sm text-white hover:bg-gray-600 transition-colors"
+                          className="block px-4 py-2 text-md tertiary-color hover:bg-gray-600 transition-colors"
                           style={{
                             animationDelay: `${index * 50}ms`,
                             animation: "fadeInDown 0.3s ease forwards",
@@ -118,7 +118,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:text-gray-300 px-2 py-1 text-sm font-light transition-colors"
+                  className="text-tertiary-color hover:text-gray-300 px-2 py-1 text-md font-light transition-colors"
                 >
                   {item.name}
                 </Link>
@@ -127,7 +127,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <button className="flex items-center text-white bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+            <button className="flex items-center text-white bg-color-yellow hover:bg-gray-800 px-4 py-2 rounded-md text-md font-medium transition-colors">
               <User className="h-4 w-4 mr-2" />
               Iniciar sesión
             </button>
@@ -137,7 +137,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-300 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-tertiary-color hover:text-gray-300 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (
@@ -156,7 +156,7 @@ export default function Navbar() {
           {/* Home link */}
           <Link
             href="/"
-            className="text-white hover:bg-gray-600 block px-3 py-2 rounded-md text-base font-light"
+            className="text-tertiary-color hover:bg-gray-600 block px-3 py-2 rounded-md text-base font-light"
             onClick={() => setIsMenuOpen(false)}
           >
             Home
@@ -165,7 +165,7 @@ export default function Navbar() {
           {/* Mobile Services dropdown */}
           <div>
             <button
-              className="flex items-center justify-between w-full text-white hover:bg-gray-600 px-3 py-2 rounded-md text-base font-light"
+              className="flex items-center justify-between w-full text-tertiary-color hover:bg-gray-600 px-3 py-2 rounded-md text-base font-light"
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
             >
               <span>Services</span>
@@ -177,14 +177,14 @@ export default function Navbar() {
             {/* Mobile Services submenu */}
             <div
               className={`pl-4 space-y-1 overflow-hidden transition-all duration-300 ${
-                isMobileServicesOpen ? "max-h-60" : "max-h-0"
+                isMobileServicesOpen ? "max-h-80" : "max-h-0"
               }`}
             >
               {serviceItems.map((service) => (
                 <Link
                   key={service.name}
                   href={service.href}
-                  className="text-white hover:bg-gray-600 block px-3 py-2 rounded-md text-base font-light"
+                  className="text-tertiary-color hover:bg-gray-600 block px-3 py-2 rounded-md text-base font-light"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {service.name}
@@ -198,16 +198,16 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-white hover:bg-gray-600 block px-3 py-2 rounded-md text-base font-light"
+              className="text-tertiary-color hover:bg-gray-600 block px-3 py-2 rounded-md text-base font-light"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
             </Link>
           ))}
 
-          <button className="flex items-center w-full text-white hover:bg-gray-600 px-3 py-2 rounded-md text-base font-medium mt-4">
+          <button className="flex items-center w-full text-tertiary-color hover:bg-gray-600 px-3 py-2 rounded-md text-base font-medium mt-4">
             <User className="h-5 w-5 mr-2" />
-            Login
+            Iniciar sesión
           </button>
         </div>
       </div>
