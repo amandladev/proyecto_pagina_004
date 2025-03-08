@@ -144,7 +144,7 @@ export default function ClientsSection() {
   }, [])
 
   return (
-    <section className="w-full py-20 bg-gray-50 mt-16" id="clients">
+    <section className="w-full py-20 bg-gray-50 mt-20" id="clients">
       {/* Section Header - Centered with container */}
       <div className="text-center mb-16 max-w-4xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4"> Con la confianza de los lideres de la Industria</h2>
@@ -167,13 +167,15 @@ export default function ClientsSection() {
                 key={`${client.name}-${index}`}
                 className="flex-shrink-0 flex items-center justify-center h-24 w-56 bg-white rounded-lg shadow-sm px-6 transition-transform hover:scale-105"
               >
-                <Image
-                  src={client.logo || "/placeholder.svg"}
-                  alt={`${client.name} logo`}
-                  width={180}
-                  height={80}
-                  className={`object-contain max-h-14 ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
-                />
+                <a href={client.link} target={"_blank"}>
+                  <Image
+                    src={client.logo || "/placeholder.svg"}
+                    alt={`${client.name} logo`}
+                    width={180}
+                    height={80}
+                    className={`object-contain max-h-14 ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
+                  />
+                </a>
               </div>
             ))}
           </div>
@@ -196,13 +198,15 @@ export default function ClientsSection() {
                 key={`${client.name}-reverse-${index}`}
                 className="flex-shrink-0 flex items-center justify-center h-24 w-56 bg-white rounded-lg shadow-sm px-6 transition-transform hover:scale-105"
               >
-                <Image
-                  src={client.logo || "/placeholder.svg"}
-                  alt={`${client.name} logo`}
-                  width={180}
-                  height={80}
-                  className={`object-contain max-h-14 ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
-                />
+                <a href={client.link} target={"_blank"}>
+                  <Image
+                    src={client.logo || "/placeholder.svg"}
+                    alt={`${client.name} logo`}
+                    width={180}
+                    height={80}
+                    className={`object-contain max-h-14 ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
+                  />
+                </a>
               </div>
             ))}
           </div>

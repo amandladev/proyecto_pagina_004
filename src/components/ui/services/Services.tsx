@@ -172,7 +172,7 @@ export default function ServicesSection() {
               {/* Call to Action */}
               <div className="pt-6">
                 <button className="px-8 py-3 bg-color-yellow text-white rounded-md hover:bg-gray-700 transition-colors">
-                  Learn More
+                  Mira los productos
                 </button>
               </div>
             </div>

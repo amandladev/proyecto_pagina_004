@@ -37,9 +37,9 @@ export default function ContactSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">Contactanos</h2>
           <div className="w-24 h-1 bg-black mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+          {/* <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor mollitia aspernatur architecto deleniti ipsum corrupti, nam omnis, porro aperiam perspiciatis quisquam, voluptatum labore sed maxime. Similique accusantium quos libero earum.
-          </p>
+          </p> */}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -48,11 +48,11 @@ export default function ContactSection() {
             <h3 className="text-2xl font-light text-gray-800 mb-6">Envíanos un mensaje</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
+                <div className="space-y-2 flex  flex-col">
                   <label htmlFor="firstName" className="text-gray-300">Nombres</label>
                   <input className="border border-gray-300 text-color-black px-2" id="firstName" placeholder="John" required />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 flex  flex-col">
                   <label htmlFor="lastName" className="text-gray-300">Apellidos</label>
                   <input className="border border-gray-300 text-color-black px-2" id="lastName" placeholder="Doe" required />
                 </div>
@@ -70,16 +70,16 @@ export default function ContactSection() {
 
               <div className="space-y-2 flex flex-col">
                 <label htmlFor="subject" className="text-gray-300">Asunto</label>
-                <input  className="border border-gray-300 text-color-black px-2" id="subject" placeholder="How can we help?" required />
+                <input  className="border border-gray-300 text-color-black px-2" id="subject" placeholder="" required />
               </div>
 
               <div className="space-y-2 flex flex-col">
                 <label htmlFor="message" className="text-gray-300">Mensaje</label>
-                <textarea id="message" placeholder="Your message..." className="min-h-[150px] text-color-black px-2 border border-gray-300" required />
+                <textarea id="message" placeholder="Escribir el detalle..." className="min-h-[150px] text-color-black px-2 border border-gray-300" required />
               </div>
 
               <button type="submit" className="flex items-center text-white bg-color-yellow hover:bg-gray-800 px-4 py-2 rounded-md text-md font-medium transition-colors" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Enviando..." : "Enviar"}
               </button>
             </form>
           </div>
@@ -112,8 +112,6 @@ export default function ContactSection() {
                     <h3 className="font-medium text-gray-900 mb-1">Teléfono</h3>
                     <p className="text-gray-600">
                       Ventas: (555) 123-4567
-                      <br />
-                      Support: (555) 123-4568
                     </p>
                   </div>
                 </div>
@@ -127,8 +125,6 @@ export default function ContactSection() {
                     <h3 className="font-medium text-gray-900 mb-1">Email</h3>
                     <p className="text-gray-600">
                       Ventas: sales@company.com
-                      <br />
-                      Support: support@company.com
                     </p>
                   </div>
                 </div>

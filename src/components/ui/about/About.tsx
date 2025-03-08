@@ -84,22 +84,22 @@ export default function AboutSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center">
           <div className="p-6 bg-gray-50 rounded-lg">
             <div className="text-4xl font-light text-tertiary-color mb-2">20+</div>
-            <div className="text-gray-600">Years of Experience</div>
+            <div className="text-gray-600">Años de Experiencia</div>
           </div>
 
           <div className="p-6 bg-gray-50 rounded-lg">
             <div className="text-4xl font-light text-tertiary-color mb-2">50+</div>
-            <div className="text-gray-600">Products</div>
+            <div className="text-gray-600">Productos</div>
           </div>
 
           <div className="p-6 bg-gray-50 rounded-lg">
             <div className="text-4xl font-light text-tertiary-color mb-2">100k+</div>
-            <div className="text-gray-600">Happy Customers</div>
+            <div className="text-gray-600">Clientes Satisfechos</div>
           </div>
 
           <div className="p-6 bg-gray-50 rounded-lg">
             <div className="text-4xl font-light text-tertiary-color mb-2">15+</div>
-            <div className="text-gray-600">Countries Served</div>
+            <div className="text-gray-600">Paises salvados</div>
           </div>
         </div>
       </div>
