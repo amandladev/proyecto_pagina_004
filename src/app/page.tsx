@@ -1,4 +1,5 @@
 import AboutSection from "@/components/ui/about/About";
+import ExpertAdviceSection from "@/components/ui/advice/Advice";
 import ClientsSection from "@/components/ui/clients/Clients";
 import ContactSection from "@/components/ui/contact/Contact";
 import Navbar from "@/components/ui/navbar/Navbar";
@@ -34,6 +35,7 @@ export default function Home() {
         {/* <ImageCarousel items={carouselItems} /> */}
         <AboutSection />
         <ServicesSection />
+        <ExpertAdviceSection />
         <ContactSection />
       </main>
   );
