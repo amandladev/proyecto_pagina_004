@@ -157,7 +157,7 @@ export default function ContactSection() {
 
               <div className="space-y-2">
                 <Label htmlFor="message">Mensaje</Label>
-                <Textarea id="message" placeholder="Your message..." className="min-h-[150px]" required />
+                <Textarea id="message" placeholder="" className="min-h-[150px]" required />
               </div>
 
               <Button type="submit" className="w-full" disabled={isSubmitting}>

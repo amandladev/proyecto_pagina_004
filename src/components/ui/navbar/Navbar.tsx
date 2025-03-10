@@ -3,9 +3,10 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X, User, ChevronDown } from "lucide-react"
+import LoginModal from "../modal/Login"
 
 const menuItems = [
-  { name: "¿Quiénes Somos?", href: "/" },
+  { name: "¿Quiénes Somos?", href: "/#about" },
   // Services is handled separately
   { name: "Tienda Virtual", href: "/store" },
   { name: "Contacto", href: "/#contact" },
@@ -128,10 +129,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <button className="flex items-center hover:text-white bg-color-yellow hover:bg-gray-800 px-4 py-2 rounded-md text-md font-bold transition-colors">
-              <User className="h-4 w-4 mr-2" />
-              Iniciar sesión
-            </button>
+            <LoginModal />
           </div>
 
           {/* Mobile menu button */}
@@ -237,8 +235,16 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <button className="flex items-center w-full text-white hover:bg-gray-600 px-3 py-2 rounded-md text-base font-medium mt-4">
-            <User className="h-5 w-5 mr-2" />
+          <button
+            className="flex items-center w-full text-white hover:bg-gray-600 px-3 py-2 rounded-md text-base font-medium mt-4"
+            onClick={() => {
+              setIsMenuOpen(false)
+              // Open login modal logic would go here
+              // Since we can't directly trigger the Dialog from here, we'd need a different approach for mobile
+              // For now, we'll just navigate to a login page
+              window.location.href = "/login"
+            }}
+          >
             Iniciar sesión
           </button>
         </div>
