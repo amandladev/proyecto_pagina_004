@@ -30,7 +30,7 @@ export default function CartDropdown() {
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center text-white hover:text-gray-300 transition-colors"
+        className="flex items-center text-greenNew hover:text-gray-800 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Shopping cart"
       >
