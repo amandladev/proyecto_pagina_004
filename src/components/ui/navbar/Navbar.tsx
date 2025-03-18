@@ -4,6 +4,8 @@ import { useState } from "react"
 import Link from "next/link"
 import { Menu, X, User, ChevronDown } from "lucide-react"
 import LoginModal from "../modal/Login"
+import RegisterModal from "../modal/Register"
+import CartDropdown from "../cart-dropdown"
 
 const menuItems = [
   { name: "¿Quiénes Somos?", href: "/#about" },
@@ -128,12 +130,15 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center space-x-4">
+            <CartDropdown />
             <LoginModal />
+            <RegisterModal />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-4">
+            <CartDropdown />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-tertiary-color hover:text-gray-800 focus:outline-none"
@@ -235,18 +240,23 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <button
-            className="flex items-center w-full text-white hover:bg-gray-600 px-3 py-2 rounded-md text-base font-medium mt-4"
-            onClick={() => {
-              setIsMenuOpen(false)
-              // Open login modal logic would go here
-              // Since we can't directly trigger the Dialog from here, we'd need a different approach for mobile
-              // For now, we'll just navigate to a login page
-              window.location.href = "/login"
-            }}
-          >
-            Iniciar sesión
-          </button>
+          <div className="pt-4 pb-3 border-t border-gray-700">
+            <Link
+              href="/login"
+              className="block w-full text-center text-white bg-gray-600 hover:bg-gray-500 px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Iniciar Sesión
+            </Link>
+            <Link
+              href="/register"
+              className="mt-2 block w-full text-center text-white bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Registrarse
+            </Link>
+          </div>
+          
         </div>
       </div>
     </nav>

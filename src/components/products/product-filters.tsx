@@ -25,7 +25,7 @@ export default function ProductFilters({ categories, selectedCategory, setSelect
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-medium text-gray-900 mb-4">Categories</h3>
+        <h3 className="text-lg font-medium text-gray-900 mb-4">Categorías</h3>
         <div className="space-y-2">
           {categories.map((category) => (
             <button
@@ -43,7 +43,7 @@ export default function ProductFilters({ categories, selectedCategory, setSelect
         </div>
       </div>
 
-      <div className="border-t pt-6">
+      {/* <div className="border-t pt-6">
         <h3 className="text-lg font-medium text-gray-900 mb-4">Rango de precios</h3>
         <Slider
           defaultValue={[0, 50]}
@@ -57,7 +57,7 @@ export default function ProductFilters({ categories, selectedCategory, setSelect
           <span className="text-sm text-gray-500">${priceRange[0]}</span>
           <span className="text-sm text-gray-500">${priceRange[1]}</span>
         </div>
-      </div>
+      </div> */}
 
       <div className="border-t pt-6">
         <h3 className="text-lg font-medium text-gray-900 mb-4">Disponibilidad</h3>

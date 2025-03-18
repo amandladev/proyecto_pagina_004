@@ -38,7 +38,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">Contact Us</h2>
+          <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">Contáctanos</h2>
           <div className="w-24 h-1 bg-gray-600 mx-auto"></div>
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
           Si tienes una pregunta, comentario o simplemente quieres saber más sobre nuestros servicios, no dudes en ponerte en contacto con nosotros.

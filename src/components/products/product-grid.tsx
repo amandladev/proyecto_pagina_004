@@ -145,7 +145,7 @@ const products = [
 
 // Categories for filtering
 const categories = [
-  { value: "all", label: "All Products" },
+  { value: "all", label: "Todos los Productos" },
   { value: "all-purpose", label: "All-Purpose Cleaners" },
   { value: "industrial", label: "Industrial Cleaners" },
   { value: "glass", label: "Glass Cleaners" },
@@ -235,17 +235,17 @@ export default function ProductsGrid() {
 
             {/* Sort Options */}
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500">Sort by:</span>
+              <span className="text-sm text-gray-500">Ordenar por:</span>
               <Select value={sortOption} onValueChange={setSortOption}>
                 <SelectTrigger className="w-[180px]">
                   <SelectValue placeholder="Sort by" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="featured">Featured</SelectItem>
-                  <SelectItem value="price-low">Price: Low to High</SelectItem>
-                  <SelectItem value="price-high">Price: High to Low</SelectItem>
-                  <SelectItem value="name">Name</SelectItem>
-                  <SelectItem value="rating">Rating</SelectItem>
+                  <SelectItem value="featured">Categoría</SelectItem>
+                  <SelectItem value="price-low">Precio: Bajo a Alto</SelectItem>
+                  <SelectItem value="price-high">Precio: Alto a Bajo</SelectItem>
+                  <SelectItem value="name">Nombre</SelectItem>
+                  <SelectItem value="rating">Valoración</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -290,14 +290,14 @@ export default function ProductsGrid() {
           <div className="mt-12 flex justify-center">
             <div className="flex items-center gap-2">
               <Button variant="outline" disabled>
-                Previous
+                Atras
               </Button>
               <Button variant="outline" className="bg-gray-100">
                 1
               </Button>
               <Button variant="outline">2</Button>
               <Button variant="outline">3</Button>
-              <Button variant="outline">Next</Button>
+              <Button variant="outline">Siguiente</Button>
             </div>
           </div>
         </div>

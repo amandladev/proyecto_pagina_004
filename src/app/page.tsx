@@ -1,3 +1,4 @@
+import BrandShowcaseSection from "@/components/brandShowcase/Brands";
 import AboutSection from "@/components/ui/about/About";
 import ExpertAdviceSection from "@/components/ui/advice/Advice";
 import ClientsSection from "@/components/ui/clients/Clients";
@@ -31,7 +32,8 @@ export default function Home() {
   return (
     <main className=" ">
         <Navbar />
-        <ClientsSection />
+        {/* <ClientsSection /> */}
+        <BrandShowcaseSection />
         {/* <ImageCarousel items={carouselItems} /> */}
         <AboutSection />
         <ServicesSection />

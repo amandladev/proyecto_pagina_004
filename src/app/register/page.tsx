@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import Navbar from "@/components/ui/navbar/Navbar"
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     <>
       <Navbar />
@@ -13,11 +13,29 @@ export default function LoginPage() {
         <div className="mt-16 sm:mx-auto sm:w-full sm:max-w-md">
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <div className="sm:mx-auto sm:w-full sm:max-w-md mb-6">
-              <h2 className="text-center text-3xl font-light text-gray-900">Iniciar Sesión</h2>
-              <p className="mt-2 text-center text-sm text-gray-600">Ingresa tus credenciales para acceder a tu cuenta</p>
+              <h2 className="text-center text-3xl font-light text-gray-900">Crear una cuenta</h2>
+              <p className="mt-2 text-center text-sm text-gray-600">
+                Uniendote tendrás acceso a funciones y servicios exclusivos
+              </p>
             </div>
 
             <form className="space-y-6" action="#" method="POST">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                  <Label htmlFor="first-name">Nombres</Label>
+                  <div className="mt-1">
+                    <Input id="first-name" name="first-name" type="text" autoComplete="given-name" required />
+                  </div>
+                </div>
+
+                <div>
+                  <Label htmlFor="last-name">Apellidos</Label>
+                  <div className="mt-1">
+                    <Input id="last-name" name="last-name" type="text" autoComplete="family-name" required />
+                  </div>
+                </div>
+              </div>
+
               <div>
                 <Label htmlFor="email">Email</Label>
                 <div className="mt-1">
@@ -33,29 +51,45 @@ export default function LoginPage() {
               </div>
 
               <div>
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Contraseña</Label>
-                  <div className="text-sm">
-                    <Link href="/forgot-password" className="font-medium text-gray-600 hover:text-gray-900">
-                      Olvido su contraseña?
-                    </Link>
-                  </div>
-                </div>
+                <Label htmlFor="password">Contraseña</Label>
                 <div className="mt-1">
-                  <Input id="password" name="password" type="password" autoComplete="current-password" required />
+                  <Input id="password" name="password" type="password" autoComplete="new-password" required />
+                </div>
+                <p className="mt-1 text-sm text-gray-500">
+                  Debe tener al menos 8 caracteres con 1 mayúscula, 1 número y 1 caracter especial  
+                </p>
+              </div>
+
+              <div>
+                <Label htmlFor="password-confirm">Confirmar contraseña</Label>
+                <div className="mt-1">
+                  <Input
+                    id="password-confirm"
+                    name="password-confirm"
+                    type="password"
+                    autoComplete="new-password"
+                    required
+                  />
                 </div>
               </div>
 
-              <div className="flex items-center space-x-2">
-                <Checkbox id="remember-me" name="remember-me" />
-                <Label htmlFor="remember-me" className="text-sm font-normal cursor-pointer">
-                  Recordarme
+              <div className="flex items-start space-x-2">
+                <Checkbox id="terms" name="terms" required />
+                <Label htmlFor="terms" className="text-sm font-normal cursor-pointer">
+                  Acepto {" "}
+                  <Link href="/terms" className="text-gray-900 hover:underline">
+                    Los Terminos de Servicio
+                  </Link>{" "}
+                  y{" "}
+                  <Link href="/privacy" className="text-gray-900 hover:underline">
+                    Política de Privacidad
+                  </Link>
                 </Label>
               </div>
 
               <div>
                 <Button type="submit" className="w-full">
-                  Iniciar sesión
+                  Crear cuenta
                 </Button>
               </div>
             </form>
@@ -95,14 +129,15 @@ export default function LoginPage() {
                     Google
                   </Button>
                 </div>
+
               </div>
             </div>
 
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600">
-                No tienes una cuenta?{" "}
-                <Link href="/register" className="font-medium text-gray-900 hover:underline">
-                  Registrate
+              ¿Ya tienes una cuenta?{" "}
+                <Link href="/login" className="font-medium text-gray-900 hover:underline">
+                  Ingresar
                 </Link>
               </p>
             </div>

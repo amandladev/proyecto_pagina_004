@@ -61,7 +61,7 @@ export default function LoginModal() {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button variant="outline" className="hidden md:flex items-center gap-2">
-          Login
+          Iniciar sesión
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
@@ -149,13 +149,14 @@ export default function LoginModal() {
           
           <div className="text-center text-sm text-gray-500">
             Aun no estas registrado?{' '}
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="font-medium text-gray-900 hover:underline"
               onClick={(e) => {
                 e.preventDefault()
-                // Handle sign up
-                console.log('Sign up clicked')
+                setIsOpen(false)
+                // Here you would trigger the register modal
+                // For example: registerModalRef.current?.click()
               }}
             >
               Crear una cuenta

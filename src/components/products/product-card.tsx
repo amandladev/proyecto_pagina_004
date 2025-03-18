@@ -66,9 +66,9 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
 
           <div className="flex items-center justify-between">
             <span className="text-lg font-medium text-gray-900">${price.toFixed(2)}</span>
-            <Button size="sm" disabled={!inStock}>
+            <Button size="sm" disabled={!inStock} className="text-xs">
               <ShoppingCart className="h-4 w-4 mr-1" />
-              Add
+              Agregar
             </Button>
           </div>
         </div>
