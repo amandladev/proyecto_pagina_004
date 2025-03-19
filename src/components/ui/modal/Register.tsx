@@ -140,7 +140,7 @@ export default function RegisterModal() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password">Contraseña</Label>
             <Input
               id="password"
               type="password"
@@ -175,14 +175,13 @@ export default function RegisterModal() {
               required
             />
             <Label htmlFor="terms" className="text-sm font-normal cursor-pointer">
-              I agree to the{" "}
+              Acepto {" "}
               <Link href="/terms" className="text-gray-900 hover:underline" onClick={(e) => e.stopPropagation()}>
-                Terms of Service
+                los términos y condiciones
               </Link>{" "}
-              and{" "}
-              <Link href="/privacy" className="text-gray-900 hover:underline" onClick={(e) => e.stopPropagation()}>
+              {/* <Link href="/privacy" className="text-gray-900 hover:underline" onClick={(e) => e.stopPropagation()}>
                 Privacy Policy
-              </Link>
+              </Link> */}
             </Label>
           </div>
 
@@ -209,7 +208,7 @@ export default function RegisterModal() {
                 // For example: loginModalRef.current?.click()
               }}
             >
-              Sign in
+              Iniciar sesión
             </a>
           </div>
 
@@ -218,7 +217,7 @@ export default function RegisterModal() {
               <span className="w-full border-t border-gray-200" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white px-2 text-gray-500">Or continue with</span>
+              <span className="bg-white px-2 text-gray-500">O continua con</span>
             </div>
           </div>
 

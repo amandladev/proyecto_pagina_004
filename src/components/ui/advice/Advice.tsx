@@ -14,7 +14,7 @@ const expertiseItems = [
       "Staff allocation planning",
       "Budget optimization",
     ],
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/asesorias/planes.webp?height=400&width=600",
     cta: "Get a custom plan",
     link: "/services/plans",
   },
@@ -29,7 +29,7 @@ const expertiseItems = [
       "Contamination prevention",
       "Certification support",
     ],
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/asesorias/validaciones.webp?height=400&width=600",
     cta: "Request validation",
     link: "/services/validations",
   },
@@ -38,7 +38,7 @@ const expertiseItems = [
     icon: <Users className="h-10 w-10 text-gray-600" />,
     description: "Educational sessions and workshops led by cleaning industry experts for your team.",
     features: ["Best practices training", "New technology demonstrations", "Regulatory updates", "Hands-on workshops"],
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/asesorias/charlas.webp?height=400&width=600",
     cta: "Book a session",
     link: "/services/talks",
   },
@@ -102,14 +102,14 @@ export default function ExpertAdviceSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <p className="text-gray-600 mb-6">Need a customized solution for your specific cleaning challenges?</p>
           <Link href="/contact">
             <Button size="lg" variant="outline">
               Schedule a Consultation
             </Button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   )

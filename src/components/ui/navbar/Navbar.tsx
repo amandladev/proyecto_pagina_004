@@ -131,14 +131,14 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <CartDropdown />
+            {/* <CartDropdown /> */}
             <LoginModal />
             <RegisterModal />
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
-            <CartDropdown />
+            {/* <CartDropdown /> */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-tertiary-color hover:text-gray-800 focus:outline-none"

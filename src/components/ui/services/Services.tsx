@@ -68,7 +68,7 @@ const services = [
     title: "Avicola",
     description:
       "Expert consultation and training services to help your team maintain cleanliness and safety standards. We share our expertise to empower your organization.",
-    image: "/ganaderia/ganaderia_1.jpg?height=600&width=800",
+    image: "/avicola.jpg?height=600&width=800",
     features: [
       "Cleaning protocol development",
       "Staff training programs",
@@ -82,7 +82,7 @@ const services = [
     title: "Horeca",
     description:
       "Expert consultation and training services to help your team maintain cleanliness and safety standards. We share our expertise to empower your organization.",
-    image: "/ganaderia/ganaderia_1.jpg?height=600&width=800",
+    image: "/hoteles/hotel1.jpg?height=600&width=800",
     features: [
       "Cleaning protocol development",
       "Staff training programs",

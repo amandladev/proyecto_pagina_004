@@ -32,8 +32,8 @@ export default function Home() {
   return (
     <main className=" ">
         <Navbar />
-        {/* <ClientsSection /> */}
-        <BrandShowcaseSection />
+        <ClientsSection />
+        {/* <BrandShowcaseSection /> */}
         {/* <ImageCarousel items={carouselItems} /> */}
         <AboutSection />
         <ServicesSection />
