@@ -29,7 +29,7 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
     return (
       <div className="group bg-white rounded-lg border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         {/* Product Image */}
-        <Link href={`/products/${id}`} className="block relative">
+        <Link href={`/store/${id}`} className="block relative">
           <div className="aspect-square relative overflow-hidden bg-gray-100">
             <Image
               src={image || "/placeholder.svg"}
@@ -58,7 +58,7 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
             <span className="text-xs text-gray-500 ml-1">{rating}</span>
           </div>
 
-          <Link href={`/products/${id}`}>
+          <Link href={`/store/${id}`}>
             <h3 className="font-medium text-gray-900 mb-1 hover:text-gray-600 transition-colors">{name}</h3>
           </Link>
 
@@ -80,7 +80,7 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
   return (
     <div className="group flex flex-col sm:flex-row gap-4 bg-white rounded-lg border overflow-hidden shadow-sm hover:shadow-md transition-shadow p-4">
       {/* Product Image */}
-      <Link href={`/products/${id}`} className="block relative">
+      <Link href={`/store/${id}`} className="block relative">
         <div className="aspect-square w-full sm:w-40 h-40 relative overflow-hidden bg-gray-100 rounded-md">
           <Image
             src={image || "/placeholder.svg"}
@@ -119,7 +119,7 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
           <span className="text-lg font-medium text-gray-900">${price.toFixed(2)}</span>
           <Button disabled={!inStock}>
             <ShoppingCart className="h-4 w-4 mr-2" />
-            Add to Cart
+            Agregar al carrito
           </Button>
         </div>
       </div>

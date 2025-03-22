@@ -1,9 +1,14 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { ChevronRight, Home, Star, ShoppingCart, Heart, Share2, ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useCart } from "@/context/cart-context"
+import { useState } from "react"
+import ShareButton from "@/components/cart/share-button"
 
 // This would normally come from a database or API
 const product = {
@@ -14,10 +19,10 @@ const product = {
   price: 12.99,
   category: "all-purpose",
   images: [
-    "/placeholder.svg?height=600&width=600",
-    "/placeholder.svg?height=600&width=600",
-    "/placeholder.svg?height=600&width=600",
-    "/placeholder.svg?height=600&width=600",
+    "/limpieza/limpieza_0.jpg?height=600&width=600",
+    "/limpieza/limpieza_1.jpg?height=600&width=600",
+    "/limpieza/limpieza_2.jpg?height=600&width=600",
+    "/limpieza/limpieza_3.jpg?height=600&width=600",
   ],
   rating: 4.5,
   reviewCount: 127,
@@ -35,30 +40,43 @@ const product = {
       id: 3,
       name: "Glass & Window Cleaner",
       price: 9.99,
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/limpieza/limpieza_6.jpg?height=300&width=300",
     },
     {
       id: 5,
       name: "Bathroom Cleaner",
       price: 11.99,
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/limpieza/limpieza_5.jpg?height=300&width=300",
     },
     {
       id: 8,
       name: "Disinfectant Spray",
       price: 8.99,
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/limpieza/limpieza_7.jpg?height=300&width=300",
     },
     {
       id: 11,
       name: "Oven & Grill Cleaner",
       price: 15.99,
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/limpieza/limpieza_8.jpg?height=300&width=300",
     },
   ],
 }
 
 export default function ProductDetailPage() {
+  const [quantity, setQuantity] = useState(1)
+  const { addItem } = useCart()
+  const handleAddToCart = () => {
+    // Add the product to cart with the selected quantity
+    for (let i = 0; i < quantity; i++) {
+      addItem({
+        id: product.id.toString(),
+        name: product.name,
+        price: product.price,
+        image: product.images[0],
+      })
+    }
+  }
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Breadcrumbs */}
@@ -141,7 +159,7 @@ export default function ProductDetailPage() {
               <div className="space-y-4 mb-6">
                 <div>
                   <label htmlFor="size" className="block text-sm font-medium text-gray-700 mb-1">
-                    Size
+                    Tamaño
                   </label>
                   <Select defaultValue="32oz">
                     <SelectTrigger className="w-full">
@@ -158,7 +176,7 @@ export default function ProductDetailPage() {
 
                 <div>
                   <label htmlFor="quantity" className="block text-sm font-medium text-gray-700 mb-1">
-                    Quantity
+                    Cantidad
                   </label>
                   <Select defaultValue="1">
                     <SelectTrigger className="w-full">
@@ -177,50 +195,59 @@ export default function ProductDetailPage() {
 
               {/* Add to Cart */}
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
-                <Button className="flex-1" size="lg">
+                <Button onClick={handleAddToCart} className="flex-1" size="lg">
                   <ShoppingCart className="h-5 w-5 mr-2" />
-                  Add to Cart
+                  Agregar al carrito
                 </Button>
-                <Button variant="outline" size="lg">
+                {/* <Button variant="outline" size="lg">
                   <Heart className="h-5 w-5 mr-2" />
                   Add to Wishlist
-                </Button>
-                <Button variant="outline" size="icon" className="h-11 w-11">
+                </Button> */}
+                {/* <Button variant="outline" size="icon" className="h-11 w-11">
                   <Share2 className="h-5 w-5" />
-                </Button>
+                </Button> */}
+                 <ShareButton
+                  title={product.name}
+                  description={`Check out this amazing product: ${product.name}`}
+                  variant="outline"
+                  size="icon"
+                  className="h-11 w-11"
+                />
               </div>
 
               {/* Product Details */}
               <div className="border-t pt-6 mt-auto">
                 <Tabs defaultValue="details">
                   <TabsList className="grid w-full grid-cols-3">
-                    <TabsTrigger value="details">Details</TabsTrigger>
-                    <TabsTrigger value="ingredients">Ingredients</TabsTrigger>
-                    <TabsTrigger value="directions">Directions</TabsTrigger>
+                    <TabsTrigger value="details">Detalles</TabsTrigger>
+                    <TabsTrigger value="ingredients">Ingredientes</TabsTrigger>
+                    <TabsTrigger value="directions">Uso</TabsTrigger>
                   </TabsList>
-                  <TabsContent value="details" className="pt-4">
-                    <dl className="space-y-2">
-                      <div className="flex">
-                        <dt className="w-24 flex-shrink-0 text-gray-500">Size:</dt>
-                        <dd>{product.details.size}</dd>
-                      </div>
-                      <div className="flex">
-                        <dt className="w-24 flex-shrink-0 text-gray-500">Category:</dt>
-                        <dd className="capitalize">{product.category.replace("-", " ")}</dd>
-                      </div>
-                      <div className="flex">
-                        <dt className="w-24 flex-shrink-0 text-gray-500">SKU:</dt>
-                        <dd>MSC-{product.id.toString().padStart(4, "0")}</dd>
-                      </div>
-                    </dl>
-                  </TabsContent>
-                  <TabsContent value="ingredients" className="pt-4">
-                    <p className="text-gray-600">{product.details.ingredients}</p>
-                  </TabsContent>
-                  <TabsContent value="directions" className="pt-4">
-                    <p className="text-gray-600">{product.details.directions}</p>
-                    <p className="text-gray-600 mt-2 text-sm font-medium">Warning: {product.details.warnings}</p>
-                  </TabsContent>
+                  <div className="min-h-[150px]">
+                    <TabsContent value="details" className="pt-4">
+                      <dl className="space-y-2">
+                        <div className="flex">
+                          <dt className="w-24 flex-shrink-0 text-gray-500">Tamaño:</dt>
+                          <dd>{product.details.size}</dd>
+                        </div>
+                        <div className="flex">
+                          <dt className="w-24 flex-shrink-0 text-gray-500">Categoría:</dt>
+                          <dd className="capitalize">{product.category.replace("-", " ")}</dd>
+                        </div>
+                        <div className="flex">
+                          <dt className="w-24 flex-shrink-0 text-gray-500">SKU:</dt>
+                          <dd>MSC-{product.id.toString().padStart(4, "0")}</dd>
+                        </div>
+                      </dl>
+                    </TabsContent>
+                    <TabsContent value="ingredients" className="pt-4">
+                      <p className="text-gray-600">{product.details.ingredients}</p>
+                    </TabsContent>
+                    <TabsContent value="directions" className="pt-4">
+                      <p className="text-gray-600">{product.details.directions}</p>
+                      <p className="text-gray-600 mt-2 text-sm font-medium">Warning: {product.details.warnings}</p>
+                    </TabsContent>
+                  </div>
                 </Tabs>
               </div>
             </div>
@@ -230,15 +257,15 @@ export default function ProductDetailPage() {
         {/* Related Products */}
         <div className="mt-12">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-light text-gray-900">Related Products</h2>
-            <div className="flex gap-2">
+            <h2 className="text-2xl font-light text-gray-900">Productos relacionados</h2>
+            {/* <div className="flex gap-2">
               <Button variant="outline" size="icon" className="h-9 w-9">
                 <ArrowLeft className="h-4 w-4" />
               </Button>
               <Button variant="outline" size="icon" className="h-9 w-9">
                 <ArrowRight className="h-4 w-4" />
               </Button>
-            </div>
+            </div> */}
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

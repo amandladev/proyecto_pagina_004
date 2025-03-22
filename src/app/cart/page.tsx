@@ -113,7 +113,7 @@ export default function CartPage() {
               </ul>
               
               <div className="p-6 border-t border-gray-200 flex justify-between">
-                <Link href="/products">
+                <Link href="/store">
                   <Button variant="outline">
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Continue Shopping
