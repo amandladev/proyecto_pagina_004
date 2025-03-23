@@ -18,10 +18,10 @@ import Link from "next/link"
 
 // Define checkout steps
 const CHECKOUT_STEPS = [
-  { id: "information", label: "Information" },
-  { id: "shipping", label: "Shipping" },
-  { id: "payment", label: "Payment" },
-  { id: "confirmation", label: "Confirmation" },
+  { id: "information", label: "Información" },
+  { id: "shipping", label: "Envío" },
+  { id: "payment", label: "Pago" },
+  { id: "confirmation", label: "Confirmación" },
 ]
 
 // Shipping methods
@@ -121,34 +121,34 @@ export default function CheckoutPage() {
     const newErrors: Record<string, string> = {}
 
     if (currentStep === "information") {
-      if (!formData.email) newErrors.email = "Email is required"
-      else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email is invalid"
+      if (!formData.email) newErrors.email = "Email es requerido"
+      else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email es inválido"
 
-      if (!formData.firstName) newErrors.firstName = "First name is required"
-      if (!formData.lastName) newErrors.lastName = "Last name is required"
-      if (!formData.address) newErrors.address = "Address is required"
-      if (!formData.city) newErrors.city = "City is required"
-      if (!formData.state) newErrors.state = "State is required"
-      if (!formData.zipCode) newErrors.zipCode = "ZIP code is required"
-      if (!formData.phone) newErrors.phone = "Phone number is required"
+      if (!formData.firstName) newErrors.firstName = "Complete su nombre"
+      if (!formData.lastName) newErrors.lastName = "Complete sus apellidos"
+      if (!formData.address) newErrors.address = "Address es requerido"
+      if (!formData.city) newErrors.city = "City es requerido"
+      if (!formData.state) newErrors.state = "State es requerido"
+      if (!formData.zipCode) newErrors.zipCode = "ZIP code es requerido"
+      if (!formData.phone) newErrors.phone = "Phone number es requerido"
     } else if (currentStep === "payment") {
-      if (!formData.cardNumber) newErrors.cardNumber = "Card number is required"
+      if (!formData.cardNumber) newErrors.cardNumber = "Card number es requerido"
       else if (!/^\d{16}$/.test(formData.cardNumber.replace(/\s/g, "")))
         newErrors.cardNumber = "Card number must be 16 digits"
 
-      if (!formData.cardName) newErrors.cardName = "Name on card is required"
+      if (!formData.cardName) newErrors.cardName = "Name on card es requerido"
 
-      if (!formData.expiryDate) newErrors.expiryDate = "Expiry date is required"
+      if (!formData.expiryDate) newErrors.expiryDate = "Expiry date es requerido"
       else if (!/^\d{2}\/\d{2}$/.test(formData.expiryDate)) newErrors.expiryDate = "Expiry date must be in MM/YY format"
 
-      if (!formData.cvv) newErrors.cvv = "CVV is required"
+      if (!formData.cvv) newErrors.cvv = "CVV es requerido"
       else if (!/^\d{3,4}$/.test(formData.cvv)) newErrors.cvv = "CVV must be 3 or 4 digits"
 
       if (!formData.sameAsBilling) {
-        if (!formData.billingAddress) newErrors.billingAddress = "Billing address is required"
-        if (!formData.billingCity) newErrors.billingCity = "Billing city is required"
-        if (!formData.billingState) newErrors.billingState = "Billing state is required"
-        if (!formData.billingZipCode) newErrors.billingZipCode = "Billing ZIP code is required"
+        if (!formData.billingAddress) newErrors.billingAddress = "Billing address es requerido"
+        if (!formData.billingCity) newErrors.billingCity = "Billing city es requerido"
+        if (!formData.billingState) newErrors.billingState = "Billing state es requerido"
+        if (!formData.billingZipCode) newErrors.billingZipCode = "Billing ZIP code es requerido"
       }
     }
 
@@ -250,13 +250,13 @@ export default function CheckoutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-16">
           <div className="text-center py-16">
             <ShoppingBag className="mx-auto h-16 w-16 text-gray-400" />
-            <h2 className="mt-4 text-2xl font-medium text-gray-900">Your cart is empty</h2>
-            <p className="mt-2 text-gray-500">Add some products to your cart to proceed to checkout.</p>
+            <h2 className="mt-4 text-2xl font-medium text-gray-900">Tu carrito está vacío</h2>
+            <p className="mt-2 text-gray-500">Agrega algunos productos a tu carrito para continuar con la compra.</p>
             <div className="mt-6">
-              <Link href="/products">
+              <Link href="/store">
                 <Button>
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  Continue Shopping
+                  Continuar comprando
                 </Button>
               </Link>
             </div>
@@ -295,16 +295,16 @@ export default function CheckoutPage() {
                     {currentStep === step.id ? (
                       <div className="flex items-center" aria-current="step">
                         <span className="absolute flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary">
-                          <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+                          <CheckCircle2 className="h-5 w-5 text-gray-400" aria-hidden="true" />
                         </span>
-                        <span className="ml-10 text-sm font-medium text-primary">{step.label}</span>
+                        <span className="ml-10 text-sm font-bold text-primary">{step.label}</span>
                       </div>
                     ) : stepIdx < CHECKOUT_STEPS.findIndex((s) => s.id === currentStep) ? (
                       <div className="flex items-center">
                         <span className="absolute flex h-8 w-8 items-center justify-center rounded-full bg-primary">
-                          <CheckCircle2 className="h-5 w-5 text-white" aria-hidden="true" />
+                          <CheckCircle2 className="h-5 w-5 text-greenNew" aria-hidden="true" />
                         </span>
-                        <span className="ml-10 text-sm font-medium text-gray-500">{step.label}</span>
+                        <span className="ml-10 text-sm font-bold text-greenNew">{step.label}</span>
                       </div>
                     ) : (
                       <div className="flex items-center">
@@ -315,9 +315,9 @@ export default function CheckoutPage() {
                       </div>
                     )}
 
-                    {stepIdx !== CHECKOUT_STEPS.length - 1 ? (
+                    {/* {stepIdx !== CHECKOUT_STEPS.length - 1 ? (
                       <div className="absolute top-4 right-0 hidden h-0.5 w-16 bg-gray-200 sm:block" />
-                    ) : null}
+                    ) : null} */}
                   </li>
                 ))}
               </ol>
@@ -341,9 +341,9 @@ export default function CheckoutPage() {
             {currentStep === "information" && (
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-lg font-medium text-gray-900">Contact information</h2>
+                  <h2 className="text-lg font-medium text-gray-900">Información de contacto</h2>
                   <div className="mt-4">
-                    <Label htmlFor="email">Email address</Label>
+                    <Label htmlFor="email">Email</Label>
                     <Input
                       type="email"
                       id="email"
@@ -358,7 +358,7 @@ export default function CheckoutPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-lg font-medium text-gray-900">Shipping information</h2>
+                  <h2 className="text-lg font-medium text-gray-900">Información de envio</h2>
                   <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
                     <div>
                       <Label htmlFor="firstName">First name</Label>
@@ -480,7 +480,7 @@ export default function CheckoutPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-2">
+                {/* <div className="flex items-center space-x-2">
                   <Checkbox
                     id="saveInfo"
                     name="saveInfo"
@@ -490,11 +490,11 @@ export default function CheckoutPage() {
                   <Label htmlFor="saveInfo" className="text-sm font-normal cursor-pointer">
                     Save this information for next time
                   </Label>
-                </div>
+                </div> */}
 
                 <div className="flex justify-end">
                   <Button onClick={handleNextStep}>
-                    Continue to shipping
+                    Continuar con el envío
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
@@ -529,10 +529,10 @@ export default function CheckoutPage() {
                 <div className="flex justify-between">
                   <Button variant="outline" onClick={handlePreviousStep}>
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back to information
+                    Retroceder
                   </Button>
                   <Button onClick={handleNextStep}>
-                    Continue to payment
+                    Continuar con el pago
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
@@ -758,7 +758,7 @@ export default function CheckoutPage() {
                 </div>
                 <h2 className="mt-6 text-2xl font-medium text-gray-900">Thank you for your order!</h2>
                 <p className="mt-2 text-gray-500">Your order #{orderNumber} has been placed successfully.</p>
-                <p className="mt-1 text-gray-500">We've sent a confirmation email to {formData.email}.</p>
+                <p className="mt-1 text-gray-500">Le hemos enviado un correo {formData.email}.</p>
                 <div className="mt-8">
                   <Link href="/">
                     <Button>Continue shopping</Button>
@@ -768,10 +768,9 @@ export default function CheckoutPage() {
             )}
           </div>
 
-          {/* Order Summary */}
           <div className="mt-10 lg:mt-0 lg:col-span-5">
             <div className="bg-gray-50 rounded-lg p-6 sticky top-24">
-              <h2 className="text-lg font-medium text-gray-900">Order summary</h2>
+              <h2 className="text-lg font-medium text-gray-900">Resumen de compra</h2>
 
               {currentStep !== "confirmation" && (
                 <ul className="mt-6 divide-y divide-gray-200">
@@ -793,7 +792,7 @@ export default function CheckoutPage() {
                           </div>
                         </div>
                         <div className="flex flex-1 items-end justify-between text-sm">
-                          <p className="text-gray-500">Qty {item.quantity}</p>
+                          <p className="text-gray-500">Cantidad: {item.quantity}</p>
                         </div>
                       </div>
                     </li>
@@ -815,7 +814,7 @@ export default function CheckoutPage() {
                 )}
 
                 <div className="flex items-center justify-between">
-                  <div className="text-sm text-gray-600">Taxes</div>
+                  <div className="text-sm text-gray-600">Impuestos</div>
                   <div className="text-base font-medium text-gray-900">{formatPrice(tax)}</div>
                 </div>
 

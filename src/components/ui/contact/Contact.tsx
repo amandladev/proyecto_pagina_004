@@ -75,9 +75,13 @@ export default function ContactSection() {
                   <div>
                     <h3 className="font-medium text-gray-900 mb-1">Telefono</h3>
                     <p className="text-gray-600">
-                      Ventas: (555) 123-4567
+                      Ventas online: (51) 956 054 017
                       <br />
-                      Soporte: (555) 123-4568
+                      Venta institucional: (51) 123-4568
+                      <br />
+                      Despacho:
+                      <br />
+                      Facturacion: 
                     </p>
                   </div>
                 </div>
@@ -90,9 +94,13 @@ export default function ContactSection() {
                   <div>
                     <h3 className="font-medium text-gray-900 mb-1">Email</h3>
                     <p className="text-gray-600">
-                      Ventas: sales@company.com
+                      Venta online: sales@gmail.com
                       <br />
-                      Soporte: support@company.com
+                      Venta institucional: support@gmail.com
+                      <br />
+                      Despacho:
+                      <br />
+                      Facturacion: 
                     </p>
                   </div>
                 </div>

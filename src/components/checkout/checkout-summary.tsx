@@ -13,7 +13,7 @@ interface CheckoutSummaryProps {
 export default function CheckoutSummary({ items, subtotal, shippingCost, tax, total }: CheckoutSummaryProps) {
   return (
     <div className="bg-gray-50 rounded-lg p-6 sticky top-24">
-      <h2 className="text-lg font-medium text-gray-900">Order summary</h2>
+      <h2 className="text-lg font-medium text-gray-900">Resumen de compra</h2>
 
       <ul className="mt-6 divide-y divide-gray-200">
         {items.map((item) => (

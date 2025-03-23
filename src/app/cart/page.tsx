@@ -130,7 +130,7 @@ export default function CartPage() {
           <div className="lg:col-span-4 mt-8 lg:mt-0">
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
               <div className="p-6">
-                <h2 className="text-lg font-medium text-gray-900 mb-4">Order Summary</h2>
+                <h2 className="text-lg font-medium text-gray-900 mb-4">Resumen de compra</h2>
                 
                 <div className="space-y-4">
                   <div className="flex justify-between">
@@ -146,7 +146,7 @@ export default function CartPage() {
                   )}
                   
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Shipping</span>
+                    <span className="text-gray-600">Envio</span>
                     <span className="text-gray-900">
                       {shipping === 0 ? 'Free' : formatPrice(shipping)}
                     </span>
@@ -158,7 +158,7 @@ export default function CartPage() {
                       <span className="text-gray-900">{formatPrice(total)}</span>
                     </div>
                     <p className="mt-1 text-xs text-gray-500">
-                      Including taxes
+                      Impuestos
                     </p>
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export default function CartPage() {
                       onClick={handleApplyPromo}
                       disabled={promoApplied || !promoCode}
                     >
-                      Apply
+                      Aplicar
                     </Button>
                   </div>
                   
@@ -186,9 +186,11 @@ export default function CartPage() {
                     </div>
                   )}
                   
+                  <Link href="/checkout" passHref>
                   <Button className="w-full">
-                    Proceed to Checkout
+                    Proceder al checkout
                   </Button>
+                </Link>
                 </div>
               </div>
             </div>

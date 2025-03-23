@@ -114,9 +114,11 @@ export default function CartDropdown() {
               </div>
               <p className="text-xs text-gray-500 mb-4">Shipping and taxes calculated at checkout</p>
               <div className="space-y-2">
+              <Link href="/checkout" passHref>
                 <Button className="w-full" onClick={() => setIsOpen(false)}>
                   Checkout
                 </Button>
+              </Link>
                 <Link href="/cart" passHref>
                   <Button variant="outline" className="w-full" onClick={() => setIsOpen(false)}>
                     View Cart

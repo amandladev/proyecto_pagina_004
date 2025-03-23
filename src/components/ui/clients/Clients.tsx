@@ -308,34 +308,171 @@ export default function ClientsSection() {
     <section className="w-full pt-16 flex flex-col min-h-[calc(100vh-80px)] bg-gray-50 mt-16" id="clients">
       {/* Section Header - Centered with container */}
       <div className="text-center mb-4 max-w-4xl mx-auto px-4">
-        <h2 className="text-xl md:text-4xl font-light text-gray-640 mb-4"> Con la confianza de los lideres de la Industria</h2>
+        <h2 className="text-xl md:text-4xl font-light text-gray-640 mb-4">
+          Con la confianza de los lideres de la Industria
+        </h2>
         <div className="w-24 h-1 bg-black mx-auto"></div>
-        {/* <p className="mt-6 text-lg text-gray-600">
-            Estamos orgullosos de trabajar con las mas respectadas empresas de distintas industrias.
-        </p> */}
       </div>
 
-      {/* Full-width Logos Section */}
+      {/* Flex container for all scrolling rows - takes remaining height */}
       <div className="flex-1 flex flex-col">
-        <div className="relative overflow-hidden w-full">
+        {/* First Row */}
+        <div className="relative overflow-hidden w-full flex-1">
           {/* Gradient Overlay - Left */}
           <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
 
           {/* Scrolling Container - Full Width */}
-          <div ref={scrollRef} className="flex overflow-x-hidden py-6" style={{ WebkitOverflowScrolling: "touch" }}>
-            <div className="flex space-x-16 animate-scroll">
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-hidden h-full py-2 md:py-4"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
+            <div className="flex space-x-16 animate-scroll items-center">
               {duplicateClients.map((client, index) => (
                 <div
                   key={`${client.name}-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center h-[77px] w-[180px] bg-white rounded-lg shadow-sm px-6 transition-transform hover:scale-105"
+                  className="flex-shrink-0 flex items-center justify-center h-[60px] sm:h-[70px] md:h-[77px] w-[140px] sm:w-[160px] md:w-[180px] bg-white rounded-lg shadow-sm px-4 sm:px-6 transition-transform hover:scale-105"
                 >
-                  <a href={client.link} target={"_blank"}>
+                  <a
+                    href={client.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full h-full flex items-center justify-center"
+                  >
                     <Image
                       src={client.logo || "/placeholder.svg"}
                       alt={`${client.name} logo`}
                       width={144}
                       height={64}
-                      className={`object-contain max-h-14 ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
+                      sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, 144px"
+                      className={`object-contain w-auto h-auto max-h-10 sm:max-h-12 md:max-h-14 max-w-full ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
+                      style={{
+                        width: "auto",
+                        height: "auto",
+                      }}
+                    />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Gradient Overlay - Right */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-gray-50 to-transparent"></div>
+        </div>
+
+        {/* Second Row */}
+        <div className="relative overflow-hidden w-full flex-1">
+          {/* Gradient Overlay - Left */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
+
+          {/* Scrolling Container - Full Width */}
+          <div className="flex overflow-x-hidden h-full py-2 md:py-4">
+            <div className="flex space-x-16 animate-scroll-reverse items-center">
+              {duplicateClients.reverse().map((client, index) => (
+                <div
+                  key={`${client.name}-reverse-${index}`}
+                  className="flex-shrink-0 flex items-center justify-center h-[60px] sm:h-[70px] md:h-[77px] w-[140px] sm:w-[160px] md:w-[180px] bg-white rounded-lg shadow-sm px-4 sm:px-6 transition-transform hover:scale-105"
+                >
+                  <a
+                    href={client.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full h-full flex items-center justify-center"
+                  >
+                    <Image
+                      src={client.logo || "/placeholder.svg"}
+                      alt={`${client.name} logo`}
+                      width={144}
+                      height={64}
+                      sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, 144px"
+                      className={`object-contain w-auto h-auto max-h-10 sm:max-h-12 md:max-h-14 max-w-full ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
+                      style={{
+                        width: "auto",
+                        height: "auto",
+                      }}
+                    />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Gradient Overlay - Right */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-gray-50 to-transparent"></div>
+        </div>
+
+        {/* Third Row */}
+        <div className="relative overflow-hidden w-full flex-1">
+          {/* Gradient Overlay - Left */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
+
+          {/* Scrolling Container - Full Width */}
+          <div className="flex overflow-x-hidden h-full py-2 md:py-4" style={{ WebkitOverflowScrolling: "touch" }}>
+            <div className="flex space-x-16 animate-scroll items-center">
+              {duplicateClients2.map((client, index) => (
+                <div
+                  key={`${client.name}-${index}`}
+                  className="flex-shrink-0 flex items-center justify-center h-[60px] sm:h-[70px] md:h-[77px] w-[140px] sm:w-[160px] md:w-[180px] bg-white rounded-lg shadow-sm px-4 sm:px-6 transition-transform hover:scale-105"
+                >
+                  <a
+                    href={client.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full h-full flex items-center justify-center"
+                  >
+                    <Image
+                      src={client.logo || "/placeholder.svg"}
+                      alt={`${client.name} logo`}
+                      width={144}
+                      height={64}
+                      sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, 144px"
+                      className={`object-contain w-auto h-auto max-h-10 sm:max-h-12 md:max-h-14 max-w-full ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
+                      style={{
+                        width: "auto",
+                        height: "auto",
+                      }}
+                    />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Gradient Overlay - Right */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-gray-50 to-transparent"></div>
+        </div>
+
+        {/* Fourth Row */}
+        <div className="relative overflow-hidden w-full flex-1">
+          {/* Gradient Overlay - Left */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
+
+          {/* Scrolling Container - Full Width */}
+          <div className="flex overflow-x-hidden h-full py-2 md:py-4">
+            <div className="flex space-x-16 animate-scroll-reverse items-center">
+              {duplicateClients2.reverse().map((client, index) => (
+                <div
+                  key={`${client.name}-reverse-${index}`}
+                  className="flex-shrink-0 flex items-center justify-center h-[60px] sm:h-[70px] md:h-[77px] w-[140px] sm:w-[160px] md:w-[180px] bg-white rounded-lg shadow-sm px-4 sm:px-6 transition-transform hover:scale-105"
+                >
+                  <a
+                    href={client.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full h-full flex items-center justify-center"
+                  >
+                    <Image
+                      src={client.logo || "/placeholder.svg"}
+                      alt={`${client.name} logo`}
+                      width={144}
+                      height={64}
+                      sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, 144px"
+                      className={`object-contain w-auto h-auto max-h-10 sm:max-h-12 md:max-h-14 max-w-full ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
+                      style={{
+                        width: "auto",
+                        height: "auto",
+                      }}
                     />
                   </a>
                 </div>
@@ -348,99 +485,6 @@ export default function ClientsSection() {
         </div>
       </div>
 
-      {/* Second Row of Logos - Scrolling in Opposite Direction */}
-      <div className="relative overflow-hidden w-full">
-        {/* Gradient Overlay - Left */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
-
-        {/* Scrolling Container - Full Width */}
-        <div className="flex overflow-x-hidden py-6">
-          <div className="flex space-x-16 animate-scroll-reverse">
-            {duplicateClients.reverse().map((client, index) => (
-              <div
-                key={`${client.name}-reverse-${index}`}
-                className="flex-shrink-0 flex items-center justify-center  bg-white rounded-lg shadow-sm px-6 transition-transform hover:scale-105"
-              >
-                <a href={client.link} target={"_blank"}>
-                  <Image
-                    src={client.logo || "/placeholder.svg"}
-                    alt={`${client.name} logo`}
-                    width={144}
-                    height={64}
-                    className={`object-contain max-h-14 ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
-                  />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Gradient Overlay - Right */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-gray-50 to-transparent">
-
-        </div>
-      </div>
-
-      <div className="relative overflow-hidden w-full">
-        {/* Gradient Overlay - Left */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
-
-        {/* Scrolling Container - Full Width */}
-        <div ref={scrollRef} className="flex overflow-x-hidden py-6" style={{ WebkitOverflowScrolling: "touch" }}>
-          <div className="flex space-x-16 animate-scroll">
-            {duplicateClients2.map((client, index) => (
-              <div
-                key={`${client.name}-${index}`}
-                className="flex-shrink-0 flex items-center justify-center h-[77px] w-[180px] bg-white rounded-lg shadow-sm px-6 transition-transform hover:scale-105"
-              >
-                <a href={client.link} target={"_blank"}>
-                  <Image
-                    src={client.logo || "/placeholder.svg"}
-                    alt={`${client.name} logo`}
-                    width={144}
-                    height={64}
-                    className={`object-contain max-h-14 ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
-                  />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Gradient Overlay - Right */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-gray-50 to-transparent"></div>
-      </div>
-
-      <div className="relative overflow-hidden w-full">
-        {/* Gradient Overlay - Left */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
-
-        {/* Scrolling Container - Full Width */}
-        <div className="flex overflow-x-hidden py-6">
-          <div className="flex space-x-16 animate-scroll-reverse">
-            {duplicateClients2.reverse().map((client, index) => (
-              <div
-                key={`${client.name}-reverse-${index}`}
-                className="flex-shrink-0 flex items-center justify-center h-[77px] w-[180px] bg-white rounded-lg shadow-sm px-6 transition-transform hover:scale-105"
-              >
-                <a href={client.link} target={"_blank"}>
-                  <Image
-                    src={client.logo || "/placeholder.svg"}
-                    alt={`${client.name} logo`}
-                    width={144}
-                    height={64}
-                    className={`object-contain max-h-14 ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
-                  />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Gradient Overlay - Right */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-gray-50 to-transparent"></div>
-      </div>
-
       {/* Static Grid for Smaller Screens */}
       <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto md:hidden">
         {clients.slice(0, 8).map((client, index) => (
@@ -450,7 +494,12 @@ export default function ClientsSection() {
               alt={`${client.name} logo`}
               width={120}
               height={60}
-              className={`object-contain max-h-10 ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
+              sizes="(max-width: 640px) 80px, 120px"
+              className={`object-contain w-auto h-auto max-h-10 max-w-full ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
+              style={{
+                width: "auto",
+                height: "auto",
+              }}
             />
           </div>
         ))}
