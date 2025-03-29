@@ -70,7 +70,7 @@ body {
   background-color: #f3f3f3;
 }
 .tertiary-color {
-  background-color: #00796b;
+  background-color: #00796b!important;
 }
 
 .text-tertiary-color {

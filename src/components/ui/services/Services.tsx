@@ -301,8 +301,8 @@ export default function ServicesSection() {
     <section className="py-16 bg-white" id="services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">Nuestros Sectores</h2>
-          <div className="w-24 h-1 bg-black mx-auto"></div>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nuestros Sectores</h2>
+          {/* <div className="w-24 h-1 bg-black mx-auto"></div> */}
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
             Descubra nuestra amplia gama de servicios de limpieza y mantenimiento diseñados para satisfacer sus necesidades específicas.
           </p>

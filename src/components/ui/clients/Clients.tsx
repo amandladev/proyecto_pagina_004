@@ -1,512 +1,359 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
+import { motion, AnimatePresence } from "framer-motion"
+import { ChevronRight, ChevronLeft, Building2, Award } from "lucide-react"
 
-// Sample client data - replace with your actual clients
-const clients = [
-  {
-    name: "Nestle",
-    logo: "/clients/nestle.jpeg?height=64&width=144",
-    grayscale: true,
-    link: "https://www.nestle.com.pe/",
-    sector: 'livestock'
-  },
-  {
-    name: "Nestle",
-    logo: "/clients/nestle.jpeg?height=64&width=144",
-    grayscale: true,
-    link: "https://www.nestle.com.pe/",
-    sector: 'livestock'
-  },
-  {
-    name: "Nestle",
-    logo: "/clients/nestle.jpeg?height=64&width=144",
-    grayscale: true,
-    link: "https://www.nestle.com.pe/",
-    sector: 'livestock'
-  },
-  {
-    name: "Gloria",
-    logo: "/clients/gloria.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.gloria.com.pe",
-    sector: 'livestock'
-  },
-  {
-    name: "Gloria",
-    logo: "/clients/gloria.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.gloria.com.pe",
-    sector: 'livestock'
-  },
-  {
-    name: "Gloria",
-    logo: "/clients/gloria.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.gloria.com.pe",
-    sector: 'livestock'
-  },
-  {
-    name: "Laive",
-    logo: "/clients/laive.png?height=64&width=144",
-    grayscale: true, 
-    link: " https://laive.pe/",
-    sector: 'dairy'
-  },
-  {
-    name: "Laive",
-    logo: "/clients/laive.png?height=64&width=144",
-    grayscale: true, 
-    link: " https://laive.pe/",
-    sector: 'dairy'
-  },
-  {
-    name: "Laive",
-    logo: "/clients/laive.png?height=64&width=144",
-    grayscale: true, 
-    link: " https://laive.pe/",
-    sector: 'dairy'
-  },
-]
-const clients2 = [
-  {
-    name: "Chugur",
-    logo: "/clients/chugur.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://chugurquesos.com/",
-    sector: 'dairy'
-  },
-  {
-    name: "Chugur",
-    logo: "/clients/chugur.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://chugurquesos.com/",
-    sector: 'dairy'
-  },
-  {
-    name: "Chugur",
-    logo: "/clients/chugur.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://chugurquesos.com/",
-    sector: 'dairy'
-  },
-  {
-    name: "Lacteus",
-    logo: "/clients/lacteus.png?height=64&width=144",
-    grayscale: true, 
-    link: "",
-      sector: 'dairy'
-  },
-  {
-    name: "Lacteus",
-    logo: "/clients/lacteus.png?height=64&width=144",
-    grayscale: true, 
-    link: "",
-      sector: 'dairy'
-  },
-  {
-    name: "Lacteus",
-    logo: "/clients/lacteus.png?height=64&width=144",
-    grayscale: true, 
-    link: "",
-      sector: 'dairy'
-  },
-  {
-    name: "Danper",
-    logo: "/clients/danper.svg?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.danper.com",
-    sector: 'hotels'
-  },
-  {
-    name: "Danper",
-    logo: "/clients/danper.svg?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.danper.com",
-    sector: 'hotels'
-  },
-  {
-    name: "Danper",
-    logo: "/clients/danper.svg?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.danper.com",
-    sector: 'hotels'
-  },
-]
-const clients3 = [
-  {
-    name: "Agrihusac",
-    logo: "/clients/agrihusac.jpeg?height=64&width=144",
-    grayscale: true, 
-    link: "",
-    sector: 'hotels'
-  },
-  {
-    name: "Agrihusac",
-    logo: "/clients/agrihusac.jpeg?height=64&width=144",
-    grayscale: true, 
-    link: "",
-    sector: 'hotels'
-  },
-  {
-    name: "Agrihusac",
-    logo: "/clients/agrihusac.jpeg?height=64&width=144",
-    grayscale: true, 
-    link: "",
-    sector: 'hotels'
-  },
-  {
-    name: "AIB Agroindustrias",
-    logo: "/clients/aib.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.aib.com.pe",
-    sector: 'hotels'
-  },
-  {
-    name: "AIB Agroindustrias",
-    logo: "/clients/aib.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.aib.com.pe",
-    sector: 'hotels'
-  },
-  {
-    name: "AIB Agroindustrias",
-    logo: "/clients/aib.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.aib.com.pe",
-    sector: 'hotels'
-  },
-  {
-    name: "T&T Fruits",
-    logo: "/clients/TyT.jpg?height=64&width=144",
-    grayscale: true, 
-    link: "https://tytfruits.com",
-    sector: 'industrial'
-  },
-  {
-    name: "T&T Fruits",
-    logo: "/clients/TyT.jpg?height=64&width=144",
-    grayscale: true, 
-    link: "https://tytfruits.com",
-    sector: 'industrial'
-  },
-  {
-    name: "T&T Fruits",
-    logo: "/clients/TyT.jpg?height=64&width=144",
-    grayscale: true, 
-    link: "https://tytfruits.com",
-    sector: 'industrial'
-  },
-]
-const clients4 = [
-  {
-    name: "Aktiva Packaging",
-    logo: "/clients/aktivapack.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://aktivapackaging.pe",
-    sector: 'industrial'
-  },
-  {
-    name: "Aktiva Packaging",
-    logo: "/clients/aktivapack.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://aktivapackaging.pe",
-    sector: 'industrial'
-  },
-  {
-    name: "Aktiva Packaging",
-    logo: "/clients/aktivapack.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://aktivapackaging.pe",
-    sector: 'industrial'
-  },
-  {
-    name: "Perulab Ecologic",
-    logo: "/clients/ecologic-logo.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://perulabecologic.com.pe/",
-    sector: 'industrial'
-  },
-  {
-    name: "Perulab Ecologic",
-    logo: "/clients/ecologic-logo.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://perulabecologic.com.pe/",
-    sector: 'industrial'
-  },
-  {
-    name: "Perulab Ecologic",
-    logo: "/clients/ecologic-logo.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://perulabecologic.com.pe/",
-    sector: 'industrial'
-  },
-  {
-    name: "General Foods",
-    logo: "/clients/general_foods.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.generalfoodsperu.com",
-    sector: 'industrial'
-  },
-  {
-    name: "General Foods",
-    logo: "/clients/general_foods.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.generalfoodsperu.com",
-    sector: 'industrial'
-  },
-  {
-    name: "General Foods",
-    logo: "/clients/general_foods.png?height=64&width=144",
-    grayscale: true, 
-    link: "https://www.generalfoodsperu.com",
-    sector: 'industrial'
-  },
-]
+// Organized client data by sectors
+const clientsBySector = {
+  Agro: [
+    {
+      name: "Danper",
+      logo: "/clients/danper.svg",
+      link: "https://www.danper.com",
+    },
+    {
+      name: "Agrihusac",
+      logo: "/clients/agrihusac.jpeg",
+      link: "",
+    },
+    {
+      name: "AIB Agroindustrias",
+      logo: "/clients/aib.png",
+      link: "https://www.aib.com.pe",
+    },
+    {
+      name: "T&T Fruits",
+      logo: "/clients/TyT.jpg",
+      link: "https://tytfruits.com",
+    },
+  ],
+  Lácteos: [
+    {
+      name: "Gloria",
+      logo: "/clients/gloria.png",
+      link: "https://www.gloria.com.pe",
+    },
+    {
+      name: "Laive",
+      logo: "/clients/laive.png",
+      link: "https://laive.pe/",
+    },
+    {
+      name: "Chugur",
+      logo: "/clients/chugur.png",
+      link: "https://chugurquesos.com/",
+    },
+    {
+      name: "Lacteus",
+      logo: "/clients/lacteus.png",
+      link: "",
+    },
+  ],
+  "Food & Drink": [
+    {
+      name: "Nestle",
+      logo: "/clients/nestle.jpeg",
+      link: "https://www.nestle.com.pe/",
+    },
+    {
+      name: "General Foods",
+      logo: "/clients/general_foods.png",
+      link: "https://www.generalfoodsperu.com",
+    },
+  ],
+  Carnicos: [
+    {
+      name: "Aktiva Packaging",
+      logo: "/clients/aktivapack.png",
+      link: "https://aktivapackaging.pe",
+    },
+    {
+      name: "Perulab Ecologic",
+      logo: "/clients/ecologic-logo.png",
+      link: "https://perulabecologic.com.pe/",
+    },
+  ],
+  Avicola: [
+    {
+      name: "Aktiva Packaging",
+      logo: "/clients/aktivapack.png",
+      link: "https://aktivapackaging.pe",
+    },
+    {
+      name: "Perulab Ecologic",
+      logo: "/clients/ecologic-logo.png",
+      link: "https://perulabecologic.com.pe/",
+    },
+  ],
+  Horeca: [
+    {
+      name: "Aktiva Packaging",
+      logo: "/clients/aktivapack.png",
+      link: "https://aktivapackaging.pe",
+    },
+    {
+      name: "Perulab Ecologic",
+      logo: "/clients/ecologic-logo.png",
+      link: "https://perulabecologic.com.pe/",
+    },
+  ],
+}
 
-export default function ClientsSection() {
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const duplicateClients = [...clients, ...clients2]
+// Color mapping for sectors
+const sectorColors = {
+  Agro: "greenNew",
+  Lácteos: "redNew",
+  "Food & Drink": "yellowNew",
+  Carnicos: "greenNew",
+  Avicola: "greenNew",
+  Horeca: "greenNew",
+}
 
-  const duplicateClients2 = [...clients3,...clients4]
+export default function PrestigiousClientsSection() {
+  const sectors = Object.keys(clientsBySector)
+  const [activeSector, setActiveSector] = useState(sectors[0])
+  const [autoplayPaused, setAutoplayPaused] = useState(false)
 
-  // Automatic scrolling effect
+  // Auto-rotate through sectors
   useEffect(() => {
-    const scrollContainer = scrollRef.current
-    if (!scrollContainer) return
+    if (autoplayPaused) return
 
-    let animationId: number
-    let startTime: number | null = null
-    const speed = 0.5 // pixels per millisecond
+    const interval = setInterval(() => {
+      setActiveSector((current) => {
+        const currentIndex = sectors.indexOf(current)
+        const nextIndex = (currentIndex + 1) % sectors.length
+        return sectors[nextIndex]
+      })
+    }, 5000)
 
-    const scroll = (timestamp: number) => {
-      if (!startTime) startTime = timestamp
-      // const elapsed = timestamp - startTime
+    return () => clearInterval(interval)
+  }, [sectors, autoplayPaused])
 
-      if (scrollContainer) {
-        scrollContainer.scrollLeft += speed
+  const handleSectorChange = (sector: string) => {
+    setActiveSector(sector)
+    setAutoplayPaused(true)
 
-        // Reset scroll position when we've scrolled through half the items
-        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 0
-          startTime = timestamp
-        }
-      }
+    // Resume autoplay after 10 seconds of inactivity
+    const timer = setTimeout(() => {
+      setAutoplayPaused(false)
+    }, 10000)
 
-      animationId = requestAnimationFrame(scroll)
-    }
+    return () => clearTimeout(timer)
+  }
 
-    animationId = requestAnimationFrame(scroll)
+  const handlePrevSector = () => {
+    const currentIndex = sectors.indexOf(activeSector)
+    const prevIndex = currentIndex === 0 ? sectors.length - 1 : currentIndex - 1
+    handleSectorChange(sectors[prevIndex])
+  }
 
-    return () => {
-      cancelAnimationFrame(animationId)
-    }
-  }, [])
+  const handleNextSector = () => {
+    const currentIndex = sectors.indexOf(activeSector)
+    const nextIndex = (currentIndex + 1) % sectors.length
+    handleSectorChange(sectors[nextIndex])
+  }
 
+  // Get current sector color
+  const currentColor = sectorColors[activeSector as keyof typeof sectorColors] || "greenNew"
+
+  console.log("Current color:", currentColor)
   return (
-    <section className="w-full pt-16 flex flex-col min-h-[calc(100vh-80px)] bg-gray-50 mt-16" id="clients">
-      {/* Section Header - Centered with container */}
-      <div className="text-center mb-4 max-w-4xl mx-auto px-4">
-        <h2 className="text-xl md:text-4xl font-light text-gray-640 mb-4">
-          Con la confianza de los lideres de la Industria
-        </h2>
-        <div className="w-24 h-1 bg-black mx-auto"></div>
-      </div>
-
-      {/* Flex container for all scrolling rows - takes remaining height */}
-      <div className="flex-1 flex flex-col">
-        {/* First Row */}
-        <div className="relative overflow-hidden w-full flex-1">
-          {/* Gradient Overlay - Left */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
-
-          {/* Scrolling Container - Full Width */}
-          <div
-            ref={scrollRef}
-            className="flex overflow-x-hidden h-full py-2 md:py-4"
-            style={{ WebkitOverflowScrolling: "touch" }}
-          >
-            <div className="flex space-x-16 animate-scroll items-center">
-              {duplicateClients.map((client, index) => (
-                <div
-                  key={`${client.name}-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center h-[60px] sm:h-[70px] md:h-[77px] w-[140px] sm:w-[160px] md:w-[180px] bg-white rounded-lg shadow-sm px-4 sm:px-6 transition-transform hover:scale-105"
-                >
-                  <a
-                    href={client.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full h-full flex items-center justify-center"
-                  >
-                    <Image
-                      src={client.logo || "/placeholder.svg"}
-                      alt={`${client.name} logo`}
-                      width={144}
-                      height={64}
-                      sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, 144px"
-                      className={`object-contain w-auto h-auto max-h-10 sm:max-h-12 md:max-h-14 max-w-full ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
-                      style={{
-                        width: "auto",
-                        height: "auto",
-                      }}
-                    />
-                  </a>
-                </div>
-              ))}
-            </div>
+    <section className="w-full py-24 bg-grayNew" id="clients">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center my-6">
+            <Award className="h-10 w-10 text-greenNew mr-3" />
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Nuestros Clientes Destacados
+            </h2>
           </div>
-
-          {/* Gradient Overlay - Right */}
-          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-gray-50 to-transparent"></div>
+          <div className={`w-24 h-1 bg-${currentColor} mx-auto mb-8 transition-colors duration-500`}></div>
+          <p className="max-w-3xl mx-auto text-lg text-gray-600">
+            Nuestras soluciones de limpieza son la elección preferida por las empresas más prestigiosas en diversos
+            sectores industriales.
+          </p>
         </div>
 
-        {/* Second Row */}
-        <div className="relative overflow-hidden w-full flex-1">
-          {/* Gradient Overlay - Left */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
-
-          {/* Scrolling Container - Full Width */}
-          <div className="flex overflow-x-hidden h-full py-2 md:py-4">
-            <div className="flex space-x-16 animate-scroll-reverse items-center">
-              {duplicateClients.reverse().map((client, index) => (
-                <div
-                  key={`${client.name}-reverse-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center h-[60px] sm:h-[70px] md:h-[77px] w-[140px] sm:w-[160px] md:w-[180px] bg-white rounded-lg shadow-sm px-4 sm:px-6 transition-transform hover:scale-105"
+        {/* Sector Navigation */}
+        <div className="flex justify-center mb-12 overflow-x-auto pb-2">
+          <div className="inline-flex items-center bg-white rounded-full shadow-md p-1.5">
+            {sectors.map((sector) => {
+              // const sectorColor = sectorColors[sector as keyof typeof sectorColors] || "greenNew"
+              return (
+                <button
+                  key={sector}
+                  onClick={() => handleSectorChange(sector)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                    activeSector === sector
+                      ? `bg-yellowNew text-black shadow-sm font-extrabold`
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                  }`}
                 >
-                  <a
-                    href={client.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full h-full flex items-center justify-center"
-                  >
-                    <Image
-                      src={client.logo || "/placeholder.svg"}
-                      alt={`${client.name} logo`}
-                      width={144}
-                      height={64}
-                      sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, 144px"
-                      className={`object-contain w-auto h-auto max-h-10 sm:max-h-12 md:max-h-14 max-w-full ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
-                      style={{
-                        width: "auto",
-                        height: "auto",
-                      }}
-                    />
-                  </a>
-                </div>
-              ))}
-            </div>
+                  
+                  {sector}
+                </button>
+              )
+            })}
           </div>
-
-          {/* Gradient Overlay - Right */}
-          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-gray-50 to-transparent"></div>
         </div>
 
-        {/* Third Row */}
-        <div className="relative overflow-hidden w-full flex-1">
-          {/* Gradient Overlay - Left */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
-
-          {/* Scrolling Container - Full Width */}
-          <div className="flex overflow-x-hidden h-full py-2 md:py-4" style={{ WebkitOverflowScrolling: "touch" }}>
-            <div className="flex space-x-16 animate-scroll items-center">
-              {duplicateClients2.map((client, index) => (
-                <div
-                  key={`${client.name}-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center h-[60px] sm:h-[70px] md:h-[77px] w-[140px] sm:w-[160px] md:w-[180px] bg-white rounded-lg shadow-sm px-4 sm:px-6 transition-transform hover:scale-105"
-                >
-                  <a
-                    href={client.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full h-full flex items-center justify-center"
-                  >
-                    <Image
-                      src={client.logo || "/placeholder.svg"}
-                      alt={`${client.name} logo`}
-                      width={144}
-                      height={64}
-                      sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, 144px"
-                      className={`object-contain w-auto h-auto max-h-10 sm:max-h-12 md:max-h-14 max-w-full ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
-                      style={{
-                        width: "auto",
-                        height: "auto",
-                      }}
-                    />
-                  </a>
+        {/* Client Logos Display */}
+        <div className="relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeSector}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="min-h-[300px] flex flex-col"
+            >
+              {/* <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center bg-white px-6 py-3 rounded-full shadow-md mb-4">
+                  <Building2
+                    className={`h-5 w-5 text-${currentColor} mr-2`}
+                    style={{ color: `var(--${currentColor})` }}
+                  />
+                  <h3 className="text-xl font-medium text-gray-800">
+                    Sector{" "}
+                    <span className={`text-${currentColor}`} style={{ color: `var(--${currentColor})` }}>
+                      {activeSector}
+                    </span>
+                  </h3>
                 </div>
-              ))}
-            </div>
-          </div>
+                <p className="text-gray-500 mt-2">Empresas líderes que confían en nuestras soluciones</p>
+              </div> */}
 
-          {/* Gradient Overlay - Right */}
-          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-gray-50 to-transparent"></div>
-        </div>
-
-        {/* Fourth Row */}
-        <div className="relative overflow-hidden w-full flex-1">
-          {/* Gradient Overlay - Left */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-gray-50 to-transparent"></div>
-
-          {/* Scrolling Container - Full Width */}
-          <div className="flex overflow-x-hidden h-full py-2 md:py-4">
-            <div className="flex space-x-16 animate-scroll-reverse items-center">
-              {duplicateClients2.reverse().map((client, index) => (
-                <div
-                  key={`${client.name}-reverse-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center h-[60px] sm:h-[70px] md:h-[77px] w-[140px] sm:w-[160px] md:w-[180px] bg-white rounded-lg shadow-sm px-4 sm:px-6 transition-transform hover:scale-105"
-                >
-                  <a
-                    href={client.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full h-full flex items-center justify-center"
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                {clientsBySector[activeSector as keyof typeof clientsBySector].map((client, index) => (
+                  <motion.div
+                    key={client.name}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    className="flex flex-col items-center"
                   >
-                    <Image
-                      src={client.logo || "/placeholder.svg"}
-                      alt={`${client.name} logo`}
-                      width={144}
-                      height={64}
-                      sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, 144px"
-                      className={`object-contain w-auto h-auto max-h-10 sm:max-h-12 md:max-h-14 max-w-full ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
+                    <div
+                      className={`bg-white rounded-xl shadow-lg p-6 h-32 w-full flex items-center justify-center mb-4 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-${currentColor}`}
                       style={{
-                        width: "auto",
-                        height: "auto",
+                        borderColor: "transparent",
+                        ["--hover-border-color" as any]: `var(--${currentColor})`,
                       }}
-                    />
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
+                      onMouseOver={(e) => {
+                        ;(e.currentTarget as HTMLDivElement).style.borderColor = `var(--${currentColor})`
+                      }}
+                      onMouseOut={(e) => {
+                        ;(e.currentTarget as HTMLDivElement).style.borderColor = "transparent"
+                      }}
+                    >
+                      <a
+                        href={client.link || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full h-full flex items-center justify-center"
+                      >
+                        <Image
+                          src={client.logo || "/placeholder.svg"}
+                          alt={`${client.name} logo`}
+                          width={160}
+                          height={80}
+                          className="object-contain w-auto h-auto max-h-16 max-w-full grayscale hover:grayscale-0 transition-all duration-300"
+                          style={{ width: "auto", height: "auto" }}
+                        />
+                      </a>
+                    </div>
+                    <p className="text-sm font-medium text-gray-700">{client.name}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-          {/* Gradient Overlay - Right */}
-          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-gray-50 to-transparent"></div>
-        </div>
-      </div>
-
-      {/* Static Grid for Smaller Screens */}
-      <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto md:hidden">
-        {clients.slice(0, 8).map((client, index) => (
-          <div key={index} className="flex items-center justify-center h-20 bg-white rounded-lg shadow-sm px-4">
-            <Image
-              src={client.logo || "/placeholder.svg"}
-              alt={`${client.name} logo`}
-              width={120}
-              height={60}
-              sizes="(max-width: 640px) 80px, 120px"
-              className={`object-contain w-auto h-auto max-h-10 max-w-full ${client.grayscale ? "grayscale hover:grayscale-0 transition-all duration-300" : ""}`}
-              style={{
-                width: "auto",
-                height: "auto",
+          {/* Navigation Arrows */}
+          <div className="absolute top-1/4 -translate-y-3/4 left-0 -ml-4 md:-ml-8">
+            <button
+              onClick={handlePrevSector}
+              className={`bg-white rounded-full p-2 shadow-lg hover:bg-${currentColor} hover:text-white transition-colors`}
+              aria-label="Previous sector"
+              style={{ ["--hover-bg-color" as any]: `var(--${currentColor})` }}
+              onMouseOver={(e) => {
+                ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = `var(--${currentColor})`
+                e.currentTarget.querySelector("svg")!.style.color = "white"
               }}
-            />
+              onMouseOut={(e) => {
+                ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = "white"
+                e.currentTarget.querySelector("svg")!.style.color = "#374151"
+              }}
+            >
+              <ChevronLeft className="h-6 w-6 text-gray-700" />
+            </button>
           </div>
-        ))}
+
+          <div className="absolute top-1/4 -translate-y-3/4 right-0 -mr-4 md:-mr-8">
+            <button
+              onClick={handleNextSector}
+              className={`bg-white rounded-full p-2 shadow-lg hover:bg-${currentColor} hover:text-white transition-colors`}
+              aria-label="Next sector"
+              style={{ ["--hover-bg-color" as any]: `var(--${currentColor})` }}
+              onMouseOver={(e) => {
+                ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = `var(--${currentColor})`
+                e.currentTarget.querySelector("svg")!.style.color = "white"
+              }}
+              onMouseOut={(e) => {
+                ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = "white"
+                e.currentTarget.querySelector("svg")!.style.color = "#374151"
+              }}
+            >
+              <ChevronRight className="h-6 w-6 text-gray-700" />
+            </button>
+          </div>
+        </div>
+
+        {/* Sector Indicators */}
+        <div className="flex justify-center">
+          <div className="flex space-x-2">
+            {sectors.map((sector) => {
+              const sectorColor = sectorColors[sector as keyof typeof sectorColors] || "greenNew"
+              return (
+                <button
+                  key={`indicator-${sector}`}
+                  onClick={() => handleSectorChange(sector)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    activeSector === sector ? `bg-yellowNew w-6` : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  style={activeSector === sector ? {  width: "1.5rem" } : {}}
+                  aria-label={`Go to ${sector} sector`}
+                />
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        {/* <div className="mt-16 text-center">
+          <div className="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 mb-6">
+              Únase a nuestra distinguida lista de clientes y descubra por qué las empresas líderes confían en nosotros.
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1"
+              style={{ backgroundColor: "var(--redNew)", ["--hover-bg-color" as any]: "var(--redNew)" }}
+              onMouseOver={(e) => {
+                ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#8a2430" // Slightly darker redNew
+              }}
+              onMouseOut={(e) => {
+                ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--redNew)"
+              }}
+            >
+              Contáctenos Hoy
+            </a>
+          </div>
+        </div> */}
       </div>
     </section>
   )
 }
-
-
 

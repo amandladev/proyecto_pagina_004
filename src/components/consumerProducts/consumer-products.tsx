@@ -8,6 +8,7 @@ import { ArrowRight, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Link from "next/link"
 
 export default function ConsumerProductsSection() {
   const [activeTab, setActiveTab] = useState("all")
@@ -53,7 +54,7 @@ export default function ConsumerProductsSection() {
     <section className="py-16 bg-gradient-to-b from-white to-gray-50 flex justify-center" id="consumer-products">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="inline-block rounded-lg  bg-slate-200 px-3 py-1 text-sm text-primary">Nuevo</div>
+          <div className="inline-block rounded-lg  bg-slate-100 px-3 py-1 text-sm text-primary">Nuevo</div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Limpieza Profesional, Ahora para tu Hogar
           </h2>
@@ -66,7 +67,7 @@ export default function ConsumerProductsSection() {
         <Tabs defaultValue="all" className="w-full max-w-3xl mx-auto mb-12">
           <TabsList className="grid grid-cols-4 w-full">
             <TabsTrigger value="all" onClick={() => setActiveTab("all")}>
-              All
+              Todos
             </TabsTrigger>
             <TabsTrigger value="kitchen" onClick={() => setActiveTab("kitchen")}>
               Cocina
@@ -117,7 +118,7 @@ export default function ConsumerProductsSection() {
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between p-8 rounded-xl bg-primary/5 border border-primary/10">
+        <div className="flex flex-col md:flex-row items-center justify-between p-8 rounded-xl bg-gray-100 border border-primary/10">
           <div className="mb-6 md:mb-0 md:mr-8">
             <h3 className="text-2xl font-bold mb-2">
             ¿Listo para transformar tu rutina de limpieza?
@@ -127,9 +128,11 @@ export default function ConsumerProductsSection() {
               
             </p>
           </div>
-          <Button size="lg" className="px-8">
-            Ir a la tienda <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <Link href={"/store"}>
+            <Button size="lg" className="px-8">
+              Ir a la tienda <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
