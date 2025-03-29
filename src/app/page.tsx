@@ -1,4 +1,5 @@
 import BrandShowcaseSection from "@/components/brandShowcase/Brands";
+import ConsumerProductsSection from "@/components/consumerProducts/consumer-products";
 import AboutSection from "@/components/ui/about/About";
 import ExpertAdviceSection from "@/components/ui/advice/Advice";
 import ClientsSection from "@/components/ui/clients/Clients";
@@ -37,6 +38,7 @@ export default function Home() {
         {/* <ImageCarousel items={carouselItems} /> */}
         <AboutSection />
         <ServicesSection />
+        <ConsumerProductsSection />
         <ExpertAdviceSection />
         <ContactSection />
       </main>

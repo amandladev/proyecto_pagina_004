@@ -40,7 +40,7 @@ export default function AboutSection() {
             </p>
 
             {/* Key Values */}
-            {/* <div className="grid grid-cols-2 gap-6 mt-8">
+            <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="flex items-start space-x-3">
                 <div className="bg-gray-100 p-3 rounded-full">
                   <Award className="h-6 w-6 text-gray-600" />
@@ -80,7 +80,7 @@ export default function AboutSection() {
                   <p className="text-sm text-gray-600">Constantly improving our products</p>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
 
