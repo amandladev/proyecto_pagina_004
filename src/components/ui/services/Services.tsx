@@ -46,8 +46,10 @@ const services = [
       }
     ],
     products: [
-      { id: 101, name: "Desinfectante Agrícola", image: "/agro/agro_1.jpg" },
-      { id: 102, name: "Limpiador de Suelos", image: "/agro/agro_1.jpg" },
+      { id: 101, name: "Palta", image: "/agro/features/palta.jpg" },
+      { id: 102, name: "Citricos", image: "/agro/features/citrico.jpg" },
+      { id: 102, name: "Mangos", image: "/agro/features/mango.jpg" },
+      { id: 102, name: "Uvas", image: "/agro/features/uva.jpg" },
     ],
   },
   {
@@ -85,8 +87,10 @@ const services = [
       },
     ],
     products: [
-      { id: 201, name: "Detergente Especializado", image: "/products/lacteos_1.jpg" },
-      { id: 202, name: "Sanitizante para Equipos", image: "/products/lacteos_2.jpg" },
+      { id: 2001, name: "Leche", image: "/lacteos/features/leche.jpg" },
+      { id: 2002, name: "Manjar", image: "/lacteos/features/manjar.webp" },
+      { id: 2003, name: "Yogurt", image: "/lacteos/features/yogurt.jpg" },
+      { id: 2004, name: "Queso", image: "/lacteos/features/queso.jpg" },
     ],
   },
   {
@@ -134,13 +138,15 @@ const services = [
       }
     ],
     products: [
-      { id: 101, name: "Desinfectante Agrícola", image: "/agro/agro_1.jpg" },
-      { id: 102, name: "Limpiador de Suelos", image: "/agro/agro_1.jpg" },
+      { id: 1010, name: "Desinfectante Agrícola", image: "/food/features/frutas.jpg" },
+      { id: 1020, name: "Limpiador de Suelos", image: "/food/features/verduras.jpg" },
+      { id: 1030, name: "Desinfectante Agrícola", image: "/food/features/botella.jpg" },
+      { id: 1040, name: "Limpiador de Suelos", image: "/food/features/frutas.jpg" },
     ],
   },
   {
     id: 4,
-    title: "Carnicos",
+    title: "Ganaderia",
     description:
       "Preventive maintenance and regular upkeep services to ensure your facility remains in optimal condition. We help extend the life of your assets and prevent costly repairs.",
     image: "/ganaderia/ganaderia_4.jpg?height=600&width=800",
@@ -182,8 +188,10 @@ const services = [
       }
     ],
     products: [
-      { id: 101, name: "Desinfectante Agrícola", image: "/agro/agro_1.jpg" },
-      { id: 102, name: "Limpiador de Suelos", image: "/agro/agro_1.jpg" },
+      { id: 201, name: "Leche", image: "/ganaderia/features/leche.jpg" },
+      { id: 202, name: "Ordenar", image: "/ganaderia/features/ordenar.jpg" },
+      { id: 203, name: "Pezunas", image: "/ganaderia/features/pezunas.jpg" },
+      { id: 204, name: "Ubres", image: "/ganaderia/features/ubres.jpg" },
     ],
   },
   {
@@ -314,8 +322,8 @@ export default function ServicesSection() {
               key={service.id}
               onClick={() => setActiveService(service)}
               className={`px-6 py-3 rounded-full text-md font-medium transition-colors ${activeService.id === service.id
-                  ? "bg-color-yellow text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                ? "bg-color-yellow text-white"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
             >
               {service.title}
@@ -323,7 +331,7 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
             <Image src={activeService.image} alt={activeService.title} fill className="object-cover" />
           </div>
@@ -343,6 +351,39 @@ export default function ServicesSection() {
               </ul>
             </div>
 
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-3 bg-color-yellow text-white rounded-md hover:bg-gray-700 transition-colors"
+            >
+              Ver más
+            </button>
+          </div>
+        </div> */}
+
+        <div className="container mx-auto py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {activeService.products.map((item) => (
+              <div key={item.id} className="flex flex-col sm:flex-row gap-4 items-start">
+                <div className="relative h-[200px] w-[200px] shrink-0 rounded-md overflow-hidden">
+                  <Image
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                </div>
+                {/* <div className="flex flex-col">
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div> */}
+
+
+              </div>
+
+            ))}
+          </div>
+          <div className="flex justify-center mt-8">
             <button
               onClick={() => setIsModalOpen(true)}
               className="px-8 py-3 bg-color-yellow text-white rounded-md hover:bg-gray-700 transition-colors"

@@ -138,8 +138,8 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
           {[
             { value: "25+", label: "Años de Experiencia" },
-            { value: "50+", label: "Productos" },
-            { value: "100k+", label: "Clientes Satisfechos" },
+            { value: "100+", label: "Soluciones de Higiene" },
+            { value: "250+", label: "Clientes Satisfechos" },
           ].map((stat, index) => (
             <motion.div
               key={index}
