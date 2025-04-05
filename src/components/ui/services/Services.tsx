@@ -48,8 +48,8 @@ const services = [
     products: [
       { id: 101, name: "Palta", image: "/agro/features/palta.jpg" },
       { id: 102, name: "Citricos", image: "/agro/features/citrico.jpg" },
-      { id: 102, name: "Mangos", image: "/agro/features/mango.jpg" },
-      { id: 102, name: "Uvas", image: "/agro/features/uva.jpg" },
+      { id: 103, name: "Mangos", image: "/agro/features/mango.jpg" },
+      { id: 104, name: "Uvas", image: "/agro/features/uva.jpg" },
     ],
   },
   {
@@ -139,9 +139,9 @@ const services = [
     ],
     products: [
       { id: 1010, name: "Desinfectante Agrícola", image: "/food/features/frutas.jpg" },
-      { id: 1020, name: "Limpiador de Suelos", image: "/food/features/verduras.jpg" },
-      { id: 1030, name: "Desinfectante Agrícola", image: "/food/features/botella.jpg" },
-      { id: 1040, name: "Limpiador de Suelos", image: "/food/features/frutas.jpg" },
+      { id: 1021, name: "Limpiador de Suelos", image: "/food/features/verduras.jpg" },
+      { id: 1031, name: "Desinfectante Agrícola", image: "/food/features/botella.jpg" },
+      { id: 1041, name: "Limpiador de Suelos", image: "/food/features/frutas.jpg" },
     ],
   },
   {
@@ -196,55 +196,6 @@ const services = [
   },
   {
     id: 5,
-    title: "Avicola",
-    description:
-      "Expert consultation and training services to help your team maintain cleanliness and safety standards. We share our expertise to empower your organization.",
-    image: "/avicola.jpg?height=600&width=800",
-    features: [
-      {
-        id: 1,
-        title: "Paltos",
-        description: "Desinfección de paltos y otros cultivos.",
-        image: "",
-        images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
-
-
-      },
-      {
-        id: 2,
-        title: "Citricos",
-        description: "Desinfección de citricos y otros cultivos.",
-        image: "",
-        images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
-
-
-      },
-      {
-        id: 3,
-        title: "ViD",
-        description: "Desinfección de ViD y otros cultivos.",
-        image: "",
-        images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
-
-
-      },
-      {
-        id: 4,
-        title: "Mango",
-        description: "Desinfección de mango y otros cultivos.",
-        image: "",
-        images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
-
-
-      }
-    ],
-    products: [
-      { id: 101, name: "Desinfectante Agrícola", image: "/agro/agro_1.jpg" },
-      { id: 102, name: "Limpiador de Suelos", image: "/agro/agro_1.jpg" },
-    ],
-  },
-  {
-    id: 6,
     title: "Horeca",
     description:
       "Expert consultation and training services to help your team maintain cleanliness and safety standards. We share our expertise to empower your organization.",
@@ -288,8 +239,8 @@ const services = [
       }
     ],
     products: [
-      { id: 101, name: "Desinfectante Agrícola", image: "/agro/agro_1.jpg" },
-      { id: 102, name: "Limpiador de Suelos", image: "/agro/agro_1.jpg" },
+      { id: 301, name: "Desinfectante Agrícola", image: "/agro/agro_1.jpg" },
+      { id: 302, name: "Limpiador de Suelos", image: "/agro/agro_1.jpg" },
     ],
   },
 ];
@@ -373,14 +324,7 @@ export default function ServicesSection() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   />
                 </div>
-                {/* <div className="flex flex-col">
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </div> */}
-
-
               </div>
-
             ))}
           </div>
           <div className="flex justify-center mt-8">

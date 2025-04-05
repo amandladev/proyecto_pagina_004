@@ -16,36 +16,118 @@ export default function ConsumerProductsSection() {
   const products = [
     {
       id: 1,
-      name: "EcoClean Home",
-      category: "kitchen",
-      description: "Powerful kitchen cleaner made with natural ingredients",
+      name: "Jabón Líquido",
+      category: "personalCare",
+      description: "Jabón para uso general en baños, cocina",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/placeholder.svg?height=300&width=300",
     },
     {
       id: 2,
-      name: "GlassShine Pro",
-      category: "bathroom",
-      description: "Streak-free glass and mirror cleaner for a crystal clear finish",
+      name: "Jabón Neutro",
+      category: "cleaning",
+      description: "Jabón profesional sin olor ni color para manos en cocina",
       features: ["No streaks", "Anti-fog", "Long-lasting"],
       image: "/placeholder.svg?height=300&width=300",
     },
     {
       id: 3,
-      name: "FreshScent Air",
-      category: "living",
-      description: "Air freshener that eliminates odors instead of masking them",
+      name: "Shampoo Professional Line",
+      category: "personalCare",
+      description: "Shampoo profesional PH balanceado para la familia",
       features: ["Long-lasting", "Natural scents", "Odor neutralizing"],
       image: "/placeholder.svg?height=300&width=300",
     },
     {
       id: 4,
-      name: "MultiSurface Clean",
-      category: "kitchen",
-      description: "One solution for all your surfaces - wood, tile, granite, and more",
+      name: "Shampoo Pets",
+      category: "personalCare",
+      description: "Shampoo profesional PH balanceado para mascotas",
       features: ["Versatile", "Gentle formula", "Deep cleaning"],
       image: "/placeholder.svg?height=300&width=300",
     },
+    {
+      id: 5,
+      name: "Shampoo Pets Antipulgas",
+      category: "personalCare",
+      description: "Shampoo profesional para mascotas con adhitivo antipulgas",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/frutas/frutas_1.jpg?height=300&width=300",
+    },
+    {
+      id: 6,
+      name: "Biochlor Prime",
+      category: "desinfeccion",
+      description: "Solución ddesinfectante de frutas y verduras",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/frutas/frutas_1.jpg?height=300&width=300",
+    },
+    {
+      id: 7,
+      name: "Lavavajillas Conc. / Lavaplatos",
+      category: "cleaning",
+      description: "Lavalozas profesionales para vajilla, utensilios, cubiertos y ollas",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/frutas/frutas_1.jpg?height=300&width=300",
+    },
+    {
+      id: 8,
+      name: "Limpia baño",
+      category: "cleaning",
+      description: "Limpieza profesional para el baño (Artefactos, quitamanchas, funguicida)",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/frutas/frutas_1.jpg?height=300&width=300",
+    },
+    {
+      id: 9,
+      name: "Limpia vidrios",
+      category: "cleaning",
+      description: "Limpia vidrios con formulación profesional",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/frutas/frutas_1.jpg?height=300&width=300",
+    },
+    {
+      id: 10,
+      name: "Limpiatodo Cuaternario",
+      category: "cleaning",
+      description: "Limpieza y desinfección profesional de superficies",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/frutas/frutas_1.jpg?height=300&width=300",
+    }
+    ,
+    {
+      id: 11,
+      name: "Limpiatodo Cuaternario",
+      category: "cleaning",
+      description: "Limpieza y desinfección profesional de pisos",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/frutas/frutas_1.jpg?height=300&width=300",
+    },
+    {
+      id: 12,
+      name: "Limpiapisos Cuaternario",
+      category: "cleaning",
+      description: "Limpieza y desinfección profesional de pisos",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/frutas/frutas_1.jpg?height=300&width=300",
+    },
+    {
+      id: 13,
+      name: "Sacagrasa",
+      category: "cleaning",
+      description: "Sacagrasas profesional para campanas, parrillas y grasa pesada",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/frutas/frutas_1.jpg?height=300&width=300",
+    }
+    ,
+    {
+      id: 14,
+      name: "Sacasarro RTU",
+      category: "cleaning",
+      description: "Sacasarro profesional PH balanceado para duchas, griferia y desagües",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/frutas/frutas_1.jpg?height=300&width=300",
+    }
   ]
 
   const filteredProducts = activeTab === "all" ? products : products.filter((product) => product.category === activeTab)
@@ -69,11 +151,14 @@ export default function ConsumerProductsSection() {
             <TabsTrigger value="all" onClick={() => setActiveTab("all")}>
               Todos
             </TabsTrigger>
-            <TabsTrigger value="kitchen" onClick={() => setActiveTab("kitchen")}>
-              Cocina
+            <TabsTrigger value="desinfeccion" onClick={() => setActiveTab("desinfeccion")}>
+              Desinfección
             </TabsTrigger>
-            <TabsTrigger value="bathroom" onClick={() => setActiveTab("bathroom")}>
-              Baños
+            <TabsTrigger value="personalCare" onClick={() => setActiveTab("personalCare")}>
+              Personal Care
+            </TabsTrigger>
+            <TabsTrigger value="cleaning" onClick={() => setActiveTab("cleaning")}>
+              Limpieza Hogar
             </TabsTrigger>
             <TabsTrigger value="living" onClick={() => setActiveTab("living")}>
               Ropa

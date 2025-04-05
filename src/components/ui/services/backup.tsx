@@ -60,7 +60,7 @@ const services = [
   },
   {
     id: 4,
-    title: "Carnicos",
+    title: "Ganaderia",
     description:
       "Preventive maintenance and regular upkeep services to ensure your facility remains in optimal condition. We help extend the life of your assets and prevent costly repairs.",
     image: "/ganaderia/ganaderia_4.jpg?height=600&width=800",
@@ -78,24 +78,6 @@ const services = [
   },
   {
     id: 5,
-    title: "Avicola",
-    description:
-      "Expert consultation and training services to help your team maintain cleanliness and safety standards. We share our expertise to empower your organization.",
-    image: "/avicola.jpg?height=600&width=800",
-    features: [
-      "Cleaning protocol development",
-      "Staff training programs",
-      "Safety compliance consulting",
-      "Efficiency audits",
-      "Best practices workshops",
-    ],
-    products: [
-      { id: 101, name: "Desinfectante Agrícola", image: "/agro/agro_1.jpg" },
-      { id: 102, name: "Limpiador de Suelos", image: "/agro/agro_1.jpg" },
-    ],
-  },
-  {
-    id: 6,
     title: "Horeca",
     description:
       "Expert consultation and training services to help your team maintain cleanliness and safety standards. We share our expertise to empower your organization.",

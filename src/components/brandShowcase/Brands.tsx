@@ -63,8 +63,7 @@ const sectors = [
   { id: 'livestock', name: 'Agro', icon: Warehouse },
   { id: 'dairy', name: 'Lacteos', icon: Factory },
   { id: 'hotels', name: 'Food & Drink', icon: Hotel },
-  { id: 'industrial', name: 'Carnicos', icon: Building2 },
-  { id: 'industrial', name: 'Avicola', icon: Building2 },
+  { id: 'industrial', name: 'Ganaderia', icon: Building2 },
   { id: 'industrial', name: 'Horeca', icon: Building2 },
 ];
 

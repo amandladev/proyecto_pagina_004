@@ -63,19 +63,7 @@ const clientsBySector = {
       link: "https://www.generalfoodsperu.com",
     },
   ],
-  Carnicos: [
-    {
-      name: "Aktiva Packaging",
-      logo: "/clients/aktivapack.png",
-      link: "https://aktivapackaging.pe",
-    },
-    {
-      name: "Perulab Ecologic",
-      logo: "/clients/ecologic-logo.png",
-      link: "https://perulabecologic.com.pe/",
-    },
-  ],
-  Avicola: [
+  Ganaderia: [
     {
       name: "Aktiva Packaging",
       logo: "/clients/aktivapack.png",
@@ -106,8 +94,7 @@ const sectorColors = {
   Agro: "greenNew",
   Lácteos: "redNew",
   "Food & Drink": "yellowNew",
-  Carnicos: "greenNew",
-  Avicola: "greenNew",
+  Ganaderia: "greenNew",
   Horeca: "greenNew",
 }
 
@@ -233,10 +220,11 @@ export default function PrestigiousClientsSection() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="flex flex-col items-center"
+                    className="flex flex-col items-center "
                   >
                     <div
-                      className={`bg-white rounded-xl shadow-lg p-6 h-32 w-full flex items-center justify-center mb-4 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-${currentColor}`}
+                      className={`bg-white/50 backdrop-blur-md rounded-xl shadow-lg p-6 h-32 w-full flex items-center justify-center mb-4 hover:shadow-xl transition-all duration-300 border-2 border-transparent `}
+                      // className="absolute inset-0 rounded-xl bg-white/50 backdrop-blur-md shadow-lg border-2 border-transparent transition-all duration-300"
                       style={{
                         borderColor: "transparent",
                         ["--hover-border-color" as any]: `var(--${currentColor})`,
@@ -264,7 +252,7 @@ export default function PrestigiousClientsSection() {
                         />
                       </a>
                     </div>
-                    <p className="text-sm font-medium text-gray-700">{client.name}</p>
+                    {/* <p className="text-sm font-medium text-gray-700">{client.name}</p> */}
                   </motion.div>
                 ))}
               </div>

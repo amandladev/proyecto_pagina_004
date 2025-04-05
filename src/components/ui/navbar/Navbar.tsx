@@ -19,8 +19,7 @@ const serviceItems = [
   { name: "Agro", href: "/services/cleaning" },
   { name: "Lacteos", href: "/services/maintenance" },
   { name: "Food & Drink", href: "/services/consulting" },
-  { name: "Carnicos", href: "/services/training" },
-  { name: "Avicola", href: "/services/custom" },
+  { name: "Ganaderia", href: "/services/training" },
   { name: "Horeca", href: "/services/consulting" },
 ]
 
