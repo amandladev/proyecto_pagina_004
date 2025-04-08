@@ -119,8 +119,14 @@ export default function ProductDetailPage() {
                     key={index}
                     className={`aspect-square relative rounded-md overflow-hidden border cursor-pointer ${
                       index === 0 ? "ring-2 ring-gray-600" : ""
-                    }`}
-                  >
+                    }`}>
+                    <div className="absolute inset-0 bg-cover bg-center blur-lg scale-110"
+                              style={
+                                {
+                                  backgroundImage: `url(${image})`
+                                }
+                              }>
+                            </div>
                     <Image
                       src={image || "/placeholder.svg"}
                       alt={`${product.name} - Image ${index + 1}`}
@@ -150,7 +156,7 @@ export default function ProductDetailPage() {
               </div>
 
               {/* Price */}
-              <div className="text-2xl font-medium text-gray-900 mb-4">${product.price.toFixed(2)}</div>
+              <div className="text-2xl font-medium text-greenNew mb-4">S/ {product.price.toFixed(2)}</div>
 
               {/* Description */}
               <p className="text-gray-600 mb-6">{product.description}</p>

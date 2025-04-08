@@ -13,7 +13,12 @@ interface Product {
   image: string
   rating: number
   inStock: boolean
-  featured: boolean
+  featured: boolean,
+  priceDetail: {
+    price: number,
+    amount: number,
+  }[],
+  size: string[]
 }
 
 interface ProductCardProps {
@@ -65,7 +70,7 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
           <p className="text-gray-500 text-sm mb-3 line-clamp-2">{description}</p>
 
           <div className="flex items-center justify-between">
-            <span className="text-lg font-medium text-gray-900">${price.toFixed(2)}</span>
+            <span className="text-lg font-extrabold text-greenNew">S/ {price.toFixed(2)}</span>
             <Button size="sm" disabled={!inStock} className="text-xs">
               <ShoppingCart className="h-4 w-4 mr-1" />
               Agregar

@@ -11,136 +11,307 @@ import { Grid, List, SlidersHorizontal } from "lucide-react"
 const products = [
   {
     id: 1,
-    name: "Multi-Surface Cleaner",
-    description: "Professional-grade cleaner for all surfaces",
-    price: 12.99,
-    category: "all-purpose",
-    image: "/cocinas/cocinas_0.jpg?height=300&width=300",
-    rating: 4.5,
+    name: "Jabón Líquido",
+    category: "personalCare",
+    description: "Jabón para uso general en baños, cocina",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/liquid_soap.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 10,
+        amount: 0.38
+      }
+    ],
     inStock: true,
     featured: true,
+    rating: 4.5,
+    size: ["0.38"],
+    price: 10,
   },
   {
     id: 2,
-    name: "Industrial Degreaser",
-    description: "Heavy-duty degreaser for industrial use",
-    price: 24.99,
-    category: "industrial",
-    image: "/cocinas/cocinas_1.jpg?height=300&width=300",
-    rating: 4.8,
+    name: "Jabón Neutro",
+    category: "cleaning",
+    description: "Jabón profesional sin olor ni color para manos en cocina",
+    features: ["No streaks", "Anti-fog", "Long-lasting"],
+    image: "/products/neutral_soap.jpg?height=300&width=300",
+    priceDetail: [{
+      price: 20,
+      amount: 1
+    }],
     inStock: true,
-    featured: false,
+    featured: true,
+    rating: 4.5,
+    size: ["1"],
+    price: 10,
   },
   {
     id: 3,
-    name: "Glass & Window Cleaner",
-    description: "Streak-free formula for glass surfaces",
-    price: 9.99,
-    category: "glass",
-    image: "/frutas/frutas_0.jpg?height=300&width=300",
-    rating: 4.2,
+    name: "Shampoo Professional Line",
+    category: "personalCare",
+    description: "Shampoo profesional PH balanceado para la familia",
+    features: ["Long-lasting", "Natural scents", "Odor neutralizing"],
+    image: "/products/shampoo_familia.jpg?height=300&width=300",
+    priceDetail: [{
+      price: 25,
+      amount: 0.5
+    }],
     inStock: true,
     featured: true,
+    rating: 4.5,
+    size: ["0.5"],
+    price: 10,
   },
   {
     id: 4,
-    name: "Floor Cleaning Solution",
-    description: "Concentrated formula for all floor types",
-    price: 19.99,
-    category: "floor",
-    image: "/frutas/frutas_1.jpg?height=300&width=300",
-    rating: 4.6,
+    name: "Shampoo Pets",
+    category: "personalCare",
+    description: "Shampoo profesional PH balanceado para mascotas",
+    features: ["Versatile", "Gentle formula", "Deep cleaning"],
+    image: "/products/gato_1.jpg?height=300&width=300",
+    priceDetail: [{
+      price: 20,
+      amount: 1
+    }],
     inStock: true,
-    featured: false,
+    featured: true,
+    rating: 4.5,
+    size: ["1"],
+    price: 10,
   },
   {
     id: 5,
-    name: "Bathroom Cleaner",
-    description: "Removes soap scum and hard water stains",
-    price: 11.99,
-    category: "bathroom",
-    image: "/limpieza/limpieza_0.jpg?height=300&width=300",
-    rating: 4.3,
+    name: "Shampoo Pets Antipulgas",
+    category: "personalCare",
+    description: "Shampoo profesional para mascotas con adhitivo antipulgas",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/perro_1.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 25,
+        amount: 1
+      }
+    ],
     inStock: true,
     featured: true,
+    rating: 4.5,
+    size: ["1"],
+    price: 10,
   },
   {
     id: 6,
-    name: "Stainless Steel Polish",
-    description: "Restores shine to stainless steel surfaces",
-    price: 14.99,
-    category: "specialty",
-    image: "/limpieza/limpieza_1.jpg?height=300&width=300",
-    rating: 4.7,
-    inStock: false,
-    featured: false,
+    name: "Biochlor Prime",
+    category: "desinfeccion",
+    description: "Solución ddesinfectante de frutas y verduras",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/frutas/frutas_1.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 15,
+        amount: 0.25
+      }
+    ],
+    inStock: true,
+    featured: true,
+    rating: 4.5,
+    size: ["0.25"],
+    price: 10,
   },
   {
     id: 7,
-    name: "Carpet Shampoo",
-    description: "Deep cleaning formula for carpets and upholstery",
-    price: 22.99,
-    category: "carpet",
-    image: "/limpieza/limpieza_2.jpg?height=300&width=300",
-    rating: 4.4,
+    name: "Lavavajillas Conc. / Lavaplatos",
+    category: "cleaning",
+    description: "Lavalozas profesionales para vajilla, utensilios, cubiertos y ollas",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/lavavajillas.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 15,
+        amount: 1
+      }
+    ],
     inStock: true,
-    featured: false,
+    featured: true,
+    rating: 4.5,
+    size: ["1"],
+    price: 10,
   },
   {
     id: 8,
-    name: "Disinfectant Spray",
-    description: "Kills 99.9% of germs and bacteria",
-    price: 8.99,
-    category: "disinfectant",
-    image: "/lacteos/lacteos_4.jpg?height=300&width=300",
-    rating: 4.9,
+    name: "Limpia baños",
+    category: "cleaning",
+    description: "Limpieza profesional para el baño (Artefactos, quitamanchas, funguicida)",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/limpia_banos.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 35,
+        amount: 1
+      }
+    ],
     inStock: true,
     featured: true,
+    rating: 4.5,
+    size: ["1"],
+    price: 10,
   },
   {
     id: 9,
-    name: "Wood Furniture Polish",
-    description: "Nourishes and protects wood surfaces",
-    price: 16.99,
-    category: "specialty",
-    image: "/ganaderia/ganaderia_0.jpg?height=300&width=300",
-    rating: 4.1,
+    name: "Limpia vidrios",
+    category: "cleaning",
+    description: "Limpia vidrios con formulación profesional",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/limpia_vidrios.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 10,
+        amount: 1
+      }
+    ],
     inStock: true,
-    featured: false,
+    featured: true,
+    rating: 4.5,
+    size: ["1"],
+    price: 10,
   },
   {
     id: 10,
-    name: "Grout Cleaner",
-    description: "Restores grout lines to like-new condition",
-    price: 13.99,
-    category: "specialty",
-    image: "/ganaderia/ganaderia_1.jpg?height=300&width=300",
-    rating: 4.6,
-    inStock: true,
-    featured: false,
-  },
-  {
-    id: 11,
-    name: "Oven & Grill Cleaner",
-    description: "Cuts through tough baked-on grease",
-    price: 15.99,
-    category: "kitchen",
-    image: "/cocinas/cocinas_0.jpg?height=300&width=300",
-    rating: 4.7,
+    name: "Limpiatodo Cuaternario",
+    category: "cleaning",
+    description: "Limpieza y desinfección profesional de superficies",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/limpiatodo_cuaternario.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 30,
+        amount: 1
+      }
+    ],
     inStock: true,
     featured: true,
+    rating: 4.5,
+    size: ["1"],
+    price: 10,
+  }
+  ,
+  {
+    id: 11,
+    name: "Limpiapisos Cuaternario",
+    category: "cleaning",
+    description: "Limpieza y desinfección profesional de pisos",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/pisos_cuaternario.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 40,
+        amount: 4
+      }
+    ],
+    inStock: true,
+    featured: true,
+    rating: 4.5,
+    size: ["4"],
+    price: 10,
   },
   {
     id: 12,
-    name: "Laundry Detergent",
-    description: "Industrial-strength formula for tough stains",
-    price: 18.99,
-    category: "laundry",
-    image: "/limpieza/limpieza_8.jpg?height=300&width=300",
-    rating: 4.5,
+    name: "Sacagrasa",
+    category: "cleaning",
+    description: "Sacagrasas profesional para campanas, parrillas y grasa pesada",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/saca_grasa.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 20,
+        amount: 0.5
+      }
+    ],
     inStock: true,
-    featured: false,
+    featured: true,
+    rating: 4.5,
+    size: ["0.5"],
+    price: 10,
   },
+  {
+    id: 14,
+    name: "Sacasarro RTU",
+    category: "cleaning",
+    description: "Sacasarro profesional PH balanceado para duchas, griferia y desagües",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/sacasarro.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 20,
+        amount: 1
+      }
+    ],
+    inStock: true,
+    featured: true,
+    rating: 4.5,
+    size: ["1"],
+    price: 10,
+  },
+  {
+    id: 15,
+    name: "Ropa blanca",
+    category: "living",
+    description: "Limpieza profesional de ropa blanca",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/ropa_blanca.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 50,
+        amount: 4
+      }
+    ],
+    inStock: true,
+    featured: true,
+    rating: 4.5,
+    size: ["4"],
+    price: 10,
+  },
+  {
+    id: 16,
+    name: "Ropa color",
+    category: "living",
+    description: "Limpieza profesional de ropa de color",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/ropa_color.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 50,
+        amount: 4
+      }
+    ],
+    inStock: true,
+    featured: true,
+    rating: 4.5,
+    size: ["4"],
+    price: 10,
+  },
+  {
+    id: 17,
+    name: "Gel Hidroalcohol",
+    category: "desinfeccion",
+    description: "",
+    features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+    image: "/products/gel_hidroalcohol.jpg?height=300&width=300",
+    priceDetail: [
+      {
+        price: 15,
+        amount: 0.5
+      },
+      {
+        price: 20,
+        amount: 1
+      }
+    ],
+    inStock: true,
+    featured: true,
+    rating: 4.5,
+    size: ["0.5", "1"],
+    price: 10,
+  }
 ]
 
 // Categories for filtering
@@ -164,11 +335,13 @@ export default function ProductsGrid() {
 
   // Sort products based on selected option
   const sortedProducts = [...filteredProducts].sort((a, b) => {
+    const firstPrice = a.priceDetail[0].price
+    const secondPrice = b.priceDetail[0].price
     switch (sortOption) {
       case "price-low":
-        return a.price - b.price
+        return firstPrice - secondPrice
       case "price-high":
-        return b.price - a.price
+        return secondPrice - firstPrice
       case "name":
         return a.name.localeCompare(b.name)
       case "rating":
@@ -202,7 +375,7 @@ export default function ProductsGrid() {
               onClick={() => setShowFilters(!showFilters)}
             >
               <SlidersHorizontal className="h-4 w-4" />
-              Filters
+              Filtros
             </Button>
 
             {/* View Mode Toggles */}
@@ -214,7 +387,7 @@ export default function ProductsGrid() {
                 className="h-9 w-9"
               >
                 <Grid className="h-4 w-4" />
-                <span className="sr-only">Grid view</span>
+                <span className="sr-only">Vista de grilla</span>
               </Button>
               <Button
                 variant={viewMode === "list" ? "default" : "outline"}
@@ -223,7 +396,7 @@ export default function ProductsGrid() {
                 className="h-9 w-9"
               >
                 <List className="h-4 w-4" />
-                <span className="sr-only">List view</span>
+                <span className="sr-only">Vista de lista</span>
               </Button>
             </div>
 
@@ -275,7 +448,7 @@ export default function ProductsGrid() {
             <div className="text-center py-12">
               <p className="text-gray-500">No products found matching your criteria.</p>
               <Button variant="outline" className="mt-4" onClick={() => setSelectedCategory("all")}>
-                View All Products
+                Ver todos los productos
               </Button>
             </div>
           )}

@@ -24,7 +24,11 @@ export default function ConsumerProductsSection() {
       priceDetail: [{
         price: 10,
         amount: 0.38
-      }]
+      }],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["0.38"]
     },
     {
       id: 2,
@@ -36,7 +40,11 @@ export default function ConsumerProductsSection() {
       priceDetail: [{
         price: 20,
         amount: 1
-      }]
+      }],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["1"]
     },
     {
       id: 3,
@@ -48,7 +56,11 @@ export default function ConsumerProductsSection() {
       priceDetail: [{
         price: 25,
         amount: 0.5
-      }]
+      }],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["0.5"]
     },
     {
       id: 4,
@@ -60,7 +72,11 @@ export default function ConsumerProductsSection() {
       priceDetail: [{
         price: 20,
         amount: 1
-      }]
+      }],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["1"]
     },
     {
       id: 5,
@@ -74,7 +90,11 @@ export default function ConsumerProductsSection() {
           price: 25,
           amount: 1
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["1"]
     },
     {
       id: 6,
@@ -88,7 +108,11 @@ export default function ConsumerProductsSection() {
           price: 15,
           amount: 0.25
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["0.25"]
     },
     {
       id: 7,
@@ -102,7 +126,11 @@ export default function ConsumerProductsSection() {
           price: 15,
           amount: 1
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["1"]
     },
     {
       id: 8,
@@ -116,7 +144,11 @@ export default function ConsumerProductsSection() {
           price: 35,
           amount: 1
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["1"]
     },
     {
       id: 9,
@@ -130,7 +162,11 @@ export default function ConsumerProductsSection() {
           price: 10,
           amount: 1
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["1"]
     },
     {
       id: 10,
@@ -144,7 +180,11 @@ export default function ConsumerProductsSection() {
           price: 30,
           amount: 1
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["1"]
     }
     ,
     {
@@ -159,7 +199,11 @@ export default function ConsumerProductsSection() {
           price: 40,
           amount: 4
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["4"]
     },
     {
       id: 12,
@@ -173,7 +217,11 @@ export default function ConsumerProductsSection() {
           price: 20,
           amount: 0.5
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["0.5"]
     },
     {
       id: 14,
@@ -187,7 +235,11 @@ export default function ConsumerProductsSection() {
           price: 20,
           amount: 1
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["1"]
     },
     {
       id: 15,
@@ -201,7 +253,11 @@ export default function ConsumerProductsSection() {
           price: 50,
           amount: 4
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["4"]
     },
     {
       id: 16,
@@ -215,7 +271,11 @@ export default function ConsumerProductsSection() {
           price: 50,
           amount: 4
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["4"]
     },
     {
       id: 17,
@@ -233,7 +293,11 @@ export default function ConsumerProductsSection() {
           price: 20,
           amount: 1
         }
-      ]
+      ],
+      isStock: true,
+      featured: true,
+      rating: 4.5,
+      size: ["0.5", "1"]
     },
   ]
 
