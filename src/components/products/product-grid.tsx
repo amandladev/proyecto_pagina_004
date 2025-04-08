@@ -146,16 +146,10 @@ const products = [
 // Categories for filtering
 const categories = [
   { value: "all", label: "Todos los Productos" },
-  { value: "all-purpose", label: "All-Purpose Cleaners" },
-  { value: "industrial", label: "Industrial Cleaners" },
-  { value: "glass", label: "Glass Cleaners" },
-  { value: "floor", label: "Floor Cleaners" },
-  { value: "bathroom", label: "Bathroom Cleaners" },
-  { value: "kitchen", label: "Kitchen Cleaners" },
-  { value: "specialty", label: "Specialty Cleaners" },
-  { value: "disinfectant", label: "Disinfectants" },
-  { value: "carpet", label: "Carpet Care" },
-  { value: "laundry", label: "Laundry Products" },
+  { value: "desinfeccion", label: "Desinfencción" },
+  { value: "personalCare", label: "Personal Care" },
+  { value: "cleaning", label: "Limpieza Hogar" },
+  { value: "living", label: "Ropa" },
 ]
 
 export default function ProductsGrid() {

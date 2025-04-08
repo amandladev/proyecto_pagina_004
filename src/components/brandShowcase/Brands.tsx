@@ -115,13 +115,13 @@ export default function BrandShowcase() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 p-6"
+              className="group relative bg-black rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 p-6"
             >
-              <div className="aspect-[2/1] relative overflow-hidden rounded-lg bg-white flex items-center justify-center">
+              <div className="aspect-[2/1] relative overflow-hidden rounded-lg bg-green-300 flex items-center justify-center">
                 <img
                   src={brand.logo}
                   alt={`${brand.name} logo`}
-                  className="absolute inset-0 w-full h-full object-contain p-4"
+                  className="absolute inset-0 w-full h-full object-contain p-4 bg-white"
                 />
               </div>
               <h3 className="mt-4 text-center text-gray-800 font-medium">

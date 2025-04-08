@@ -15,7 +15,7 @@ const clientsBySector = {
     },
     {
       name: "Agrihusac",
-      logo: "/clients/agrihusac.jpeg",
+      logo: "/clients/agrihusac.png",
       link: "",
     },
     {
@@ -223,7 +223,7 @@ export default function PrestigiousClientsSection() {
                     className="flex flex-col items-center "
                   >
                     <div
-                      className={`bg-white/50 backdrop-blur-md rounded-xl shadow-lg p-6 h-32 w-full flex items-center justify-center mb-4 hover:shadow-xl transition-all duration-300 border-2 border-transparent `}
+                      className={`bg-white backdrop-blur-md rounded-xl shadow-lg p-6 h-32 w-full flex items-center justify-center mb-4 hover:shadow-xl transition-all duration-300 border-2 border-transparent `}
                       // className="absolute inset-0 rounded-xl bg-white/50 backdrop-blur-md shadow-lg border-2 border-transparent transition-all duration-300"
                       style={{
                         borderColor: "transparent",

@@ -20,7 +20,11 @@ export default function ConsumerProductsSection() {
       category: "personalCare",
       description: "Jabón para uso general en baños, cocina",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/products/liquid_soap.jpg?height=300&width=300",
+      priceDetail: [{
+        price: 10,
+        amount: 0.38
+      }]
     },
     {
       id: 2,
@@ -28,7 +32,11 @@ export default function ConsumerProductsSection() {
       category: "cleaning",
       description: "Jabón profesional sin olor ni color para manos en cocina",
       features: ["No streaks", "Anti-fog", "Long-lasting"],
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/products/neutral_soap.jpg?height=300&width=300",
+      priceDetail: [{
+        price: 20,
+        amount: 1
+      }]
     },
     {
       id: 3,
@@ -36,7 +44,11 @@ export default function ConsumerProductsSection() {
       category: "personalCare",
       description: "Shampoo profesional PH balanceado para la familia",
       features: ["Long-lasting", "Natural scents", "Odor neutralizing"],
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/products/shampoo_familia.jpg?height=300&width=300",
+      priceDetail: [{
+        price: 25,
+        amount: 0.5
+      }]
     },
     {
       id: 4,
@@ -44,7 +56,11 @@ export default function ConsumerProductsSection() {
       category: "personalCare",
       description: "Shampoo profesional PH balanceado para mascotas",
       features: ["Versatile", "Gentle formula", "Deep cleaning"],
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/products/gato_1.jpg?height=300&width=300",
+      priceDetail: [{
+        price: 20,
+        amount: 1
+      }]
     },
     {
       id: 5,
@@ -52,7 +68,13 @@ export default function ConsumerProductsSection() {
       category: "personalCare",
       description: "Shampoo profesional para mascotas con adhitivo antipulgas",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-      image: "/frutas/frutas_1.jpg?height=300&width=300",
+      image: "/products/perro_1.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 25,
+          amount: 1
+        }
+      ]
     },
     {
       id: 6,
@@ -61,6 +83,12 @@ export default function ConsumerProductsSection() {
       description: "Solución ddesinfectante de frutas y verduras",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/frutas/frutas_1.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 15,
+          amount: 0.25
+        }
+      ]
     },
     {
       id: 7,
@@ -68,15 +96,27 @@ export default function ConsumerProductsSection() {
       category: "cleaning",
       description: "Lavalozas profesionales para vajilla, utensilios, cubiertos y ollas",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-      image: "/frutas/frutas_1.jpg?height=300&width=300",
+      image: "/products/lavavajillas.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 15,
+          amount: 1
+        }
+      ]
     },
     {
       id: 8,
-      name: "Limpia baño",
+      name: "Limpia baños",
       category: "cleaning",
       description: "Limpieza profesional para el baño (Artefactos, quitamanchas, funguicida)",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-      image: "/frutas/frutas_1.jpg?height=300&width=300",
+      image: "/products/limpia_banos.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 35,
+          amount: 1
+        }
+      ]
     },
     {
       id: 9,
@@ -84,7 +124,13 @@ export default function ConsumerProductsSection() {
       category: "cleaning",
       description: "Limpia vidrios con formulación profesional",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-      image: "/frutas/frutas_1.jpg?height=300&width=300",
+      image: "/products/limpia_vidrios.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 10,
+          amount: 1
+        }
+      ]
     },
     {
       id: 10,
@@ -92,42 +138,103 @@ export default function ConsumerProductsSection() {
       category: "cleaning",
       description: "Limpieza y desinfección profesional de superficies",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-      image: "/frutas/frutas_1.jpg?height=300&width=300",
+      image: "/products/limpiatodo_cuaternario.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 30,
+          amount: 1
+        }
+      ]
     }
     ,
     {
       id: 11,
-      name: "Limpiatodo Cuaternario",
-      category: "cleaning",
-      description: "Limpieza y desinfección profesional de pisos",
-      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-      image: "/frutas/frutas_1.jpg?height=300&width=300",
-    },
-    {
-      id: 12,
       name: "Limpiapisos Cuaternario",
       category: "cleaning",
       description: "Limpieza y desinfección profesional de pisos",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-      image: "/frutas/frutas_1.jpg?height=300&width=300",
+      image: "/products/pisos_cuaternario.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 40,
+          amount: 4
+        }
+      ]
     },
     {
-      id: 13,
+      id: 12,
       name: "Sacagrasa",
       category: "cleaning",
       description: "Sacagrasas profesional para campanas, parrillas y grasa pesada",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-      image: "/frutas/frutas_1.jpg?height=300&width=300",
-    }
-    ,
+      image: "/products/saca_grasa.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 20,
+          amount: 0.5
+        }
+      ]
+    },
     {
       id: 14,
       name: "Sacasarro RTU",
       category: "cleaning",
       description: "Sacasarro profesional PH balanceado para duchas, griferia y desagües",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-      image: "/frutas/frutas_1.jpg?height=300&width=300",
-    }
+      image: "/products/sacasarro.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 20,
+          amount: 1
+        }
+      ]
+    },
+    {
+      id: 15,
+      name: "Ropa blanca",
+      category: "living",
+      description: "Limpieza profesional de ropa blanca",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/products/ropa_blanca.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 50,
+          amount: 4
+        }
+      ]
+    },
+    {
+      id: 16,
+      name: "Ropa color",
+      category: "living",
+      description: "Limpieza profesional de ropa de color",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/products/ropa_color.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 50,
+          amount: 4
+        }
+      ]
+    },
+    {
+      id: 17,
+      name: "Gel Hidroalcohol",
+      category: "desinfeccion",
+      description: "",
+      features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+      image: "/products/gel_hidroalcohol.jpg?height=300&width=300",
+      priceDetail: [
+        {
+          price: 15,
+          amount: 0.5
+        },
+        {
+          price: 20,
+          amount: 1
+        }
+      ]
+    },
   ]
 
   const filteredProducts = activeTab === "all" ? products : products.filter((product) => product.category === activeTab)
@@ -147,7 +254,7 @@ export default function ConsumerProductsSection() {
         </div>
 
         <Tabs defaultValue="all" className="w-full max-w-3xl mx-auto mb-12">
-          <TabsList className="grid grid-cols-4 w-full">
+          <TabsList className="grid grid-cols-5 w-full">
             <TabsTrigger value="all" onClick={() => setActiveTab("all")}>
               Todos
             </TabsTrigger>
@@ -176,12 +283,15 @@ export default function ConsumerProductsSection() {
             >
               <Card className="overflow-hidden border-0 shadow-lg h-full">
                 <div className="relative h-48 w-full overflow-hidden bg-gray-100">
-                  <Image
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.name}
-                    fill
-                    className="object-cover transition-transform duration-300 hover:scale-105"
-                  />
+                  <Link href={`/store/${product.id}`}>
+                    <Image
+                      src={product.image || "/placeholder.svg"}
+                      alt={product.name}
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                    />
+
+                  </Link>
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-2">{product.name}</h3>
@@ -194,9 +304,11 @@ export default function ConsumerProductsSection() {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="w-full mt-2">
-                    Learn more
-                  </Button>
+                  {/* <Link  href={`/store/${product.id}`}>
+                    <Button variant="outline" className="w-full mt-2">
+                      Ver detalle
+                    </Button>
+                  </Link> */}
                 </CardContent>
               </Card>
             </motion.div>

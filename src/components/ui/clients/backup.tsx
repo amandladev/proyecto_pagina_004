@@ -137,21 +137,21 @@ const clients2 = [
 const clients3 = [
   {
     name: "Agrihusac",
-    logo: "/clients/agrihusac.jpeg?height=64&width=144",
+    logo: "/clients/agrihusac.png?height=64&width=144",
     grayscale: true, 
     link: "",
     sector: 'hotels'
   },
   {
     name: "Agrihusac",
-    logo: "/clients/agrihusac.jpeg?height=64&width=144",
+    logo: "/clients/agrihusac.png?height=64&width=144",
     grayscale: true, 
     link: "",
     sector: 'hotels'
   },
   {
     name: "Agrihusac",
-    logo: "/clients/agrihusac.jpeg?height=64&width=144",
+    logo: "/clients/agrihusac.png?height=64&width=144",
     grayscale: true, 
     link: "",
     sector: 'hotels'
