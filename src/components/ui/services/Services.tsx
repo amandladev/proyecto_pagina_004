@@ -310,12 +310,46 @@ export default function ServicesSection() {
             </button>
           </div>
         </div> */}
+        <div className="container mx-auto mb-5">
+          <div className="grid grid-cols-1 gap-6  mx-6">
+            <div className="h-[450px] relative w-full">
+                <div className="-z-10" style={{
+                  backgroundImage: `url(${activeService.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  zIndex: 1,
+                  filter: 'blur(5px)',
+                  opacity: 0.5,
+                  transition: 'all 0.5s ease-in-out',
+                  transform: 'scale(1.1)',
+                  borderRadius: '10px',
+                  overflow: 'hidden',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+                  border: '1px solid rgba(0, 0, 0, 0.1)',
+
+                }}></div>
+                <Image 
+                  className="object-contain relative z-10" 
+                  src={activeService.image} 
+                  alt={activeService.title} 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  fill 
+                />
+            </div>
+          </div>
+        </div>
 
         <div className="container mx-auto py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {activeService.products.map((item) => (
-              <div key={item.id} className="flex flex-col sm:flex-row gap-4 items-start">
-                <div className="relative h-[200px] w-[200px] shrink-0 rounded-md overflow-hidden">
+              <div key={item.id} className="flex flex-col sm:flex-row gap-4 items-center">
+                <div className="relative h-[200px] w-[200px] shrink-0 rounded-md overflow-hidden sm:left-[15%] left-0">
                   <Image
                     src={item.image || "/placeholder.svg"}
                     alt={item.name}
