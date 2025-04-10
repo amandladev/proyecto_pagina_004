@@ -199,7 +199,7 @@ const services = [
     title: "Horeca",
     description:
       "Expert consultation and training services to help your team maintain cleanliness and safety standards. We share our expertise to empower your organization.",
-    image: "/hoteles/hotel_2.jpg?height=600&width=800",
+    image: "/hoteles/hoteles.jpg?height=600&width=800",
     features: [
       {
         id: 1,
@@ -239,8 +239,10 @@ const services = [
       }
     ],
     products: [
-      { id: 301, name: "Desinfectante Agrícola", image: "/agro/agro_1.jpg" },
-      { id: 302, name: "Limpiador de Suelos", image: "/agro/agro_1.jpg" },
+      { id: 301, name: "Comedor de empresa", image: "/hoteles/hoteles_1.jpg" },
+      { id: 302, name: "Cocina", image: "/hoteles/hoteles_2.jpg" },
+      { id: 303, name: "Sanitarios", image: "/hoteles/hoteles_3.jpg" },
+      { id: 304, name: "Lavanderia", image: "/hoteles/hoteles_4.jpg" },
     ],
   },
 ];
@@ -282,34 +284,6 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-            <Image src={activeService.image} alt={activeService.title} fill className="object-cover" />
-          </div>
-
-          <div className="space-y-6">
-            <p className="text-gray-600">{activeService.description}</p>
-
-            <div className="mb-4">
-              <h4 className="font-medium text-gray-800">Sub sector:</h4>
-              <ul className="space-y-2 text-gray-600">
-                {activeService.features.map((feature, index) => (
-                  <li key={index} className="flex items-center space-x-2">
-                    <Check className="h-5 w-5 text-gray-600 flex-shrink-0" />
-                    <span>{feature.title}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-8 py-3 bg-color-yellow text-white rounded-md hover:bg-gray-700 transition-colors"
-            >
-              Ver más
-            </button>
-          </div>
-        </div> */}
         <div className="container mx-auto mb-5">
           <div className="grid grid-cols-1 gap-6  mx-6">
             <div className="h-[450px] relative w-full">
@@ -340,6 +314,7 @@ export default function ServicesSection() {
                   alt={activeService.title} 
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   fill 
+                  priority
                 />
             </div>
           </div>
@@ -356,6 +331,7 @@ export default function ServicesSection() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    priority
                   />
                 </div>
               </div>
