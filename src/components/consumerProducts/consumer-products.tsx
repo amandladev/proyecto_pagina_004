@@ -18,7 +18,7 @@ export default function ConsumerProductsSection() {
       id: 1,
       name: "Jabón Líquido",
       category: "personalCare",
-      description: "Jabón para uso general en baños, cocina",
+      description: "Jabón profesional de uso continuo.  Enjuague rápido y efectivo.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/liquid_soap.jpg?height=300&width=300",
       priceDetail: [{
@@ -50,7 +50,7 @@ export default function ConsumerProductsSection() {
       id: 3,
       name: "Shampoo Professional Line",
       category: "personalCare",
-      description: "Shampoo profesional PH balanceado para la familia",
+      description: "Shampoo profesional libre de sales de uso continuo, para el hogar.",
       features: ["Long-lasting", "Natural scents", "Odor neutralizing"],
       image: "/products/shampoo_familia.jpg?height=300&width=300",
       priceDetail: [{
@@ -64,9 +64,9 @@ export default function ConsumerProductsSection() {
     },
     {
       id: 4,
-      name: "Shampoo Pets",
+      name: "Shampoo Pets Royal",
       category: "personalCare",
-      description: "Shampoo profesional PH balanceado para mascotas",
+      description: "Shampoo profesional para Mascotas razas finas. PH Balanceado.",
       features: ["Versatile", "Gentle formula", "Deep cleaning"],
       image: "/products/gato_1.jpg?height=300&width=300",
       priceDetail: [{
@@ -82,7 +82,7 @@ export default function ConsumerProductsSection() {
       id: 5,
       name: "Shampoo Pets Antipulgas",
       category: "personalCare",
-      description: "Shampoo profesional para mascotas con adhitivo antipulgas",
+      description: "Shampoo para Mascotas con formulación especial antipulgas.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/perro_1.jpg?height=300&width=300",
       priceDetail: [
@@ -100,7 +100,7 @@ export default function ConsumerProductsSection() {
       id: 6,
       name: "Biochlor Prime",
       category: "desinfeccion",
-      description: "Solución ddesinfectante de frutas y verduras",
+      description: "Desinfectante profesional de mayor uso en el mundo para la industria de alimentos.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/frutas/frutas_1.jpg?height=300&width=300",
       priceDetail: [
@@ -118,7 +118,7 @@ export default function ConsumerProductsSection() {
       id: 7,
       name: "Lavavajillas Conc. / Lavaplatos",
       category: "cleaning",
-      description: "Lavalozas profesionales para vajilla, utensilios, cubiertos y ollas",
+      description: "Lavalozas Profesional, desengrase y brillo para Loza y Utensilios.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/lavavajillas.jpg?height=300&width=300",
       priceDetail: [
@@ -136,7 +136,7 @@ export default function ConsumerProductsSection() {
       id: 8,
       name: "Limpia baños",
       category: "cleaning",
-      description: "Limpieza profesional para el baño (Artefactos, quitamanchas, funguicida)",
+      description: "Limpieza profesional desodorizante de uso continuo para el baño (artefactos, quitamanchas, funguicida).",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/limpia_banos.jpg?height=300&width=300",
       priceDetail: [
@@ -154,7 +154,7 @@ export default function ConsumerProductsSection() {
       id: 9,
       name: "Limpia vidrios",
       category: "cleaning",
-      description: "Limpia vidrios con formulación profesional",
+      description: "Limpia vidrios profesional con antiadherente y repelente de insectos.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/limpia_vidrios.jpg?height=300&width=300",
       priceDetail: [
@@ -172,7 +172,7 @@ export default function ConsumerProductsSection() {
       id: 10,
       name: "Limpiatodo Cuaternario",
       category: "cleaning",
-      description: "Limpieza y desinfección profesional de superficies",
+      description: "Limpiador profesional. Listo para usar, disolución correcta, sumamente efectivo.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/limpiatodo_cuaternario.jpg?height=300&width=300",
       priceDetail: [
@@ -191,7 +191,7 @@ export default function ConsumerProductsSection() {
       id: 11,
       name: "Limpiapisos Cuaternario",
       category: "cleaning",
-      description: "Limpieza y desinfección profesional de pisos",
+      description: "Listo para usar, disolución correcta y secado rápido. Contiene dióxido de Cloro.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/pisos_cuaternario.jpg?height=300&width=300",
       priceDetail: [
@@ -209,7 +209,7 @@ export default function ConsumerProductsSection() {
       id: 12,
       name: "Sacagrasa",
       category: "cleaning",
-      description: "Sacagrasas profesional para campanas, parrillas y grasa pesada",
+      description: "Removedor ecológico profesional de grasa pesada (campanas, parrillas, etc).",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/saca_grasa.jpg?height=300&width=300",
       priceDetail: [
@@ -227,7 +227,7 @@ export default function ConsumerProductsSection() {
       id: 14,
       name: "Sacasarro RTU",
       category: "cleaning",
-      description: "Sacasarro profesional PH balanceado para duchas, griferia y desagües",
+      description: "Removedor profesional de incrustaciones y óxidos para el hogar.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/sacasarro.jpg?height=300&width=300",
       priceDetail: [
@@ -245,7 +245,7 @@ export default function ConsumerProductsSection() {
       id: 15,
       name: "Ropa blanca",
       category: "living",
-      description: "Limpieza profesional de ropa blanca",
+      description: "Detergente profesional clorado, con inhibidores de corrosión.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/ropa_blanca.jpg?height=300&width=300",
       priceDetail: [
@@ -263,7 +263,7 @@ export default function ConsumerProductsSection() {
       id: 16,
       name: "Ropa color",
       category: "living",
-      description: "Limpieza profesional de ropa de color",
+      description: "Detergente profesional de espuma controlada. Libre de nonil fenol y fosfatos.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/ropa_color.jpg?height=300&width=300",
       priceDetail: [
@@ -281,7 +281,7 @@ export default function ConsumerProductsSection() {
       id: 17,
       name: "Gel Hidroalcohol",
       category: "desinfeccion",
-      description: "",
+      description: "Limpiador con humectantes y dióxido de Cloro.",
       features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
       image: "/products/gel_hidroalcohol.jpg?height=300&width=300",
       priceDetail: [

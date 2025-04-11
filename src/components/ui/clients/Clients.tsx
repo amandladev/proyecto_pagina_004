@@ -236,6 +236,24 @@ export default function PrestigiousClientsSection() {
                         ;(e.currentTarget as HTMLDivElement).style.borderColor = "transparent"
                       }}
                     >
+                      <div style={{
+                        backgroundImage: `url(${client.logo})`,
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        width: "100%",
+                        height: "100%",
+                        position: "absolute",
+                        top: "0",
+                        left: "0",
+                        right: "0",
+                        bottom: "0",
+                        filter: "blur(10px)",
+                        zIndex: "-1",
+                        opacity: "0.5",
+                      }}>
+
+                      </div>
                       <a
                         href={client.link || "#"}
                         target="_blank"

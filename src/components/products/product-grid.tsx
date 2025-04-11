@@ -13,7 +13,7 @@ const products = [
     id: 1,
     name: "Jabón Líquido",
     category: "personalCare",
-    description: "Jabón para uso general en baños, cocina",
+    description: "Jabón profesional de uso continuo.  Enjuague rápido y efectivo.",
     features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
     image: "/products/liquid_soap.jpg?height=300&width=300",
     priceDetail: [
@@ -102,7 +102,7 @@ const products = [
     id: 6,
     name: "Biochlor Prime",
     category: "desinfeccion",
-    description: "Solución ddesinfectante de frutas y verduras",
+    description: "Desinfectante profesional de mayor uso en el mundo para la industria de alimentos.",
     features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
     image: "/frutas/frutas_1.jpg?height=300&width=300",
     priceDetail: [
@@ -128,12 +128,16 @@ const products = [
       {
         price: 15,
         amount: 1
+      },
+      {
+        price: 50,
+        amount: 4
       }
     ],
     inStock: true,
     featured: true,
     rating: 4.5,
-    size: ["1"],
+    size: ["1", "4"],
     price: 10,
   },
   {
@@ -147,12 +151,16 @@ const products = [
       {
         price: 35,
         amount: 1
+      },
+      {
+        price: 120,
+        amount: 4
       }
     ],
     inStock: true,
     featured: true,
     rating: 4.5,
-    size: ["1"],
+    size: ["1", "4"],
     price: 10,
   },
   {
@@ -166,6 +174,10 @@ const products = [
       {
         price: 10,
         amount: 1
+      },
+      {
+        price: 35,
+        amount: 4
       }
     ],
     inStock: true,
@@ -185,12 +197,16 @@ const products = [
       {
         price: 30,
         amount: 1
+      },
+      {
+        price: 100,
+        amount: 4
       }
     ],
     inStock: true,
     featured: true,
     rating: 4.5,
-    size: ["1"],
+    size: ["1", "4"],
     price: 10,
   }
   ,
@@ -293,7 +309,7 @@ const products = [
     id: 17,
     name: "Gel Hidroalcohol",
     category: "desinfeccion",
-    description: "",
+    description: "Limpiador con humectantes y dióxido de Cloro.",
     features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
     image: "/products/gel_hidroalcohol.jpg?height=300&width=300",
     priceDetail: [

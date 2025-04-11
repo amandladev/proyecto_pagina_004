@@ -18,6 +18,7 @@ const product = {
     "Professional-grade cleaner for all surfaces. Our Multi-Surface Cleaner is formulated to tackle dirt, grime, and stains on virtually any washable surface. The powerful yet gentle formula is safe for use on countertops, appliances, walls, floors, and more.",
   price: 12.99,
   category: "all-purpose",
+  categoryName: "Personal Care",
   images: [
     "/limpieza/limpieza_0.jpg?height=600&width=600",
     "/limpieza/limpieza_1.jpg?height=600&width=600",
@@ -29,7 +30,7 @@ const product = {
   inStock: true,
   featured: true,
   details: {
-    size: "32 oz",
+    size: "4 KG",
     ingredients: "Water, Surfactants, Citric Acid, Natural Fragrance",
     directions:
       "Spray directly onto surface and wipe clean with a cloth or paper towel. For tough stains, let sit for 30 seconds before wiping.",
@@ -167,15 +168,15 @@ export default function ProductDetailPage() {
                   <label htmlFor="size" className="block text-sm font-medium text-gray-700 mb-1">
                     Tamaño
                   </label>
-                  <Select defaultValue="32oz">
+                  <Select defaultValue="32kg">
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select size" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="16oz">16 oz</SelectItem>
-                      <SelectItem value="32oz">32 oz</SelectItem>
-                      <SelectItem value="64oz">64 oz (Half Gallon)</SelectItem>
-                      <SelectItem value="128oz">128 oz (Gallon)</SelectItem>
+                      <SelectItem value="16kg">16 kg</SelectItem>
+                      <SelectItem value="32kg">32 kg</SelectItem>
+                      <SelectItem value="64kg">64 kg (Half Gallon)</SelectItem>
+                      <SelectItem value="128kg">128 kg (Gallon)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -238,7 +239,7 @@ export default function ProductDetailPage() {
                         </div>
                         <div className="flex">
                           <dt className="w-24 flex-shrink-0 text-gray-500">Categoría:</dt>
-                          <dd className="capitalize">{product.category.replace("-", " ")}</dd>
+                          <dd className="capitalize">{product.categoryName.replace("-", " ")}</dd>
                         </div>
                         <div className="flex">
                           <dt className="w-24 flex-shrink-0 text-gray-500">SKU:</dt>
@@ -293,7 +294,7 @@ export default function ProductDetailPage() {
                   <h3 className="font-medium text-gray-900 mb-1 group-hover:text-gray-600 transition-colors">
                     {relatedProduct.name}
                   </h3>
-                  <span className="text-gray-900">${relatedProduct.price.toFixed(2)}</span>
+                  <span className="text-gray-900">S/ {relatedProduct.price.toFixed(2)}</span>
                 </div>
               </Link>
             ))}
