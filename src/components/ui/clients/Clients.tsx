@@ -346,27 +346,7 @@ export default function PrestigiousClientsSection() {
 <div className="container mx-auto mb-5 bg-grayNew">
           <div className="grid grid-cols-1 gap-6  mx-6">
             <div className="h-[450px] relative w-full">
-                <div className="-z-10" style={{
-                  backgroundImage: `url(/${currentImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  zIndex: 1,
-                  filter: 'blur(5px)',
-                  opacity: 0.5,
-                  transition: 'all 0.5s ease-in-out',
-                  transform: 'scale(1.1)',
-                  borderRadius: '10px',
-                  overflow: 'hidden',
-                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
-                  border: '1px solid rgba(0, 0, 0, 0.1)',
-
-                }}></div>
+                
                 <Image 
                   className="object-contain relative z-10" 
                   src={currentImage} 
