@@ -178,13 +178,12 @@ export default function PrestigiousClientsSection() {
                 <button
                   key={sector}
                   onClick={() => handleSectorChange(sector)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                    activeSector === sector
-                      ? `bg-yellowNew text-black shadow-sm font-extrabold`
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                  }`}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${activeSector === sector
+                    ? `bg-yellowNew text-black shadow-sm font-extrabold`
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
                 >
-                  
+
                   {sector}
                 </button>
               )
@@ -201,101 +200,97 @@ export default function PrestigiousClientsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="min-h-[180px] flex flex-col"
+              className="min-h-[500px] flex flex-col relative overflow-hidden"
             >
-              {/* <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center bg-white px-6 py-3 rounded-full shadow-md mb-4">
-                  <Building2
-                    className={`h-5 w-5 text-${currentColor} mr-2`}
-                    style={{ color: `var(--${currentColor})` }}
-                  />
-                  <h3 className="text-xl font-medium text-gray-800">
-                    Sector{" "}
-                    <span className={`text-${currentColor}`} style={{ color: `var(--${currentColor})` }}>
-                      {activeSector}
-                    </span>
-                  </h3>
-                </div>
-                <p className="text-gray-500 mt-2">Empresas líderes que confían en nuestras soluciones</p>
-              </div> */}
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-                {clientsBySector[activeSector as keyof typeof clientsBySector].map((client, index) => (
-                  <motion.div
-                    key={client.name}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="flex flex-col items-center "
-                  >
+              <div className="flex-1 flex items-center justify-center relative z-10">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                  {currentImage && (
                     <div
-                      className={`bg-white backdrop-blur-md rounded-xl shadow-lg p-6 h-32 w-full flex items-center justify-center mb-4 hover:shadow-xl transition-all duration-300 border-2 border-transparent `}
-                      // className="absolute inset-0 rounded-xl bg-white/50 backdrop-blur-md shadow-lg border-2 border-transparent transition-all duration-300"
+                      className="absolute inset-0 z-0"
                       style={{
-                        borderColor: "transparent",
-                        ["--hover-border-color" as any]: `var(--${currentColor})`,
-                      }}
-                      onMouseOver={(e) => {
-                        ;(e.currentTarget as HTMLDivElement).style.borderColor = `var(--${currentColor})`
-                      }}
-                      onMouseOut={(e) => {
-                        ;(e.currentTarget as HTMLDivElement).style.borderColor = "transparent"
-                      }}
-                    >
-                      <div style={{
-                        backgroundImage: `url(${client.logo})`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
+                        backgroundImage: `url(${currentImage})`,
+                        backgroundSize: "cover",
                         backgroundPosition: "center",
-                        width: "100%",
-                        height: "100%",
-                        position: "absolute",
-                        top: "0",
-                        left: "0",
-                        right: "0",
-                        bottom: "0",
-                        filter: "blur(10px)",
-                        zIndex: "-1",
-                        opacity: "0.5",
-                      }}>
-
-                      </div>
-                      <a
-                        href={client.link || "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full h-full flex items-center justify-center"
+                      }}
+                    />
+                  )}
+                  {clientsBySector[activeSector as keyof typeof clientsBySector].map((client, index) => (
+                    <motion.div
+                      key={client.name}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      className="flex flex-col items-center "
+                    >
+                      <div
+                        className={`bg-white backdrop-blur-md rounded-xl shadow-lg p-6 h-32 w-full flex items-center justify-center mb-4 hover:shadow-xl transition-all duration-300 border-2 border-transparent `}
+                        // className="absolute inset-0 rounded-xl bg-white/50 backdrop-blur-md shadow-lg border-2 border-transparent transition-all duration-300"
+                        style={{
+                          borderColor: "transparent",
+                          ["--hover-border-color" as any]: `var(--${currentColor})`,
+                        }}
+                        onMouseOver={(e) => {
+                          ; (e.currentTarget as HTMLDivElement).style.borderColor = `var(--${currentColor})`
+                        }}
+                        onMouseOut={(e) => {
+                          ; (e.currentTarget as HTMLDivElement).style.borderColor = "transparent"
+                        }}
                       >
-                        <Image
-                          src={client.logo || "/placeholder.svg"}
-                          alt={`${client.name} logo`}
-                          width={160}
-                          height={80}
-                          className="object-contain w-auto h-auto max-h-16 max-w-full grayscale hover:grayscale-0 transition-all duration-300"
-                          style={{ width: "auto", height: "auto" }}
-                        />
-                      </a>
-                    </div>
-                    {/* <p className="text-sm font-medium text-gray-700">{client.name}</p> */}
-                  </motion.div>
-                ))}
+                        <div style={{
+                          backgroundImage: `url(${client.logo})`,
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "center",
+                          width: "100%",
+                          height: "100%",
+                          position: "absolute",
+                          top: "0",
+                          left: "0",
+                          right: "0",
+                          bottom: "0",
+                          filter: "blur(10px)",
+                          zIndex: "-1",
+                          opacity: "0.5",
+                        }}>
+
+                        </div>
+                        <a
+                          href={client.link || "#"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full h-full flex items-center justify-center"
+                        >
+                          <Image
+                            src={client.logo || "/placeholder.svg"}
+                            alt={`${client.name} logo`}
+                            width={160}
+                            height={80}
+                            className="object-contain w-auto h-auto max-h-16 max-w-full grayscale hover:grayscale-0 transition-all duration-300"
+                            style={{ width: "auto", height: "auto" }}
+                          />
+                        </a>
+                      </div>
+                      {/* <p className="text-sm font-medium text-gray-700">{client.name}</p> */}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>
 
           {/* Navigation Arrows */}
-          <div className="absolute top-1/4 -translate-y-3/4 left-0 -ml-4 md:-ml-8">
+          <div className="absolute top-1/2 z-50 -translate-y-3/4 left-0 -ml-4 md:-ml-8">
             <button
               onClick={handlePrevSector}
               className={`bg-white rounded-full p-2 shadow-lg hover:bg-${currentColor} hover:text-white transition-colors`}
               aria-label="Previous sector"
               style={{ ["--hover-bg-color" as any]: `var(--${currentColor})` }}
               onMouseOver={(e) => {
-                ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = `var(--${currentColor})`
+                ; (e.currentTarget as HTMLButtonElement).style.backgroundColor = `var(--${currentColor})`
                 e.currentTarget.querySelector("svg")!.style.color = "white"
               }}
               onMouseOut={(e) => {
-                ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = "white"
+                ; (e.currentTarget as HTMLButtonElement).style.backgroundColor = "white"
                 e.currentTarget.querySelector("svg")!.style.color = "#374151"
               }}
             >
@@ -303,18 +298,18 @@ export default function PrestigiousClientsSection() {
             </button>
           </div>
 
-          <div className="absolute top-1/4 -translate-y-3/4 right-0 -mr-4 md:-mr-8">
+          <div className="absolute top-1/2 z-50 -translate-y-3/4 right-0 -mr-4 md:-mr-8">
             <button
               onClick={handleNextSector}
               className={`bg-white rounded-full p-2 shadow-lg hover:bg-${currentColor} hover:text-white transition-colors`}
               aria-label="Next sector"
               style={{ ["--hover-bg-color" as any]: `var(--${currentColor})` }}
               onMouseOver={(e) => {
-                ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = `var(--${currentColor})`
+                ; (e.currentTarget as HTMLButtonElement).style.backgroundColor = `var(--${currentColor})`
                 e.currentTarget.querySelector("svg")!.style.color = "white"
               }}
               onMouseOut={(e) => {
-                ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = "white"
+                ; (e.currentTarget as HTMLButtonElement).style.backgroundColor = "white"
                 e.currentTarget.querySelector("svg")!.style.color = "#374151"
               }}
             >
@@ -342,22 +337,6 @@ export default function PrestigiousClientsSection() {
             })}
           </div>
         </div> */}
-
-<div className="container mx-auto mb-5 bg-grayNew">
-          <div className="grid grid-cols-1 gap-6  mx-6">
-            <div className="h-[450px] relative w-full">
-                
-                <Image 
-                  className="object-contain relative z-10" 
-                  src={currentImage} 
-                  alt="test"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  fill 
-                  priority
-                />
-            </div>
-          </div>
-        </div>
         {/* Call to Action */}
         {/* <div className="mt-16 text-center">
           <div className="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto">
