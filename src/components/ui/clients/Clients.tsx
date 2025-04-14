@@ -98,6 +98,14 @@ const sectorColors = {
   Horeca: "greenNew",
 }
 
+const sectorImage = {
+  Agro: "/agro/agro_1.jpg?height=600&width=800",
+  Lácteos: "/lacteos/lacteos_5.jpg?height=600&width=800",
+  "Food & Drink": "/frutas/frutas_0.jpg?height=600&width=800",
+  Ganaderia: "/ganaderia/ganaderia_4.jpg?height=600&width=800",
+  Horeca: "/hoteles/hoteles.jpg?height=600&width=800",
+}
+
 export default function PrestigiousClientsSection() {
   const sectors = Object.keys(clientsBySector)
   const [activeSector, setActiveSector] = useState(sectors[0])
@@ -144,22 +152,20 @@ export default function PrestigiousClientsSection() {
 
   // Get current sector color
   const currentColor = sectorColors[activeSector as keyof typeof sectorColors] || "greenNew"
-
-  console.log("Current color:", currentColor)
+  const currentImage = sectorImage[activeSector as keyof typeof sectorImage] || "/agro/agro_1.jpg"
   return (
     <section className="w-full py-24 bg-grayNew" id="clients">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center my-6">
-            <Award className="h-10 w-10 text-greenNew mr-3" />
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <Award className="h-7 w-7 text-greenNew mr-3" />
+            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
               Nuestros Clientes Destacados
             </h2>
           </div>
-          <div className={`w-24 h-1 bg-${currentColor} mx-auto mb-8 transition-colors duration-500`}></div>
+          <div className={`w-24 h-1 bg-${currentColor} mx-auto mb-4 transition-colors duration-500`}></div>
           <p className="max-w-3xl mx-auto text-lg text-gray-600">
-            Nuestras soluciones de limpieza son la elección preferida por las empresas más prestigiosas en diversos
-            sectores industriales.
+            Nuestras soluciones de limpieza son la elección preferida por las empresas más prestigiosas.
           </p>
         </div>
 
@@ -195,7 +201,7 @@ export default function PrestigiousClientsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="min-h-[300px] flex flex-col"
+              className="min-h-[180px] flex flex-col"
             >
               {/* <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center bg-white px-6 py-3 rounded-full shadow-md mb-4">
@@ -318,7 +324,7 @@ export default function PrestigiousClientsSection() {
         </div>
 
         {/* Sector Indicators */}
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <div className="flex space-x-2">
             {sectors.map((sector) => {
               const sectorColor = sectorColors[sector as keyof typeof sectorColors] || "greenNew"
@@ -335,8 +341,43 @@ export default function PrestigiousClientsSection() {
               )
             })}
           </div>
-        </div>
+        </div> */}
 
+<div className="container mx-auto mb-5 bg-grayNew">
+          <div className="grid grid-cols-1 gap-6  mx-6">
+            <div className="h-[450px] relative w-full">
+                <div className="-z-10" style={{
+                  backgroundImage: `url(/${currentImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  zIndex: 1,
+                  filter: 'blur(5px)',
+                  opacity: 0.5,
+                  transition: 'all 0.5s ease-in-out',
+                  transform: 'scale(1.1)',
+                  borderRadius: '10px',
+                  overflow: 'hidden',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+                  border: '1px solid rgba(0, 0, 0, 0.1)',
+
+                }}></div>
+                <Image 
+                  className="object-contain relative z-10" 
+                  src={currentImage} 
+                  alt="test"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  fill 
+                  priority
+                />
+            </div>
+          </div>
+        </div>
         {/* Call to Action */}
         {/* <div className="mt-16 text-center">
           <div className="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto">

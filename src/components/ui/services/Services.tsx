@@ -284,10 +284,10 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="container mx-auto mb-5">
+        {/* <div className="container mx-auto mb-5">
           <div className="grid grid-cols-1 gap-6  mx-6">
             <div className="h-[450px] relative w-full">
-                {/* <div className="-z-10" style={{
+                <div className="-z-10" style={{
                   backgroundImage: `url(${activeService.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
@@ -307,7 +307,7 @@ export default function ServicesSection() {
                   boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
                   border: '1px solid rgba(0, 0, 0, 0.1)',
 
-                }}></div> */}
+                }}></div>
                 <Image 
                   className="object-contain relative z-10" 
                   src={activeService.image} 
@@ -318,7 +318,7 @@ export default function ServicesSection() {
                 />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="container mx-auto py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
