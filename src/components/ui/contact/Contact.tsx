@@ -48,7 +48,7 @@ export default function ContactSection() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="grid  grid-cols-2 gap-8">
+              <div className="grid grid-cols-1  md:grid-cols-2 gap-8">
                 {/* Address */}
                 <div className="flex space-x-4 flex-col">
                   <h2 className="ms-6 text-lg font-bold mb-3">Ventas Industriales</h2>
