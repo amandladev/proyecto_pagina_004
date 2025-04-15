@@ -104,7 +104,7 @@ const services = [
         id: 1,
         title: "Paltos",
         description: "Desinfección de paltos y otros cultivos.",
-        image: "",
+        image: "/food/avocado.jpg",
         images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
 
 
@@ -113,7 +113,7 @@ const services = [
         id: 2,
         title: "Citricos",
         description: "Desinfección de citricos y otros cultivos.",
-        image: "",
+        image: "/food/citrico.jpg",
         images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
 
 
@@ -122,7 +122,7 @@ const services = [
         id: 3,
         title: "ViD",
         description: "Desinfección de ViD y otros cultivos.",
-        image: "",
+        image: "/food/uva.jpg",
         images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
 
 
@@ -131,7 +131,7 @@ const services = [
         id: 4,
         title: "Mango",
         description: "Desinfección de mango y otros cultivos.",
-        image: "",
+        image: "/food/mango.jpg",
         images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
 
 
