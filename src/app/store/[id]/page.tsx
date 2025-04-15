@@ -2,69 +2,76 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { useEffect, useState } from "react"
 import { ChevronRight, Home, Star, ShoppingCart, Heart, Share2, ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useCart } from "@/context/cart-context"
-import { useState } from "react"
 import ShareButton from "@/components/cart/share-button"
+import { products } from "@/utils/productsMockup"
 
 // This would normally come from a database or API
-const product = {
+const product2 = {
   id: 1,
-  name: "Multi-Surface Cleaner",
-  description:
-    "Professional-grade cleaner for all surfaces. Our Multi-Surface Cleaner is formulated to tackle dirt, grime, and stains on virtually any washable surface. The powerful yet gentle formula is safe for use on countertops, appliances, walls, floors, and more.",
-  price: 12.99,
-  category: "all-purpose",
-  categoryName: "Personal Care",
+  name: "Jabón Líquido",
+  category: "personalCare",
+  categoryName: "Cuidado Personal",
   images: [
-    "/limpieza/limpieza_0.jpg?height=600&width=600",
-    "/limpieza/limpieza_1.jpg?height=600&width=600",
-    "/limpieza/limpieza_2.jpg?height=600&width=600",
-    "/limpieza/limpieza_3.jpg?height=600&width=600",
-  ],
-  rating: 4.5,
-  reviewCount: 127,
-  inStock: true,
+      "/limpieza/limpieza_0.jpg?height=600&width=600",
+      "/limpieza/limpieza_1.jpg?height=600&width=600",
+      "/limpieza/limpieza_2.jpg?height=600&width=600",
+      "/limpieza/limpieza_3.jpg?height=600&width=600",
+    ],
+  description: "Jabón profesional de uso continuo.  Enjuague rápido y efectivo.",
+  features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
+  image: "/products/liquid_soap.jpg?height=300&width=300",
+  priceDetail: [{
+      price: 10,
+      amount: 0.38
+  }],
+  isStock: true,
   featured: true,
+  rating: 4.5,
+  size: ["0.38"],
   details: {
-    size: "4 KG",
-    ingredients: "Water, Surfactants, Citric Acid, Natural Fragrance",
-    directions:
-      "Spray directly onto surface and wipe clean with a cloth or paper towel. For tough stains, let sit for 30 seconds before wiping.",
-    warnings: "Keep out of reach of children. Avoid contact with eyes.",
+      size: "4 KG",
+      ingredients: "Water, Surfactants, Citric Acid, Natural Fragrance",
+      directions:
+        "Spray directly onto surface and wipe clean with a cloth or paper towel. For tough stains, let sit for 30 seconds before wiping.",
+      warnings: "Keep out of reach of children. Avoid contact with eyes.",
   },
   relatedProducts: [
-    {
-      id: 3,
-      name: "Glass & Window Cleaner",
-      price: 9.99,
-      image: "/limpieza/limpieza_6.jpg?height=300&width=300",
-    },
-    {
-      id: 5,
-      name: "Bathroom Cleaner",
-      price: 11.99,
-      image: "/limpieza/limpieza_5.jpg?height=300&width=300",
-    },
-    {
-      id: 8,
-      name: "Disinfectant Spray",
-      price: 8.99,
-      image: "/limpieza/limpieza_7.jpg?height=300&width=300",
-    },
-    {
-      id: 11,
-      name: "Oven & Grill Cleaner",
-      price: 15.99,
-      image: "/limpieza/limpieza_8.jpg?height=300&width=300",
-    },
+      {
+        id: 3,
+        name: "Glass & Window Cleaner",
+        price: 9.99,
+        image: "/limpieza/limpieza_6.jpg?height=300&width=300",
+      },
+      {
+        id: 5,
+        name: "Bathroom Cleaner",
+        price: 11.99,
+        image: "/limpieza/limpieza_5.jpg?height=300&width=300",
+      },
+      {
+        id: 8,
+        name: "Disinfectant Spray",
+        price: 8.99,
+        image: "/limpieza/limpieza_7.jpg?height=300&width=300",
+      },
+      {
+        id: 11,
+        name: "Oven & Grill Cleaner",
+        price: 15.99,
+        image: "/limpieza/limpieza_8.jpg?height=300&width=300",
+      },
   ],
+  reviewCount: 127
 }
 
 export default function ProductDetailPage() {
+  const [product, setProduct] = useState(product2)
   const [quantity, setQuantity] = useState(1)
   const { addItem } = useCart()
   const handleAddToCart = () => {
@@ -73,11 +80,29 @@ export default function ProductDetailPage() {
       addItem({
         id: product.id.toString(),
         name: product.name,
-        price: product.price,
+        price: product.priceDetail[0].price,
         image: product.images[0],
       })
     }
   }
+
+  useEffect(() => {
+    const getId = () => {
+      const url = window.location.href
+      const id = url.split("/").pop()
+      return id
+    }
+    const id = Number(getId())
+
+    if (id) {
+      const currentProduct = products.find((product) => product.id === id)
+      if (currentProduct !== undefined) {
+        console.log("CURRENT PRODUCT", currentProduct)
+        setProduct(currentProduct)
+      }
+    }
+    // setProduct()
+  }, [])
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Breadcrumbs */}
@@ -118,16 +143,15 @@ export default function ProductDetailPage() {
                 {product.images.map((image, index) => (
                   <div
                     key={index}
-                    className={`aspect-square relative rounded-md overflow-hidden border cursor-pointer ${
-                      index === 0 ? "ring-2 ring-gray-600" : ""
-                    }`}>
+                    className={`aspect-square relative rounded-md overflow-hidden border cursor-pointer ${index === 0 ? "ring-2 ring-gray-600" : ""
+                      }`}>
                     <div className="absolute inset-0 bg-cover bg-center blur-lg scale-110"
-                              style={
-                                {
-                                  backgroundImage: `url(${image})`
-                                }
-                              }>
-                            </div>
+                      style={
+                        {
+                          backgroundImage: `url(${image})`
+                        }
+                      }>
+                    </div>
                     <Image
                       src={image || "/placeholder.svg"}
                       alt={`${product.name} - Image ${index + 1}`}
@@ -157,7 +181,7 @@ export default function ProductDetailPage() {
               </div>
 
               {/* Price */}
-              <div className="text-2xl font-medium text-greenNew mb-4">S/ {product.price.toFixed(2)}</div>
+              <div className="text-2xl font-medium text-greenNew mb-4">S/ {product.priceDetail[0].price.toFixed(2)}</div>
 
               {/* Description */}
               <p className="text-gray-600 mb-6">{product.description}</p>
@@ -168,15 +192,18 @@ export default function ProductDetailPage() {
                   <label htmlFor="size" className="block text-sm font-medium text-gray-700 mb-1">
                     Tamaño
                   </label>
-                  <Select defaultValue="32kg">
+                  <Select defaultValue="0.5">
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select size" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="16kg">16 kg</SelectItem>
-                      <SelectItem value="32kg">32 kg</SelectItem>
-                      <SelectItem value="64kg">64 kg (Half Gallon)</SelectItem>
-                      <SelectItem value="128kg">128 kg (Gallon)</SelectItem>
+                    {
+                      product.size.map((size) => (
+                        <SelectItem key={size} value={size}>
+                          {size} KG
+                        </SelectItem>
+                      ))
+                    }
                     </SelectContent>
                   </Select>
                 </div>
@@ -213,7 +240,7 @@ export default function ProductDetailPage() {
                 {/* <Button variant="outline" size="icon" className="h-11 w-11">
                   <Share2 className="h-5 w-5" />
                 </Button> */}
-                 <ShareButton
+                <ShareButton
                   title={product.name}
                   description={`Check out this amazing product: ${product.name}`}
                   variant="outline"

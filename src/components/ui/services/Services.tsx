@@ -62,8 +62,8 @@ const services = [
         id: 1,
         title: "Ordeñadores",
         description: "Desinfección de paltos y otros cultivos.",
-        image: "",
-        images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
+        image: "/lacteos/lacteos_6.jpg",
+        images: [{ image: "/agro/features/products/1.jpg", name: "Ordeñadores 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
 
 
       },
@@ -71,8 +71,8 @@ const services = [
         id: 2,
         title: "Fabricacion de Lacteos",
         description: "Desinfección de citricos y otros cultivos.",
-        image: "",
-        images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
+        image: "/lacteos/lacteos_7.jpg",
+        images: [{ image: "/agro/features/products/1.jpg", name: "Ordeñadores 2" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
 
 
       },
@@ -80,8 +80,8 @@ const services = [
         id: 3,
         title: "Quesos",
         description: "Desinfección de ViD y otros cultivos.",
-        image: "",
-        images: [{ image: "/agro/features/products/1.jpg", name: "Limpieza 1" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
+        image: "/lacteos/lacteos_8.jpg",
+        images: [{ image: "/agro/features/products/1.jpg", name: "Ordeñadores 3" }, { image: "/agro/features/products/2.jpg", name: "Limpieza 2" }, { image: "/agro/features/products/3.jpg", name: "Limpieza 3" }]
 
 
       },
