@@ -5,14 +5,14 @@ import { ClipboardCheck, FileCheck, Users, ArrowRight, CheckCircle } from "lucid
 
 const expertiseItems = [
   {
-    title: "Planes",
+    title: "Protocolos",
     icon: <ClipboardCheck className="h-10 w-10 text-gray-600" />,
-    description: "Customized cleaning protocols designed specifically for your facility and operational needs.",
+    description: "Protocolos de limpieza personalizados, diseñados específicamente para tu instalación y necesidades operativas.",
     features: [
-      "Tailored cleaning schedules",
-      "Product recommendations",
-      "Staff allocation planning",
-      "Budget optimization",
+      "Cronogramas de limpieza a medida",
+      "Recomendaciones de productos",
+      "Planificación de asignación de personal",
+      "Optimización del presupuesto",
     ],
     image: "/planes/planes_3.jpg?height=400&width=600",
     cta: "Get a custom plan",
@@ -22,12 +22,12 @@ const expertiseItems = [
     title: "Validaciones",
     icon: <FileCheck className="h-10 w-10 text-gray-600" />,
     description:
-      "Professional validation services to ensure your cleaning processes meet industry standards and regulations.",
+      "Servicios de validación profesional para asegurar que tus procesos de limpieza cumplan con los estándares y regulaciones del sector.",
     features: [
-      "Compliance verification",
-      "Quality assurance testing",
-      "Contamination prevention",
-      "Certification support",
+      "Verificación de cumplimiento",
+      "Pruebas de aseguramiento de la calidad",
+      "Prevención de contaminación",
+      "Soporte para certificaciones",
     ],
     image: "/validaciones/validaciones_2.jpg?height=400&width=600",
     cta: "Request validation",
@@ -36,8 +36,8 @@ const expertiseItems = [
   {
     title: "Charlas",
     icon: <Users className="h-10 w-10 text-gray-600" />,
-    description: "Educational sessions and workshops led by cleaning industry experts for your team.",
-    features: ["Best practices training", "New technology demonstrations", "Regulatory updates", "Hands-on workshops"],
+    description: "Sesiones educativas y talleres dirigidos por expertos de la industria de la limpieza para tu equipo.",
+    features: ["Capacitación en mejores prácticas", "Demostraciones de nuevas tecnologías", "Actualizaciones regulatorias", "Talleres prácticos"],
     image: "/charlas/charlas_3.jpg?height=400&width=600",
     cta: "Book a session",
     link: "/services/talks",
@@ -89,14 +89,14 @@ export default function ExpertAdviceSection() {
               </div>
 
               {/* Card Footer */}
-              <div className="px-6 pb-6 mt-auto">
+              {/* <div className="px-6 pb-6 mt-auto">
                 <Link href={item.link}>
                   <Button className="w-full group bg-color-yellow">
                     {item.cta}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </Link>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

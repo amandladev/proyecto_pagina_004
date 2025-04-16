@@ -60,7 +60,9 @@ export default function ContactSection() {
                     <div>
                       <h3 className="font-medium text-gray-900 mb-1">Teléfono</h3>
                       <p className="text-gray-600">
-                        (51) 956 054 017
+                        (51) 933 297 202  
+                        <br/>
+                        (51) 990 999 779
                       </p>
                     </div>
                   </div>
@@ -71,7 +73,7 @@ export default function ContactSection() {
                     <div>
                       <h3 className="font-medium text-gray-900 mb-1">Correo Electrónico</h3>
                       <p className="text-gray-600">
-                        correo@example.com
+                        ventas@higieneperu.com
                       </p>
                     </div>
                   </div>
@@ -83,11 +85,7 @@ export default function ContactSection() {
                     <div>
                       <h3 className="font-medium text-gray-900 mb-1">Horario de Atención</h3>
                       <p className="text-gray-600">
-                        Lunes - Viernes: 9:00 AM - 6:00 PM
-                        <br />
-                        Sábado: 10:00 AM - 4:00 PM
-                        <br />
-                        Domingo: Cerrado
+                        Lunes - Viernes: 9:00 AM - 12:00 PM y 3:00 PM - 6:00 PM
                       </p>
                     </div>
                   </div>
@@ -104,7 +102,9 @@ export default function ContactSection() {
                     <div>
                       <h3 className="font-medium text-gray-900 mb-1">Teléfono</h3>
                       <p className="text-gray-600">
-                         (51) 123-4568
+                         (51) 956 054 017  
+                         <br/>
+                         (51) 940 864 330
                       </p>
                     </div>
                   </div>
@@ -115,7 +115,7 @@ export default function ContactSection() {
                     <div>
                       <h3 className="font-medium text-gray-900 mb-1">Correo Electrónico</h3>
                       <p className="text-gray-600">
-                        correo@example.com
+                        ventasganaservice@gmail.com
                       </p>
                     </div>
                   </div>
@@ -126,11 +126,7 @@ export default function ContactSection() {
                     <div>
                       <h3 className="font-medium text-gray-900 mb-1">Horario de Atención</h3>
                       <p className="text-gray-600">
-                        Lunes - Viernes: 9:00 AM - 6:00 PM
-                        <br />
-                        Sábado: 10:00 AM - 4:00 PM
-                        <br />
-                        Domingo: Cerrado
+                        Lunes - Viernes: 9:00 AM - 12:00 PM y 3:00 PM - 6:00 PM
                       </p>
                     </div>
                   </div>

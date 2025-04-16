@@ -87,7 +87,7 @@ const services = [
       },
     ],
     products: [
-      { id: 2001, name: "Leche", image: "/lacteos/features/leche.jpg" },
+      { id: 2001, name: "Leche", image: "/lacteos/features/leche.webp" },
       { id: 2002, name: "Manjar", image: "/lacteos/features/manjar.webp" },
       { id: 2003, name: "Yogurt", image: "/lacteos/features/yogurt.jpg" },
       { id: 2004, name: "Queso", image: "/lacteos/features/queso.jpg" },
@@ -138,10 +138,10 @@ const services = [
       }
     ],
     products: [
-      { id: 1010, name: "Desinfectante Agrícola", image: "/food/features/frutas.jpg" },
-      { id: 1021, name: "Limpiador de Suelos", image: "/food/features/verduras.jpg" },
-      { id: 1031, name: "Desinfectante Agrícola", image: "/food/features/botella.jpg" },
-      { id: 1041, name: "Limpiador de Suelos", image: "/food/features/frutas.jpg" },
+      { id: 1009, name: "Botella de agua", image: "/food/features/botella.jpg" },
+      { id: 1010, name: "Verduras supermercado", image: "/food/features/verduras.jpg" },
+      { id: 1011, name: "Ketchup y Mostaza", image: "/food/features/mayonnaise.jpg" },
+      { id: 1041, name: "Jugos en caja tetrapack", image: "/food/features/jugos.jpg" },
     ],
   },
   {
@@ -188,10 +188,10 @@ const services = [
       }
     ],
     products: [
-      { id: 201, name: "Leche", image: "/ganaderia/features/leche.jpg" },
-      { id: 202, name: "Ordenar", image: "/ganaderia/features/ordenar.jpg" },
-      { id: 203, name: "Pezunas", image: "/ganaderia/features/pezunas.jpg" },
-      { id: 204, name: "Ubres", image: "/ganaderia/features/ubres.jpg" },
+      { id: 201, name: "Ordenar", image: "/ganaderia/features/ordenar.jpg" },
+      { id: 202, name: "Ubres", image: "/ganaderia/features/ubres.jpg" },
+      { id: 203, name: "Leche", image: "/ganaderia/features/leche.webp" },
+      { id: 204, name: "Pezunas", image: "/ganaderia/features/pezunas.jpg" },
     ],
   },
   {
@@ -324,7 +324,7 @@ export default function ServicesSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {activeService.products.map((item) => (
               <div key={item.id} className="flex flex-col sm:flex-row gap-4 items-center">
-                <div className="relative h-[200px] w-[200px] shrink-0 rounded-md overflow-hidden sm:left-[15%] left-0">
+                <div className="relative h-[250px] w-[280px] shrink-0 rounded-md overflow-hidden sm:left-[15%] left-0">
                   <Image
                     src={item.image || "/placeholder.svg"}
                     alt={item.name}
@@ -337,14 +337,14 @@ export default function ServicesSection() {
               </div>
             ))}
           </div>
-          <div className="flex justify-center mt-8">
+          {/* <div className="flex justify-center mt-8">
             <button
               onClick={() => setIsModalOpen(true)}
               className="px-8 py-3 bg-color-yellow text-white rounded-md hover:bg-gray-700 transition-colors"
             >
               Ver más
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 

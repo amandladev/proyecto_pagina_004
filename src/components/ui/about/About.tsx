@@ -85,7 +85,7 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800 text-lg">Calidad</h4>
-                  <p className="text-sm text-gray-600 mt-1">Premium ingredients for superior results</p>
+                  <p className="text-sm text-gray-600 mt-1">Ingredientes de alta calidad para resultados excepcionales</p>
                 </div>
               </motion.div>
 
@@ -99,7 +99,7 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800 text-lg">Eco-Friendly</h4>
-                  <p className="text-sm text-gray-600 mt-1">Sustainable formulas and packaging</p>
+                  <p className="text-sm text-gray-600 mt-1">Formulas y embalajes ecológicos</p>
                 </div>
               </motion.div>
 
@@ -113,7 +113,7 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800 text-lg">Seguro para las familias</h4>
-                  <p className="text-sm text-gray-600 mt-1">Non-toxic and gentle formulations</p>
+                  <p className="text-sm text-gray-600 mt-1">Formulas sin sustancias tóxicas</p>
                 </div>
               </motion.div>
 
@@ -127,7 +127,9 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800 text-lg">Innovación</h4>
-                  <p className="text-sm text-gray-600 mt-1">Constantly improving our products</p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Constante mejora de nuestros productos
+                   </p>
                 </div>
               </motion.div>
             </div>

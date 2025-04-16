@@ -50,30 +50,36 @@ const clientsBySector = {
       logo: "/clients/lacteus.png",
       link: "",
     },
-  ],
-  "Food & Drink": [
     {
       name: "Nestle",
       logo: "/clients/nestle.jpeg",
       link: "https://www.nestle.com.pe/",
+    },
+  ],
+  "Food & Drink": [
+    {
+      name: "Aliex",
+      logo: "/clients/aliex.png",
+      link: "https://aliexperu.com/",
     },
     {
       name: "General Foods",
       logo: "/clients/general_foods.png",
       link: "https://www.generalfoodsperu.com",
     },
-  ],
-  Ganaderia: [
-    {
-      name: "Aktiva Packaging",
-      logo: "/clients/aktivapack.png",
-      link: "https://aktivapackaging.pe",
-    },
     {
       name: "Perulab Ecologic",
       logo: "/clients/ecologic-logo.png",
       link: "https://perulabecologic.com.pe/",
     },
+    {
+      name: "Aktiva Packaging",
+      logo: "/clients/aktivapack.png",
+      link: "https://aktivapackaging.pe",
+    },
+  ],
+  Ganaderia: [
+    
   ],
   Horeca: [
     {
