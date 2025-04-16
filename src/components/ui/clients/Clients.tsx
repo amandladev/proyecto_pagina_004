@@ -83,13 +83,13 @@ const clientsBySector = {
   ],
   Horeca: [
     {
-      name: "Aktiva Packaging",
-      logo: "/clients/aktivapack.png",
-      link: "https://aktivapackaging.pe",
+      name: "Grupo Express",
+      logo: "/clients/grupo_express.jpg",
+      link: "https://grupoexpressperu.com",
     },
     {
-      name: "Perulab Ecologic",
-      logo: "/clients/ecologic-logo.png",
+      name: "Flora y Fauna",
+      logo: "/clients/flora_fauna.svg",
       link: "https://perulabecologic.com.pe/",
     },
   ],
