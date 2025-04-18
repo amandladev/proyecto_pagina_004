@@ -79,7 +79,26 @@ const clientsBySector = {
     },
   ],
   Ganaderia: [
-    
+    {
+      name: "Establo Piamonte",
+      logo: "/clients/piamonte.png",
+      link: "",
+    },
+    {
+      name: "Establo El Sequion",
+      logo: "/clients/sequion.png",
+      link: "",
+    },
+    {
+      name: "Establo Gasur",
+      logo: "/clients/gasur.png",
+      link: "",
+    },
+    {
+      name: "Establo Santa Fe",
+      logo: "/clients/santa_fe.png",
+      link: "",
+    },
   ],
   Horeca: [
     {
@@ -103,11 +122,10 @@ const sectorColors = {
   Ganaderia: "greenNew",
   Horeca: "greenNew",
 }
-
 const sectorImage = {
   Agro: "/agro/agro_1.jpg?height=600&width=800",
   Lácteos: "/lacteos/lacteos_5.jpg?height=600&width=800",
-  "Food & Drink": "/frutas/frutas_0.jpg?height=600&width=800",
+  "Food & Drink": "/food/agua.jpg?height=600&width=800",
   Ganaderia: "/ganaderia/ganaderia_4.jpg?height=600&width=800",
   Horeca: "/hoteles/hoteles.jpg?height=600&width=800",
 }
@@ -271,7 +289,7 @@ export default function PrestigiousClientsSection() {
                             alt={`${client.name} logo`}
                             width={160}
                             height={80}
-                            className="object-contain w-auto h-auto max-h-16 max-w-full grayscale hover:grayscale-0 transition-all duration-300"
+                            className="object-contain w-auto h-auto max-h-16 min-w-36 max-w-full grayscale hover:grayscale-0 transition-all duration-300"
                             style={{ width: "auto", height: "auto" }}
                           />
                         </a>

@@ -89,7 +89,7 @@ const services = [
     products: [
       { id: 2001, name: "Leche", image: "/lacteos/features/leche.webp" },
       { id: 2002, name: "Manjar", image: "/lacteos/features/manjar.webp" },
-      { id: 2003, name: "Yogurt", image: "/lacteos/features/yogurt.jpg" },
+      { id: 2003, name: "Yogurt", image: "/lacteos/features/yogurt.jpeg" },
       { id: 2004, name: "Queso", image: "/lacteos/features/queso.jpg" },
     ],
   },
