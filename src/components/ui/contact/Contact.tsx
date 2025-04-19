@@ -163,7 +163,7 @@ export default function ContactSection() {
 
               <div className="space-y-2">
                 <Label htmlFor="subject">Asunto</Label>
-                <Input id="subject" placeholder="How can we help?" required />
+                <Input id="subject" placeholder="¿Cómo podemos ayudar?" required />
               </div>
 
               <div className="space-y-2">

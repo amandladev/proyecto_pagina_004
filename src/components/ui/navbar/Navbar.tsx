@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const menuItems = [
   { name: "¿Quiénes Somos?", href: "/#about" },
-  { name: "Hogar", href: "#consumer-products" },
+  // { name: "Hogar", href: "#consumer-products" },
   { name: "Contacto", href: "/#contact" },
 ]
 
