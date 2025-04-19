@@ -239,7 +239,7 @@ const services = [
       }
     ],
     products: [
-      { id: 301, name: "Comedor de empresa", image: "/hoteles/hoteles_1.jpg" },
+      { id: 301, name: "Comedor de empresa", image: "/hoteles/hoteles.jpg" },
       { id: 302, name: "Cocina", image: "/hoteles/hoteles_2.jpg" },
       { id: 303, name: "Sanitarios", image: "/hoteles/hoteles_3.jpg" },
       { id: 304, name: "Lavanderia", image: "/hoteles/hoteles_4.jpg" },
