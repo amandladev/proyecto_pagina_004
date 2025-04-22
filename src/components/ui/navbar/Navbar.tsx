@@ -10,7 +10,8 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const menuItems = [
   { name: "¿Quiénes Somos?", href: "/#about" },
-  // { name: "Hogar", href: "#consumer-products" },
+  { name: "Sectores", href: "/#services" },
+  { name: "Asesoría Experta", href: "/#expert-advice" },
   { name: "Contacto", href: "/#contact" },
 ]
 
@@ -61,13 +62,12 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
 
-              <div className="relative group">
+              {/* <div className="relative group">
                 <button className="flex items-center text-gray-700 hover:text-primary px-2 py-1 text-sm font-medium transition-colors duration-200">
                   Sectores
                   <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
                 </button>
 
-                {/* Dropdown menu with improved hover area */}
                 <div className="absolute left-0 pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="rounded-lg shadow-lg bg-white ring-1 ring-black/5 overflow-hidden">
                     <div className="py-1">
@@ -83,15 +83,14 @@ export default function Navbar() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="relative group">
+              {/* <div className="relative group">
                 <button className="flex items-center text-gray-700 hover:text-primary px-2 py-1 text-sm font-medium transition-colors duration-200">
                   Asesoría Experta
                   <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
                 </button>
 
-                {/* Dropdown menu with improved hover area */}
                 <div className="absolute left-0 pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="rounded-lg shadow-lg bg-white ring-1 ring-black/5 overflow-hidden">
                     <div className="py-1">
@@ -107,7 +106,7 @@ export default function Navbar() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Remaining menu items */}
               {menuItems.slice(1).map((item) => (
@@ -124,7 +123,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <CartDropdown />
+            {/* <CartDropdown /> */}
             <div className="flex space-x-2">
               <LoginModal />
               <RegisterModal />
@@ -133,7 +132,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
-            <CartDropdown />
+            {/* <CartDropdown /> */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-100 transition-colors duration-200 focus:outline-none"
