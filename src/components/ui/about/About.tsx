@@ -63,14 +63,12 @@ export default function AboutSection() {
             <h3 className="text-3xl font-light text-gray-800 border-l-4 border-primary pl-4">Nuestra historia</h3>
             <p className="text-gray-600 leading-relaxed">
               AZOCHEM® marca de propiedad familiar, evolucionando durante más de 25 años, combina las mejores
-              condiciones en manufactura con las más exigidas de calidad para conseguir un proceso de producción seguro,
-              ofreciendo a la industria productos de la mejor funcionalidad con diseños personalizados.
+              condiciones en manufactura con las máximas exigencias de calidad para conseguir un proceso de producción seguro,
+              ofreciendo a la industria productos de la mejor funcionalidad con desarrollos personalizados.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              AZOCHEM® respaldado por el polo técnico que investiga y desarrolla desinfectantes, así como limpiadores,
-              manteniendo bases características comerciales con un único network que comparten recursos y know-how
-              alineados a sus intereses para mantener ambientes y equipamientos higienizados, promover alimentos
-              seguros, así como optimizar la calidad en la utilización del agua.
+            AZOCHEM® es el polo técnico que investiga y desarrolla desinfectantes, así como limpiadores, agrupando empresas independientes con un único network que comparten recursos y know-how, manteniendo las características comerciales de cada una.
+            AZOCHEM® ofrece soluciones integrales para mantener ambientes y equipamientos higienizados, promover alimentos seguros, así como optimizar la calidad de la utilización del agua.
             </p>
 
             {/* Key Values */}
