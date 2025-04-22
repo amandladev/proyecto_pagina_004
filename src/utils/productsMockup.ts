@@ -17,7 +17,7 @@ export const products = [
             price: 10,
             amount: 0.38
         }],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["0.38"],
@@ -68,7 +68,7 @@ export const products = [
             price: 20,
             amount: 1
         }],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["1"],
@@ -100,7 +100,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/neutral_soap.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -125,7 +125,7 @@ export const products = [
             price: 25,
             amount: 0.5
         }],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["0.5"],
@@ -182,7 +182,7 @@ export const products = [
             price: 20,
             amount: 1
         }],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["1"],
@@ -214,7 +214,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/gato_1.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -241,7 +241,7 @@ export const products = [
                 amount: 1
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["1"],
@@ -273,7 +273,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/perro_1.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -300,7 +300,7 @@ export const products = [
                 amount: 0.25
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["0.25"],
@@ -332,7 +332,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/frutas/frutas_1.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -359,7 +359,7 @@ export const products = [
                 amount: 1
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["1"],
@@ -391,7 +391,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/lavavajillas.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -418,7 +418,7 @@ export const products = [
                 amount: 1
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["1"],
@@ -450,7 +450,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/limpia_banos.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -477,7 +477,7 @@ export const products = [
                 amount: 1
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["1"],
@@ -509,7 +509,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/limpia_vidrios.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -536,7 +536,7 @@ export const products = [
                 amount: 1
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["1"],
@@ -568,7 +568,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/limpiatodo_cuaternario.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -595,7 +595,7 @@ export const products = [
                 amount: 4
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["4"],
@@ -627,7 +627,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/pisos_cuaternario.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -654,7 +654,7 @@ export const products = [
                 amount: 0.5
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["0.5"],
@@ -686,7 +686,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/saca_grasa.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -713,7 +713,7 @@ export const products = [
                 amount: 1
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["1"],
@@ -745,7 +745,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/sacasarro.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -772,7 +772,7 @@ export const products = [
                 amount: 4
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["4"],
@@ -804,7 +804,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/ropa_blanca.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -831,7 +831,7 @@ export const products = [
                 amount: 4
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["4"],
@@ -863,7 +863,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/ropa_color.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",
@@ -894,7 +894,7 @@ export const products = [
                 amount: 1
             }
         ],
-        isStock: true,
+        inStock: true,
         featured: true,
         rating: 4.5,
         size: ["0.5", "1"],
@@ -926,7 +926,7 @@ export const products = [
         ],
         reviewCount: 127,
         images: [
-          "/limpieza/limpieza_0.jpg?height=600&width=600",
+          "/products/gel_hidroalcohol.jpg?height=600&width=600",
           "/limpieza/limpieza_1.jpg?height=600&width=600",
           "/limpieza/limpieza_2.jpg?height=600&width=600",
           "/limpieza/limpieza_3.jpg?height=600&width=600",

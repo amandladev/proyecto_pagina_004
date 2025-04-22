@@ -26,8 +26,8 @@ interface ProductCardProps {
   viewMode: "grid" | "list"
 }
 
-export default function ProductCard({ product, viewMode }: ProductCardProps) {
-  const { id, name, description, price, image, rating, inStock, featured } = product
+export default function ProductCard({ product, viewMode }: any) {
+  const { id, name, description, price, image, rating, inStock, featured, priceDetail } = product
 
   // Grid View
   if (viewMode === "grid") {
@@ -70,7 +70,7 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
           <p className="text-gray-500 text-sm mb-3 line-clamp-2">{description}</p>
 
           <div className="flex items-center justify-between">
-            <span className="text-lg font-extrabold text-greenNew">S/ {price.toFixed(2)}</span>
+            <span className="text-lg font-extrabold text-greenNew">S/ {priceDetail[0].price.toFixed(2)}</span>
             <Button size="sm" disabled={!inStock} className="text-xs">
               <ShoppingCart className="h-4 w-4 mr-1" />
               Agregar
