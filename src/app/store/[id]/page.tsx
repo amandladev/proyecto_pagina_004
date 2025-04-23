@@ -12,66 +12,9 @@ import ShareButton from "@/components/cart/share-button"
 import { products } from "@/utils/productsMockup"
 
 // This would normally come from a database or API
-const product2 = {
-  id: 1,
-  name: "Jabón Líquido",
-  category: "personalCare",
-  categoryName: "Cuidado Personal",
-  images: [
-      "/limpieza/limpieza_0.jpg?height=600&width=600",
-      "/limpieza/limpieza_1.jpg?height=600&width=600",
-      "/limpieza/limpieza_2.jpg?height=600&width=600",
-      "/limpieza/limpieza_3.jpg?height=600&width=600",
-    ],
-  description: "Jabón profesional de uso continuo.  Enjuague rápido y efectivo.",
-  features: ["Eco-friendly", "Non-toxic", "Biodegradable"],
-  image: "/products/liquid_soap.jpg?height=300&width=300",
-  priceDetail: [{
-      price: 10,
-      amount: 0.38
-  }],
-  isStock: true,
-  featured: true,
-  rating: 4.5,
-  size: ["0.38"],
-  details: {
-      size: "4 KG",
-      ingredients: "Water, Surfactants, Citric Acid, Natural Fragrance",
-      directions:
-        "Spray directly onto surface and wipe clean with a cloth or paper towel. For tough stains, let sit for 30 seconds before wiping.",
-      warnings: "Keep out of reach of children. Avoid contact with eyes.",
-  },
-  relatedProducts: [
-      {
-        id: 3,
-        name: "Glass & Window Cleaner",
-        price: 9.99,
-        image: "/limpieza/limpieza_6.jpg?height=300&width=300",
-      },
-      {
-        id: 5,
-        name: "Bathroom Cleaner",
-        price: 11.99,
-        image: "/limpieza/limpieza_5.jpg?height=300&width=300",
-      },
-      {
-        id: 8,
-        name: "Disinfectant Spray",
-        price: 8.99,
-        image: "/limpieza/limpieza_7.jpg?height=300&width=300",
-      },
-      {
-        id: 11,
-        name: "Oven & Grill Cleaner",
-        price: 15.99,
-        image: "/limpieza/limpieza_8.jpg?height=300&width=300",
-      },
-  ],
-  reviewCount: 127
-}
 
 export default function ProductDetailPage() {
-  const [product, setProduct] = useState(product2)
+  const [product, setProduct] = useState(products[0])
   const [quantity, setQuantity] = useState(1)
   const { addItem } = useCart()
   const handleAddToCart = () => {
@@ -97,7 +40,6 @@ export default function ProductDetailPage() {
     if (id) {
       const currentProduct = products.find((product) => product.id === id)
       if (currentProduct !== undefined) {
-        console.log("CURRENT PRODUCT", currentProduct)
         setProduct(currentProduct)
       }
     }
