@@ -290,7 +290,7 @@ export default function PrestigiousClientsSection() {
                             alt={`${client.name} logo`}
                             width={160}
                             height={80}
-                            className="object-contain w-auto h-auto max-h-16 min-w-36 max-w-full grayscale hover:grayscale-0 transition-all duration-300"
+                            className="object-cover w-auto h-auto max-h-16 min-w-36 max-w-full grayscale hover:grayscale-0 transition-all duration-300"
                             style={{ width: "auto", height: "auto" }}
                           />
                         </a>
