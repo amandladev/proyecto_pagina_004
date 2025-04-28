@@ -123,11 +123,11 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            {/* <CartDropdown /> */}
+             {/* <CartDropdown /> 
             <div className="flex space-x-2">
               <LoginModal />
               <RegisterModal />
-            </div>
+            </div> */}
           </div>
 
           {/* Mobile menu button */}
@@ -170,7 +170,7 @@ export default function Navbar() {
               </Link>
 
               {/* Mobile Services dropdown */}
-              <div>
+              {/* <div>
                 <button
                   className="flex items-center justify-between w-full text-gray-700 hover:bg-primary/10 hover:text-primary px-3 py-2 rounded-md text-base font-medium transition-colors"
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
@@ -180,8 +180,6 @@ export default function Navbar() {
                     className={`h-5 w-5 transition-transform duration-200 ${isMobileServicesOpen ? "transform rotate-180" : ""}`}
                   />
                 </button>
-
-                {/* Mobile Services submenu */}
                 <motion.div
                   className="pl-4 space-y-1 overflow-hidden"
                   initial={{ height: 0 }}
@@ -199,9 +197,9 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </motion.div>
-              </div>
+              </div> */}
 
-              <div>
+              {/* <div>
                 <button
                   className="flex items-center justify-between w-full text-gray-700 hover:bg-primary/10 hover:text-primary px-3 py-2 rounded-md text-base font-medium transition-colors"
                   onClick={() => setIsMobileAdvicesOpen(!isMobileAdvicesOpen)}
@@ -211,8 +209,6 @@ export default function Navbar() {
                     className={`h-5 w-5 transition-transform duration-200 ${isMobileAdvicesOpen ? "transform rotate-180" : ""}`}
                   />
                 </button>
-
-                {/* Mobile Advice submenu */}
                 <motion.div
                   className="pl-4 space-y-1 overflow-hidden"
                   initial={{ height: 0 }}
@@ -230,7 +226,7 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </motion.div>
-              </div>
+              </div> */}
 
               {/* Remaining menu items */}
               {menuItems.map((item) => (
@@ -244,7 +240,7 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              <div className="pt-4 pb-3 border-t border-gray-200">
+              {/* <div className="pt-4 pb-3 border-t border-gray-200">
                 <div className="grid grid-cols-2 gap-3 px-2">
                   <Link
                     href="/login"
@@ -261,7 +257,7 @@ export default function Navbar() {
                     Registrarse
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         )}
