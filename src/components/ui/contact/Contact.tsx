@@ -115,7 +115,7 @@ export default function ContactSection() {
                     <div>
                       <h3 className="font-medium text-gray-900 mb-1">Correo Electrónico</h3>
                       <p className="text-gray-600">
-                        ventasganaservice@gmail.com
+                      contacto@gana-service.com
                       </p>
                     </div>
                   </div>
