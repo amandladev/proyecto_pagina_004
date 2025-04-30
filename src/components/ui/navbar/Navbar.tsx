@@ -52,7 +52,7 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
+            <div className="flex items-center space-x-8">
               {/* First menu item */}
               <Link
                 href="/#about"
