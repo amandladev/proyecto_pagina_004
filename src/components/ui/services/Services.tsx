@@ -105,14 +105,14 @@ const services = [
       { id: 2004, name: "Queso", image: "/lacteos/features/queso.jpg" },
     ],
     technicalSpecs: [
-      { name: "Alkacip", src: "/fichasTecnicas/lacteos/Acidcip.pdf"},
-      { name: "Break Down", src: "/fichasTecnicas/lacteos/Acidclean.pdf"},
-      { name: "Full Clean", src: "/fichasTecnicas/lacteos/Alkacip.pdf"},
-      { name: "Green Adhiere", src: "/fichasTecnicas/lacteos/Alkaclean.pdf"},
-      { name: "Green Fruits", src: "/fichasTecnicas/lacteos/Azoquats.pdf"},
-      { name: "Green K", src: "/fichasTecnicas/lacteos/Biochlor.pdf"},
-      { name: "Green Silicon", src: "/fichasTecnicas/lacteos/Fullclean.pdf"},
-      { name: "Green Tree", src: "/fichasTecnicas/lacteos/Jabon_neutro.pdf"}
+      { name: "Acidcip", src: "/fichasTecnicas/lacteos/Acidcip.pdf"},
+      { name: "Acid Clean", src: "/fichasTecnicas/lacteos/Acidclean.pdf"},
+      { name: "Alkacip", src: "/fichasTecnicas/lacteos/Alkacip.pdf"},
+      { name: "Alka Clean", src: "/fichasTecnicas/lacteos/Alkaclean.pdf"},
+      { name: "Azoquats", src: "/fichasTecnicas/lacteos/Azoquats.pdf"},
+      { name: "Biochlor Prime", src: "/fichasTecnicas/lacteos/Biochlor.pdf"},
+      { name: "Full Clean", src: "/fichasTecnicas/lacteos/Fullclean.pdf"},
+      { name: "Jabon Neutro", src: "/fichasTecnicas/lacteos/Jabon_neutro.pdf"}
     ]
   },
   {
@@ -234,7 +234,7 @@ const services = [
       { name: "Biochlor Prime", src: "/fichasTecnicas/ganaderia/Biochlor.pdf"},
       { name: "Full Clean", src: "/fichasTecnicas/ganaderia/Fullclean.pdf"},
       { name: "Iodine", src: "/fichasTecnicas/ganaderia/Iodine.pdf"},
-      { name: "Lacti", src: "/fichasTecnicas/ganaderia/Lacti.pdf"},
+      { name: "Lactifoam", src: "/fichasTecnicas/ganaderia/Lacti.pdf"},
       { name: "Peroxiclean", src: "/fichasTecnicas/ganaderia/Peroxiclean.pdf"},
       { name: "Pre Oxilac", src: "/fichasTecnicas/ganaderia/Pre-Oxilac.pdf"},
       { name: "Pre Sellado", src: "/fichasTecnicas/ganaderia/Pre-sellado.pdf"}
