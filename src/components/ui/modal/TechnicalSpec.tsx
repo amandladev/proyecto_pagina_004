@@ -30,7 +30,6 @@ export const TechnicalSpecsModal: React.FC<Props> = ({ isOpen, onClose, specs })
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 50, opacity: 0 }}
           >
-            {/* Botón de cerrar */}
             <button
               onClick={onClose}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:hover:text-white transition"
@@ -39,13 +38,11 @@ export const TechnicalSpecsModal: React.FC<Props> = ({ isOpen, onClose, specs })
               <X className="w-5 h-5" />
             </button>
 
-            {/* Título */}
             <div className="mb-4 flex items-center gap-2">
               <FileText className="w-6 h-6 text-blue-600" />
               <h2 className="text-xl font-semibold">Fichas Técnicas</h2>
             </div>
 
-            {/* Lista */}
             <div className="max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200 pr-2">
               <ul className="space-y-3">
                 {specs.map((item, index) => (

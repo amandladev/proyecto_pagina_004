@@ -288,9 +288,9 @@ export default function PrestigiousClientsSection() {
                           <Image
                             src={client.logo || "/placeholder.svg"}
                             alt={`${client.name} logo`}
-                            width={160}
-                            height={80}
-                            className="object-cover w-auto h-auto max-h-16 min-w-36 max-w-full grayscale hover:grayscale-0 transition-all duration-300"
+                            width={140}
+                            height={70}
+                            className="object-contain w-auto h-auto max-h-16 min-w-36 max-w-full grayscale hover:grayscale-0 transition-all duration-300"
                             style={{ width: "auto", height: "auto" }}
                           />
                         </a>
