@@ -41,20 +41,22 @@ const clientsBySector = {
       link: "https://laive.pe/",
     },
     {
-      name: "Chugur",
-      logo: "/clients/chugur.png",
-      link: "https://chugurquesos.com/",
+      name: "Nestle",
+      logo: "/clients/nestle.jpeg",
+      link: "https://www.nestle.com.pe/",
     },
+
     {
       name: "Lacteus",
       logo: "/clients/lacteus.png",
       link: "",
     },
     {
-      name: "Nestle",
-      logo: "/clients/nestle.jpeg",
-      link: "https://www.nestle.com.pe/",
+      name: "Chugur",
+      logo: "/clients/chugur.png",
+      link: "https://chugurquesos.com/",
     },
+ 
   ],
   "Food & Drink": [
     {
