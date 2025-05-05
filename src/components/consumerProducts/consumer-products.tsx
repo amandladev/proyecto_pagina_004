@@ -25,8 +25,7 @@ export default function ConsumerProductsSection() {
             Limpieza Profesional, Ahora para tu Hogar
               </h3>
             <p className="text-gray-500">
-            Nuestro equipo de expertos en limpieza industrial ha reformulado nuestros productos para su uso cotidiano. El mismo poder y eficiencia, ahora para tu hogar.
-              
+            Trasladamos nuestra experiencia en higiene industrial a productos de uso cotidiano, para el hogar.
             </p>
           </div>
           <Link href={"/store"}>

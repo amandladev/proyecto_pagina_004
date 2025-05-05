@@ -291,7 +291,7 @@ const services = [
       { id: 304, name: "Lavanderia", image: "/hoteles/hoteles_4.jpg" },
     ],
     technicalSpecs: [
-      { name: "Alcohol Gel", src: "/fichasTecnicas/horeca/Alcohol.pdf"},
+      { name: "Gel Hidroalcoholico", src: "/fichasTecnicas/horeca/Alcohol.pdf"},
       { name: "Biochlor Prime", src: "/fichasTecnicas/horeca/Biochlor.pdf"},
       { name: "Jabon Neutro", src: "/fichasTecnicas/horeca/Jabon_neutro.pdf"},
       { name: "Lavavajillas", src: "/fichasTecnicas/horeca/Lavavajillas.pdf"},
@@ -299,7 +299,7 @@ const services = [
       { name: "Limpia baños", src: "/fichasTecnicas/horeca/Limpiabanos.pdf"},
       { name: "Limpiatodo", src: "/fichasTecnicas/horeca/Limpiatodo.pdf"},
       { name: "Limpiavidrio", src: "/fichasTecnicas/horeca/Limpiavidrio.pdf"},
-      { name: "Ropa Blanca Azowash", src: "/fichasTecnicas/horeca/Ropa_Blanca_Azowash.pdf"},
+      { name: "Ropa Blanca", src: "/fichasTecnicas/horeca/Ropa_Blanca_Azowash.pdf"},
       { name: "Ropa color", src: "/fichasTecnicas/horeca/Ropa_color.pdf"},
       { name: "Sacagrasa", src: "/fichasTecnicas/horeca/Sacagrasa.pdf"},
       { name: "Sacasarro", src: "/fichasTecnicas/horeca/Sacasarro.pdf"},
