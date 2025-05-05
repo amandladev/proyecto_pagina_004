@@ -99,7 +99,7 @@ const services = [
       },
     ],
     products: [
-      { id: 2001, name: "Leche", image: "/lacteos/features/leche.webp" },
+      { id: 2001, name: "Leche", image: "/lacteos/features/leche.png" },
       { id: 2002, name: "Manjar", image: "/lacteos/features/manjar.webp" },
       { id: 2003, name: "Yogurt", image: "/lacteos/features/yogurt.jpeg" },
       { id: 2004, name: "Queso", image: "/lacteos/features/queso.jpg" },
@@ -222,7 +222,7 @@ const services = [
     products: [
       { id: 201, name: "Ordenar", image: "/ganaderia/features/ordenar.jpg" },
       { id: 202, name: "Ubres", image: "/ganaderia/features/ubres.jpg" },
-      { id: 203, name: "Leche", image: "/ganaderia/features/leche.webp" },
+      { id: 203, name: "Leche", image: "/ganaderia/features/leche.png" },
       { id: 204, name: "Pezunas", image: "/ganaderia/features/pezunas.jpg" },
     ],
     technicalSpecs: [
