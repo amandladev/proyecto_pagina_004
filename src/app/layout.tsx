@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Azochem",
   description: "Productos de limpieza industrial",
+  icons: {
+    icon: "/azochem.ico",
+  }
 };
 
 export default function RootLayout({
