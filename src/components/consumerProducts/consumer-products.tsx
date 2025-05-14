@@ -28,7 +28,7 @@ export default function ConsumerProductsSection() {
             Trasladamos nuestra experiencia en higiene industrial a productos de uso cotidiano, para el hogar.
             </p>
           </div>
-          <Link href={"/store"}>
+          <Link href={"/construction"}>
             <Button size="lg" className="px-8">
               Ir a la tienda <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
