@@ -43,10 +43,10 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
               <Image 
-                src="/logo.jpeg"
+                src="/logo_azochem.png"
                 alt="Logo"
-                width={100}
-                height={100}
+                width={60}
+                height={60}
               />
             </Link>
           </div>
