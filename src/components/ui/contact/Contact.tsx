@@ -18,20 +18,48 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    })
-
-    // Reset form
+  
     const form = e.target as HTMLFormElement
-    form.reset()
-    setIsSubmitting(false)
-  }
+    const formData = new FormData(form)
+    console.log({formData})
+    const data = {
+      name: formData.get("firstName"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    }
+  
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+  
+      if (res.ok) {
+        toast({
+          title: "¡Mensaje enviado!",
+          description: "Nos pondremos en contacto lo más pronto posible.",
+        })
+        form.reset()
+      } else {
+        toast({
+          title: "Error al enviar",
+          description: "Por favor intenta de nuevo.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      toast({
+        title: "Error de servidor",
+        description: "Algo salió mal. Intenta más tarde.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }  
 
   return (
     <section className="py-16 bg-gray-50" id="contact">
@@ -136,39 +164,39 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Contact Form */}
+          
           <div className="bg-white p-8 rounded-lg shadow-sm">
             <h3 className="text-2xl font-light text-gray-800 mb-6">Envianos un mensaje</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="firstName">Nombres</Label>
-                  <Input id="firstName" placeholder="John" required />
+                  <Input id="firstName" placeholder="John" required name="firstName"/>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="lastName">Apellidos</Label>
-                  <Input id="lastName" placeholder="Doe" required />
+                  <Input id="lastName" placeholder="Doe" required name="lastName"/>
                 </div>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="john@example.com" required />
+                <Input id="email" type="email" placeholder="john@example.com" required name="email"/>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="phone">Telefono (opcional)</Label>
-                <Input id="phone" type="tel" placeholder="(555) 123-4567" />
+                <Input id="phone" type="tel" placeholder="(555) 123-4567" name="phone"/>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="subject">Asunto</Label>
-                <Input id="subject" placeholder="¿Cómo podemos ayudar?" required />
+                <Input id="subject" placeholder="¿Cómo podemos ayudar?" required name="subject"/>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="message">Mensaje</Label>
-                <Textarea id="message" placeholder="" className="min-h-[150px]" required />
+                <Textarea id="message" placeholder="" className="min-h-[150px]" required name="message"/>
               </div>
 
               <Button type="submit" className="" disabled={isSubmitting}>
