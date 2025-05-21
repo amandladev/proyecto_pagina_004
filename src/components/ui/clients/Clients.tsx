@@ -56,7 +56,7 @@ const clientsBySector = {
       logo: "/clients/chugur.png",
       link: "https://chugurquesos.com/",
     },
- 
+
   ],
   "Food & Drink": [
     {
@@ -196,26 +196,23 @@ export default function PrestigiousClientsSection() {
         </div>
 
         {/* Sector Navigation */}
-        <div className="flex justify-center mb-12 overflow-x-auto pb-2">
-          <div className="inline-flex items-center bg-white rounded-full shadow-md p-1.5">
-            {sectors.map((sector) => {
-              // const sectorColor = sectorColors[sector as keyof typeof sectorColors] || "greenNew"
-              return (
-                <button
-                  key={sector}
-                  onClick={() => handleSectorChange(sector)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${activeSector === sector
-                    ? `bg-yellowNew text-black shadow-sm font-extrabold`
+        <div className="flex justify-center mb-12 pb-2">
+          <div className="flex flex-wrap justify-center gap-2 bg-white rounded-full shadow-md p-1.5">
+            {sectors.map((sector) => (
+              <button
+                key={sector}
+                onClick={() => handleSectorChange(sector)}
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${activeSector === sector
+                    ? "bg-yellowNew text-black shadow-sm font-extrabold"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                    }`}
-                >
-
-                  {sector}
-                </button>
-              )
-            })}
+                  }`}
+              >
+                {sector}
+              </button>
+            ))}
           </div>
         </div>
+
 
         {/* Client Logos Display */}
         <div className="relative">
@@ -271,7 +268,7 @@ export default function PrestigiousClientsSection() {
                           height: "100%",
                           position: "absolute",
                           top: "0",
-                          
+
                           left: "0",
                           right: "0",
                           bottom: "0",
