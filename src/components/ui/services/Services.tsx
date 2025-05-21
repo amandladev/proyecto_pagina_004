@@ -367,7 +367,7 @@ export default function ServicesSection() {
               onClick={() => setShowModal(true)}
               className="px-8 py-3 bg-color-yellow text-white rounded-md hover:bg-gray-700 transition-colors"
             >
-              Ver Fichas Técnicas
+              Información Técnica
             </button>
           </div>
 
