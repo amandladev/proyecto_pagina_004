@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.azochem.com
+
+# Sitemaps
+Sitemap: https://www.azochem.com/sitemap.xml
